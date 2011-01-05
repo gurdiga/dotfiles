@@ -1,7 +1,7 @@
 " Put this file in ~/.vim/ and add the following lines to your ~/.vimrc
 "
 " source ~/.vim/html_macros.vim
-" autocmd Filetype *.html imap <Tab> <C-R>=GetMacroByKey()<CR>
+" autocmd BufEnter *.html imap <Tab> <C-R>=GetMacroByKey()<CR>
 " autocmd BufLeave *.html iunmap <Tab>
 
 let g:html_macros = {
@@ -80,9 +80,9 @@ function! GetMacroByKey()
 		return "\<Tab>"
 	endif
 
-	"grab the key in the default register
 	let one_letter_key = start_pos[2] == (initial_pos[2] - 1)
 
+	"grab the key in the default register
 	if one_letter_key
 		execute 'normal yl'
 	else
@@ -100,7 +100,7 @@ function! GetMacroByKey()
 	if one_letter_key
 		execute 'normal x'
 	else
-		execute 'norma de'
+		execute 'normal de'
 	endif
 
 	let macro = body[0]
@@ -109,8 +109,6 @@ function! GetMacroByKey()
 	if empty(post_expand_command)
 		let post_expand_command = ''
 	endif
-
-	call setpos('.', start_pos)
 
 	if strpart(post_expand_command, len(post_expand_command) - 1, 1) != 'a'
 		let post_expand_command = post_expand_command . 'i'
