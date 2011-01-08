@@ -18,6 +18,7 @@ set noerrorbells
 set foldmethod=indent
 set nofoldenable
 set encoding=utf-8
+set listchars=tab:▸\ ,eol:¬
 
 "restore cursor position
 autocmd BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
