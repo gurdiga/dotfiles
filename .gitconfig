@@ -1,0 +1,13 @@
+[github]
+	user = gurdiga
+	token = 8e6491be25675756987603e28e8f886f
+[user]
+	name = Vlad GURDIGA
+	email = gurdiga@gmail.com
+[color]
+	ui = true
+[core]
+	pager = less -XFRS -x2
+	editor = vim
+[alias]
+	unstage = reset HEAD --
