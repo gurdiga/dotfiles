@@ -28,10 +28,6 @@ autocmd BufNewFile,BufRead *.log :set nonu
 autocmd Filetype html,xml,xsl source ~/.vim/closetag.vim
 autocmd BufNewFile,BufRead *.html,*.php let b:unaryTagsStack="none"
 
-source ~/.vim/html_macros.vim
-autocmd BufEnter *.html,*.shtml,*.php imap <Tab> <C-R>=GetMacroByKey()<CR>
-autocmd BufLeave *.html,*.shtml,*.php iunmap <Tab>
-
 autocmd Filetype blog set textwidth=72 formatoptions=tanv
 
 highlight TrailingWhitespaceAndSpacesBeforeTab ctermbg=darkgreen guibg=lightgreen
