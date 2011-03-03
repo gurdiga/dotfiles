@@ -25,7 +25,7 @@ autocmd BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '
 " remove line numbers for log files
 autocmd BufNewFile,BufRead *.log :set nonu
 
-autocmd Filetype html,xml,xsl source ~/.vim/closetag.vim 
+autocmd Filetype html,xml,xsl source ~/.vim/closetag.vim
 autocmd BufNewFile,BufRead *.html,*.php let b:unaryTagsStack="none"
 
 source ~/.vim/html_macros.vim
