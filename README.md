@@ -1,1 +1,1 @@
-Various config files
+Various config files.  Run `install.sh`.
