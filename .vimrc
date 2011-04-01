@@ -23,7 +23,7 @@ set listchars=tab:▸\ ,eol:¬
 autocmd BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
 " remove line numbers for log files
-autocmd BufNewFile,BufRead *.log :set nonu
+autocmd BufNewFile,BufRead *.log set nonu
 
 autocmd Filetype html,xml,xsl source ~/.vim/closetag.vim
 autocmd BufNewFile,BufRead *.html,*.php let b:unaryTagsStack="none"
@@ -33,7 +33,7 @@ autocmd Filetype blog set textwidth=72 formatoptions=tanv
 highlight TrailingWhitespaceAndSpacesBeforeTab ctermbg=darkgreen guibg=lightgreen
 highlight TabsNotAtTheStartOfLine ctermbg=darkgreen guibg=lightgreen
 highlight SpacesForIndentingAfterTabs ctermbg=darkgreen guibg=lightgreen
-highlight SpacesForIndenting ctermbg=darkgreen guibg=lightgreen
+"highlight SpacesForIndenting ctermbg=darkgreen guibg=lightgreen
 
 " Show trailing whitepace and spaces before a tab:
 autocmd Syntax * syn match TrailingWhitespaceAndSpacesBeforeTab /\s\+$\| \+\ze\t/
@@ -44,3 +44,4 @@ autocmd Syntax * syn match TabsNotAtTheStartOfLine /[^\t]\zs\t\+/
 " Show spaces used for indenting (so you use only tabs for indenting).
 autocmd Syntax * syn match SpacesForIndentingAfterTabs /^\t*\zs \+/
 autocmd Syntax * syn match SpacesForIndenting /^ \+/
+autocmd FileType ruby set expandtab
