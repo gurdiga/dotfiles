@@ -45,3 +45,4 @@ autocmd Syntax * syn match TabsNotAtTheStartOfLine /[^\t]\zs\t\+/
 autocmd Syntax * syn match SpacesForIndentingAfterTabs /^\t*\zs \+/
 autocmd Syntax * syn match SpacesForIndenting /^ \+/
 autocmd FileType ruby set expandtab
+autocmd FileType yaml set expandtab
