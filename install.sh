@@ -8,5 +8,3 @@ ln -s $DIR/.gitconfig $DIR/.gitignore $DIR/.vimrc $DIR/.aliases ~/ && \
 
 fgrep '.aliases' ~/.bashrc || \
 	echo ". ~/.aliases" >> ~/.bashrc
-
-. ~/.aliases
