@@ -9,5 +9,6 @@
 [core]
 	pager = less -XFRS -x2
 	editor = vim
+	excludesfile = ~/.gitignore
 [alias]
 	unstage = reset HEAD --
