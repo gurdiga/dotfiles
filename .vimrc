@@ -44,4 +44,6 @@ autocmd Syntax * syn match TabsNotAtTheStartOfLine /[^\t]\zs\t\+/
 " Show spaces used for indenting (so you use only tabs for indenting).
 autocmd Syntax * syn match SpacesForIndentingAfterTabs /^\t*\zs \+/
 autocmd Syntax * syn match SpacesForIndenting /^ \+/
+
+autocmd BufRead,BufNewFile Gemfile,*.ru,*.rb.* set filetype=ruby
 autocmd FileType ruby,eruby,yaml set expandtab
