@@ -3,7 +3,7 @@
 	token = 8e6491be25675756987603e28e8f886f
 [user]
 	name = Vlad GURDIGA
-	email = vlad@html.md
+	email = gurdiga@gmail.com
 [color]
 	ui = true
 [core]
@@ -12,3 +12,5 @@
 	excludesfile = ~/.gitignore
 [alias]
 	unstage = reset HEAD --
+[branch]
+	autosetuprebase = always
