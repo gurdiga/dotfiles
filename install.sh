@@ -3,8 +3,8 @@
 MY_PATH=`readlink -f $0`
 DIR=`dirname $MY_PATH`
 
-ln -s $DIR/.gitconfig $DIR/.gitignore $DIR/.vimrc $DIR/.aliases ~/ && \
-	echo ".gitconfig .gitignore .vimrc .aliases"
+ln -s $DIR/.gitconfig $DIR/.gitignore $DIR/.vimrc $DIR/.aliases $DIR/.fonts.conf ~/ && \
+	echo "Created symbolic links."
 
 fgrep '.aliases' ~/.bashrc || \
 	echo ". ~/.aliases" >> ~/.bashrc
