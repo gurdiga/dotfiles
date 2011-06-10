@@ -34,6 +34,7 @@ highlight TrailingWhitespaceAndSpacesBeforeTab ctermbg=darkgreen guibg=lightgree
 highlight TabsNotAtTheStartOfLine ctermbg=darkgreen guibg=lightgreen
 highlight SpacesForIndentingAfterTabs ctermbg=darkgreen guibg=lightgreen
 "highlight SpacesForIndenting ctermbg=darkgreen guibg=lightgreen
+highlight OnlyWhitespace ctermbg=darkgreen guibg=lightgreen
 
 " Show trailing whitepace and spaces before a tab:
 autocmd Syntax * syn match TrailingWhitespaceAndSpacesBeforeTab /\s\+$\| \+\ze\t/
@@ -44,6 +45,7 @@ autocmd Syntax * syn match TabsNotAtTheStartOfLine /[^\t]\zs\t\+/
 " Show spaces used for indenting (so you use only tabs for indenting).
 autocmd Syntax * syn match SpacesForIndentingAfterTabs /^\t*\zs \+/
 autocmd Syntax * syn match SpacesForIndenting /^ \+/
+autocmd Syntax * syn match OnlyWhitespace /^[ \t]\+$/
 
 autocmd BufRead,BufNewFile Gemfile,*.ru,*.rb.* set filetype=ruby
 autocmd FileType ruby,eruby,yaml set expandtab
