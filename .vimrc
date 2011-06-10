@@ -49,3 +49,5 @@ autocmd Syntax * syn match OnlyWhitespace /^[ \t]\+$/
 
 autocmd BufRead,BufNewFile Gemfile,*.ru,*.rb.* set filetype=ruby
 autocmd FileType ruby,eruby,yaml set expandtab
+
+source ~/.vimrc_local
