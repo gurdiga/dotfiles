@@ -1,7 +1,7 @@
 
 /* Google Notebok */
-@-moz-document url-prefix(https://www.google.com/reader/view/) {
-	.oh {
+@-moz-document url-prefix(https://www.google.com/notebook/) {
+	#gn2, .oh, #gn0_4 {
 		display: none;
 	}
 }
