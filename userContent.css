@@ -4,6 +4,10 @@
 	#gn2, .oh, #gn0_4 {
 		display: none;
 	}
+
+	#gn1_0 {
+		height: auto!important;
+	}
 }
 
 /* GMail */
