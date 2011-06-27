@@ -1,1 +1,5 @@
 *.swp
+vendor/plugins/rails_upgrade/
+app/views/ping/
+app/controllers/ping_controller.rb
+config.ru
