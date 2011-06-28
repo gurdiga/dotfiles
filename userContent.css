@@ -17,16 +17,6 @@
 /* GMail */
 
 @-moz-document url-prefix(https://mail.google.com/mail/) {
-	html.cQ body.cP>div>div.nH {
-		width: 62em!important;
-		margin: 0 auto;
-	}
-
-	/* left nav */
-	html.cQ body.cP>div>div.nH>.nH>.nH>.no>.nH.oy8Mbf.nn {
-		width: 10em;
-	}
-
 	/* invite box */
 	.T0.pp:nth-child(2) {
 		display: none;
@@ -70,11 +60,6 @@
 	.nH.oy8Mbf.nn .Ls77Lb .CX.pp,
 	.nH.oy8Mbf.nn .Ls77Lb .T4.pp {
 		display: none;
-	}
-
-	.nH.oy8Mbf.nn + .nH.nn {
-		width: 50em!important;
-		border-right: solid 5px #BBCCFF;
 	}
 
 	/* "Compose" button */
