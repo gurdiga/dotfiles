@@ -108,3 +108,10 @@
 		display: none;
 	}
 }
+
+
+@-moz-document url-prefix(https://encrypted.google.com/) {
+  #mngb, #footer {
+    display: none!important;
+  }
+}
