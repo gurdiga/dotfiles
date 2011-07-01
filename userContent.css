@@ -111,7 +111,7 @@
 
 
 @-moz-document url-prefix(https://encrypted.google.com/) {
-  #mngb, #footer {
+  #mngb, #footer, #ssleh {
     display: none!important;
   }
 }
