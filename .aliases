@@ -17,3 +17,4 @@ alias f='grep --color=always -n -I -R --exclude-dir=.git --exclude-dir=.svn --ex
 alias fi='find . -name'
 alias axel='axel -a'
 alias vim='~/vimp'
+alias less='less -R'
