@@ -114,4 +114,18 @@
   #mngb, #footer, #ssleh {
     display: none!important;
   }
+
+
+@-moz-document url-prefix(http://www.youtube.com/) {
+	#watch-sidebar {
+		opacity: 0;
+	}
+
+	#watch-sidebar:hover {
+		opacity: .8;
+	}
+
+	#footer-container, #watch-main-container {
+		display: none;
+	}
 }
