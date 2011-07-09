@@ -115,6 +115,11 @@
     display: none!important;
   }
 
+	#ms {
+		margin-top: 2em;
+	}
+}
+
 
 @-moz-document url-prefix(http://www.youtube.com/) {
 	#watch-sidebar {
