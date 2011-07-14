@@ -6,7 +6,9 @@ DIR=`dirname $MY_PATH`
 ln -s $DIR/.gitconfig $DIR/.gitignore $DIR/.vimrc $DIR/.aliases $DIR/.fonts.conf $DIR/gpl $DIR/vimp ~/ && \
 	echo "Created symbolic links."
 
-ln -s $DIR/userContent.css ~/.mozilla/firefox/*.default/chrome/
+if [ -d ~/.mozilla/firefox ]; then
+	ln -s $DIR/userContent.css ~/.mozilla/firefox/*.default/chrome/
+fi
 
 fgrep '.aliases' ~/.bashrc || \
 	echo ". ~/.aliases" >> ~/.bashrc
