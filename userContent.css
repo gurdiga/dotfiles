@@ -110,17 +110,6 @@
 }
 
 
-@-moz-document url-prefix(https://encrypted.google.com/) {
-  #mngb, #footer, #ssleh {
-    display: none!important;
-  }
-
-	#ms {
-		margin-top: 2em;
-	}
-}
-
-
 @-moz-document url-prefix(http://www.youtube.com/) {
 	#watch-sidebar {
 		opacity: 0;
