@@ -30,14 +30,16 @@ autocmd BufNewFile,BufRead *.html,*.php let b:unaryTagsStack="none"
 
 autocmd Filetype blog set textwidth=72 formatoptions=tanv
 
-highlight TrailingWhitespaceAndSpacesBeforeTab ctermbg=darkgreen guibg=lightgreen
-highlight TabsNotAtTheStartOfLine ctermbg=darkgreen guibg=lightgreen
-highlight SpacesForIndentingAfterTabs ctermbg=darkgreen guibg=lightgreen
+highlight SpacesBeforeTab ctermbg=red guibg=lightgreen
+highlight TrailingWhitespace ctermbg=red guibg=lightgreen
+highlight TabsNotAtTheStartOfLine ctermbg=red guibg=lightgreen
+highlight SpacesForIndentingAfterTabs ctermbg=red guibg=lightgreen
 "highlight SpacesForIndenting ctermbg=darkgreen guibg=lightgreen
-highlight OnlyWhitespace ctermbg=darkgreen guibg=lightgreen
+highlight OnlyWhitespace ctermbg=red guibg=lightgreen
 
 " Show trailing whitepace and spaces before a tab:
-autocmd Syntax * syn match TrailingWhitespaceAndSpacesBeforeTab /\s\+$\| \+\ze\t/
+autocmd Syntax * syn match SpacesBeforeTab / \+\ze\t/
+autocmd Syntax * syn match TrailingWhitespace /\s\+$/
 
 " Show tabs that are not at the start of a line:
 autocmd Syntax * syn match TabsNotAtTheStartOfLine /[^\t]\zs\t\+/
