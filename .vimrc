@@ -48,6 +48,6 @@ autocmd Syntax * syn match SpacesForIndenting /^ \+/
 autocmd Syntax * syn match OnlyWhitespace /^[ \t]\+$/
 
 autocmd BufRead,BufNewFile Gemfile,*.ru,*.rb.* set filetype=ruby
-autocmd FileType yaml set expandtab
+autocmd FileType sql,yaml set expandtab
 
 source ~/.vimrc_local
