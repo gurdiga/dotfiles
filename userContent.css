@@ -1,4 +1,3 @@
-
 /* Google Notebok */
 @-moz-document url-prefix(https://www.google.com/notebook/) {
 	#gn2, .oh, #gn0_4, #gn_ph, #guser, #gn0.h>div, #gbar, body>.gbh {
@@ -15,7 +14,6 @@
 }
 
 /* GMail */
-
 @-moz-document url-prefix(https://mail.google.com/mail/) {
 	/* invite box */
 	.T0.pp:nth-child(2) {
@@ -117,6 +115,12 @@
 	}
 }
 
+@-moz-document url-prefix(https://encrypted.google.com) {
+	#taw {
+		display: none;
+	}
+}
+
 
 @-moz-document url-prefix(http://www.youtube.com/) {
 	#watch-sidebar {
@@ -128,6 +132,16 @@
 	}
 
 	#footer-container, #watch-main-container {
+		display: none;
+	}
+}
+
+
+@-moz-document url-prefix(http://www.mediafire.com/) {
+	div.more_dloptions,
+	#remove_ads_button2,
+	#iframe_linkto3,
+	table.dl_options_wrapper>tbody>tr>td:first-child {
 		display: none;
 	}
 }
