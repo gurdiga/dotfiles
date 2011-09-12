@@ -26,11 +26,13 @@
 	}
 
 	/* "Move to" + "Labels" button pair */
-	.VP5otc-HT6HAf.J-J5-Ji:nth-child(3) {
+	.VP5otc-HT6HAf.J-J5-Ji:nth-child(3),
+	.VP5otc-HT6HAf.J-J5-Ji:nth-child(5) {
 		opacity: 0;
 	}
 
-	.VP5otc-HT6HAf.J-J5-Ji:nth-child(3):hover {
+	.VP5otc-HT6HAf.J-J5-Ji:nth-child(3):hover,
+	.VP5otc-HT6HAf.J-J5-Ji:nth-child(5):hover {
 		opacity: .7;
 	}
 
