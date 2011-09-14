@@ -53,3 +53,5 @@ autocmd BufRead,BufNewFile Gemfile,*.ru,*.rb.* set filetype=ruby
 autocmd FileType sql,yaml set expandtab
 
 source ~/.vimrc_local
+
+let g:netrw_list_hide='.*\.swp$'
