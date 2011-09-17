@@ -156,3 +156,13 @@
 		display: none;
 	}
 }
+
+
+@-moz-document url-prefix(http://thepiratebay.org/) {
+	#header .ad,
+	#main-content iframe,
+	.ads#sky-banner,
+	script + script + script + div {
+		display: none!important;
+	}
+}
