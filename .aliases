@@ -19,6 +19,7 @@ alias axel='axel -a'
 alias vim='~/vimp'
 alias less='less -R'
 alias j='jobs -l'
+alias top='top -d1'
 
 # Breakout stuff
 alias refreshdb='rake db:drop:all db:create:all db:migrate db:test:clone_structure'
