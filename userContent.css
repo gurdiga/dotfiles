@@ -134,16 +134,16 @@
 
 
 @-moz-document url-prefix(http://www.youtube.com/) {
+	#footer-container,
+	#watch-main-container,
 	#watch-sidebar {
 		opacity: 0;
 	}
 
+	#footer-container:hover,
+	#watch-main-container:hover,
 	#watch-sidebar:hover {
 		opacity: .8;
-	}
-
-	#footer-container, #watch-main-container {
-		display: none;
 	}
 }
 
