@@ -173,3 +173,10 @@
 		display: none!important;
 	}
 }
+
+
+@-moz-document url-prefix(http://dexonline.ro/) {
+  #banner_beforeResults {
+    display: none;
+  }
+}
