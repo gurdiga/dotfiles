@@ -10,10 +10,6 @@ if [ -d ~/.mozilla/firefox ]; then
 	ln -s $DIR/userContent.css ~/.mozilla/firefox/*.default/chrome/
 fi
 
-if [ -d ~/.ssh ]; then
-	ln -s $DIR/.ssh/config ~/.ssh/
-fi
-
 if [ ! -f ~/.vimrc_local ]; then
 	touch ~/.vimrc_local
 fi
