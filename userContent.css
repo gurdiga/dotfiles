@@ -113,6 +113,11 @@
 		display: none;
 	}
 
+  /* bottom ads in view-conversation */
+  .Bs.nH.iY .nH.PS .Zs {
+    display: none !important;
+  }
+
 	/* border for the chat panel */
 	.nH.oy8Mbf.nn .T8uMgc .T0.pp {
 		border: 1px solid #CCD2E6;
