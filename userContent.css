@@ -185,3 +185,10 @@
     display: none;
   }
 }
+
+
+@-moz-document url-prefix(http://video.google.com/) {
+	#related-div {
+		display: none;
+	}
+}
