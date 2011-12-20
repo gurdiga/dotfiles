@@ -27,8 +27,9 @@ alias migrate='rake db:migrate db:test:clone_structure'
 alias synctestdb='rake db:test:clone_structure'
 alias br='cd ~/src/breakout'
 alias pull='git fetch review && gch master && git reset --hard review/master'
-alias push='git push review HEAD:refs/for/master'
 alias s='rails server -d'
 alias ss='kill -INT `cat tmp/pids/server.pid`'
 alias c='rails console'
 alias wu='f worming-up-the-file-system-buffers .'
+
+function gp() { git push review HEAD:refs/for/$1; }
