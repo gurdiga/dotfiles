@@ -88,3 +88,13 @@
 		display: none;
 	}
 }
+
+
+@-moz-document url-prefix(http://review.assembla.com/) {
+  input.gwt-TextBox,
+  .GFIMIIOBMB,
+  .GFIMIIOBHH td {
+    font-family: "Ubuntu mono", monospace!important;
+    font-size: 12px !important;
+  }
+}
