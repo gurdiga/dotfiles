@@ -29,3 +29,4 @@ alias ss='killall -INT ruby1.8'
 alias c='rails console'
 
 function gp() { git push review HEAD:refs/for/$1; }
+function gb() { git branch $1 && git checkout $1; }
