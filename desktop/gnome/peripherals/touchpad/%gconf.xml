@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="horiz_scroll_enabled" mtime="1324478508" type="bool" value="true"/>
-	<entry name="scroll_method" mtime="1324478519" type="string">
-		<stringvalue>edge-scrolling</stringvalue>
-	</entry>
-</gconf>
