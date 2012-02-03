@@ -4,6 +4,7 @@ set nomodeline
 set autoindent
 set shiftwidth=2
 set tabstop=2
+set expandtab
 set ruler
 set number
 set backspace=indent,eol,start
@@ -51,7 +52,6 @@ autocmd Syntax * syn match SpacesForIndenting /^ \+/
 autocmd Syntax * syn match OnlyWhitespace /^[ \t]\+$/
 
 autocmd BufRead,BufNewFile Gemfile,*.ru,*.rb.* set filetype=ruby
-autocmd FileType sql,yaml set expandtab
 
 source ~/.vimrc_local
 
