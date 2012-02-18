@@ -17,11 +17,11 @@ fgrep '.aliases' ~/.bashrc || \
 	echo ". ~/.aliases" >> ~/.bashrc
 
 
-if [ ! -d ~/.vim ]; then
+if [ ! -d ~/.vim/ftplugin ]; then
   mkdir -p ~/.vim/ftplugin
 fi
 
 if [ ! -f ~/.vim/ftplugin/xml.vim ]; then
   wget https://raw.github.com/sukima/xmledit/master/ftplugin/xml.vim -O ~/.vim/ftplugin/xml.vim
-  ln -s ~/.vim/ftplugin/xml.vim ~/.vim/ftplugin/html.vim
+  ln -vs ~/.vim/ftplugin/xml.vim ~/.vim/ftplugin/html.vim
 fi
