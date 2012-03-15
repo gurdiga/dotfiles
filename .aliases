@@ -35,3 +35,4 @@ alias profm90s='mplayer http://stream.profm.ro:8092/90s.mp3'
 alias profmclassic='mplayer http://stream.profm.ro:8082/clasic.mp3'
 
 export HISTSIZE=10000
+PS1="\w$ "
