@@ -4,10 +4,10 @@ file=$1
 line_number=`expr "$file" : '.*:\([0-9]\+\)'`
 
 if [[ "$line_number" == "" ]] ; then
-	vim $*
+	vim "$*"
 else
 	file=${file%%:$line_number*}
 	shift
 
-	vim $file +$line_number $*
+	vim "$file" +$line_number $*
 fi
