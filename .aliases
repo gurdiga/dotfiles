@@ -28,6 +28,7 @@ alias br2='cd ~/src/breakout2'
 alias s='rails server -d'
 alias ss='killall -INT ruby1.8'
 alias c='rails console'
+alias migrate='rake db:migrate db:test:clone_structure'
 
 function gp() { git push review HEAD:refs/for/$1; }
 function gb() { git branch $1 && git checkout $1; }
