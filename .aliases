@@ -18,6 +18,7 @@ alias v='~/vimp'
 alias less='less -R'
 alias j='jobs -l'
 alias top='top -d1'
+alias ff='google-chrome --user-data-dir=$HOME/.config/chrome.vlad & exit'
 
 # Breakout stuff
 alias refreshdb='rake db:drop db:create db:migrate db:test:clone_structure'
