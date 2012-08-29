@@ -1,5 +1,4 @@
 alias gs='git status'
-alias gsu='git status -uno'
 alias gsh='git show'
 alias gd='git diff'
 alias gds='git diff --staged'
@@ -7,7 +6,6 @@ alias ga='git add'
 alias grh='git reset --hard'
 alias gc='git commit -v'
 alias gch='git checkout'
-alias gcp='git cherry-pick'
 alias gl='git log --abbrev-commit'
 alias gln='git log --abbrev-commit --name-only'
 alias glg='git log --graph --pretty=oneline --abbrev-commit'
@@ -29,9 +27,6 @@ alias s='rails server -d'
 alias ss='killall -INT ruby1.8'
 alias c='rails console'
 alias migrate='rake db:migrate db:test:clone_structure'
-
-function gp() { git push review HEAD:refs/for/$1; }
-function gb() { git branch $1 && git checkout $1; }
 
 alias profm90s='mplayer http://stream.profm.ro:8092/90s.mp3'
 alias profmclassic='mplayer http://stream.profm.ro:8082/clasic.mp3'
