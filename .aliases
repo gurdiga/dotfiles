@@ -28,7 +28,7 @@ alias br2='cd ~/src/breakout2'
 alias s='rails server thin -d'
 alias ss='killall -INT ruby1.8'
 alias c='rails console'
-alias migrate='rake db:migrate db:test:clone_structure'
+alias migrate='rake db:migrate && RAILS_ENV=test rake db:migrate'
 
 alias profm90s='mplayer http://stream.profm.ro:8092/90s.mp3'
 alias profmclassic='mplayer http://stream.profm.ro:8082/clasic.mp3'
