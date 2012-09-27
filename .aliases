@@ -1,13 +1,12 @@
 alias gs='git status'
-alias gsu='git status -uno'
 alias gsh='git show'
 alias gd='git diff'
 alias gds='git diff --staged'
+alias gdn='git diff --name-only'
 alias ga='git add'
 alias grh='git reset --hard'
 alias gc='git commit -v'
 alias gch='git checkout'
-alias gcp='git cherry-pick'
 alias gl='git log --abbrev-commit'
 alias gln='git log --abbrev-commit --name-only'
 alias glg='git log --graph --pretty=oneline --abbrev-commit'
@@ -20,17 +19,16 @@ alias v='~/vimp'
 alias less='less -R'
 alias j='jobs -l'
 alias top='top -d1'
+alias ff='google-chrome --user-data-dir=$HOME/.config/chrome.vlad & exit'
 
 # Breakout stuff
 alias refreshdb='rake db:drop db:create db:migrate db:test:clone_structure'
 alias br='cd ~/src/breakout'
 alias br2='cd ~/src/breakout2'
-alias s='rails server -d'
+alias s='rails server thin -d'
 alias ss='killall -INT ruby1.8'
 alias c='rails console'
-
-function gp() { git push review HEAD:refs/for/$1; }
-function gb() { git branch $1 && git checkout $1; }
+alias migrate='rake db:migrate && RAILS_ENV=test rake db:migrate'
 
 alias profm90s='mplayer http://stream.profm.ro:8092/90s.mp3'
 alias profmclassic='mplayer http://stream.profm.ro:8082/clasic.mp3'
