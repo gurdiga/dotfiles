@@ -7,9 +7,10 @@
 [color]
 	ui = true
 [core]
-	pager = "sed -e 's/\\\\/\\\\\\\\/g' -e 's/^\\\"//' -e 's/\\\"$//' | while IFS='';read line; do eval \"echo '$line'\"; done | less -XFRS -x2"
+	pager = less -XFRS -x2
 	editor = vim
 	excludesfile = ~/.gitignore
+  quotepath = false
 [alias]
 	unstage = reset HEAD --
 [branch]
