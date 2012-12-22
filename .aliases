@@ -1,3 +1,5 @@
+OS=`uname`
+
 alias gs='git status'
 alias gsh='git show'
 alias gd='git diff'
@@ -12,7 +14,13 @@ alias gln='git log --abbrev-commit --name-only'
 alias glg='git log --graph --pretty=oneline --abbrev-commit'
 alias push='git push'
 alias pull='git pull'
-alias l='ls -hlaF --color'
+
+if [ "$OS"=="Linux" ]; then
+  alias l='ls -hlaF --color'
+else
+  alias l='ls -hlaFG'
+fi
+
 alias f='grep --color=always -n -I -R --exclude-dir=log --exclude-dir=tmp --exclude-dir=.git --exclude-dir=.svn --exclude-dir=session'
 alias fi='find . -name'
 alias v='~/vimp'
