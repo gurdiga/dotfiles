@@ -17,7 +17,6 @@ alias fi='find . -name'
 alias v='~/vimp'
 alias less='less -R'
 alias j='jobs -l'
-alias top='top -d1'
 alias ff='google-chrome --user-data-dir=$HOME/.config/chrome.vlad & exit'
 alias l='ls -hlaF'
 
