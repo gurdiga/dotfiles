@@ -52,6 +52,7 @@ autocmd Syntax * syn match OnlyWhitespace /^[ \t]\+$/
 
 autocmd BufRead,BufNewFile nginx.* set filetype=nginx
 autocmd BufRead,BufNewFile */nginx.conf.d/*.conf set filetype=nginx
+autocmd BufRead,BufNewFile */bind/zones/*.db set tabstop=8
 autocmd BufRead,BufNewFile Gemfile,*.ru,*.rb.* set filetype=ruby
 filetype plugin on
 source ~/.vimrc_local
