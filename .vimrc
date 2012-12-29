@@ -8,7 +8,6 @@ set expandtab
 set ruler
 set number
 set backspace=indent,eol,start
-set mouse=a
 set history=200
 set nohlsearch
 
