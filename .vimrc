@@ -18,6 +18,9 @@ set nofoldenable
 set encoding=utf-8
 set listchars=tab:▸\ ,eol:¬
 
+" enable per-directory .vimrc files
+set exrc
+
 "restore cursor position
 autocmd BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
