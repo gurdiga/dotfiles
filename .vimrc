@@ -1,5 +1,10 @@
 syntax on
 
+" wget https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim -O ~/.vim/colors/solarized.vim
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
+
 set nomodeline
 set autoindent
 set shiftwidth=2
@@ -9,7 +14,6 @@ set ruler
 set number
 set backspace=indent,eol,start
 set history=200
-set nohlsearch
 
 set noerrorbells
 "set visualbell
@@ -18,6 +22,9 @@ set foldmethod=indent
 set nofoldenable
 set encoding=utf-8
 set listchars=tab:▸\ ,eol:¬
+
+" enable per-directory .vimrc files
+set exrc
 
 "restore cursor position
 autocmd BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
