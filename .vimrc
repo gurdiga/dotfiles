@@ -1,5 +1,10 @@
 syntax on
 
+# wget https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim -O ~/.vim/colors/solarized.vim
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
+
 set nomodeline
 set autoindent
 set shiftwidth=2
