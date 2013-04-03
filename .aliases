@@ -25,7 +25,7 @@ alias refreshdb='bundle exec rake db:drop db:create db:migrate db:test:clone_str
 alias br='cd ~/src/breakout'
 alias br2='cd ~/src/breakout2'
 alias s='bundle exec rails server -d'
-alias ss='killall -INT ruby1.8 && rm log/*.log'
+alias ss='test -f tmp/pids/server.pid && kill -INT `cat tmp/pids/server.pid` && rm -f log/*.log'
 alias c='rails console'
 alias migrate='bundle exec rake db:migrate && RAILS_ENV=test bundle exec rake db:migrate'
 
