@@ -2,7 +2,7 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-ln -v -s $DIR/.gitconfig $DIR/.gitignore $DIR/.vimrc $DIR/.aliases $DIR/vimp $DIR/.mplayer $DIR/.screenrc ~/
+ln -v -s $DIR/.gitconfig $DIR/.gitignore $DIR/.vimrc $DIR/.aliases $DIR/vimp $DIR/.mplayer $DIR/.screenrc $DIR/.irbrc ~/
 
 if [ -d ~/.mozilla/firefox ]; then
 	ln -s $DIR/userContent.css ~/.mozilla/firefox/*.default/chrome/
