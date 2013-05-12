@@ -10,6 +10,9 @@ set number
 set backspace=indent,eol,start
 set history=200
 
+set incsearch
+set hlsearch
+
 set noerrorbells
 "set visualbell
 
