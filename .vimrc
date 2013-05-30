@@ -8,10 +8,7 @@ set expandtab
 set ruler
 set number
 set backspace=indent,eol,start
-set history=200
-
-set incsearch
-set hlsearch
+set history=1000
 
 set noerrorbells
 "set visualbell
