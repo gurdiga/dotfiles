@@ -28,7 +28,7 @@ alias br2='cd ~/src/breakout2'
 alias s='bundle exec rails server -d'
 alias ss='test -f tmp/pids/server.pid && kill -INT `cat tmp/pids/server.pid` && rm -f log/*.log'
 alias c='rails console'
-alias migrate='bundle exec rake db:migrate && RAILS_ENV=test bundle exec rake db:migrate'
+alias migrate='bundle exec rake db:migrate db:test:clone_structure && RAILS_ENV=test bundle exec rake db:migrate'
 
 alias profm90s='mplayer http://stream.profm.ro:8092/90s.mp3'
 alias profmclassic='mplayer http://stream.profm.ro:8082/clasic.mp3'
