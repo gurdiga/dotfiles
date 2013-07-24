@@ -2,7 +2,7 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-ln -v -s $DIR/.gitconfig $DIR/.gitignore $DIR/.vimrc $DIR/.aliases $DIR/vimp $DIR/.mplayer $DIR/.screenrc $DIR/.irbrc ~/
+ln -v -s $DIR/.gitconfig $DIR/.gitignore $DIR/.vimrc $DIR/.aliases $DIR/.bashrc.my $DIR/vimp $DIR/.mplayer $DIR/.screenrc $DIR/.irbrc ~/
 
 if [ -d ~/.mozilla/firefox ]; then
 	ln -s $DIR/userContent.css ~/.mozilla/firefox/*.default/chrome/
@@ -15,6 +15,8 @@ fi
 fgrep '.aliases' ~/.bashrc || \
 	echo ". ~/.aliases" >> ~/.bashrc
 
+fgrep '.bashrc.my' ~/.bashrc || \
+	echo ". ~/.bashrc.my" >> ~/.bashrc
 
 if [ ! -d ~/.vim/ftplugin ]; then
   mkdir -p ~/.vim/ftplugin
