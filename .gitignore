@@ -1,3 +1,1 @@
 *.swp
-vendor/plugins/rails_upgrade/
-config.ru
