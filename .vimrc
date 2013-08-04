@@ -60,3 +60,5 @@ filetype plugin on
 source ~/.vimrc_local
 
 let g:netrw_list_hide='.*\.swp$'
+
+let mapleader = ","
