@@ -9,6 +9,7 @@ set ruler
 set number
 set backspace=indent,eol,start
 set history=1000
+set scrolloff=5
 
 set noerrorbells
 "set visualbell
