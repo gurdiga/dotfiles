@@ -24,3 +24,7 @@ if [ ! -f ~/.vim/ftplugin/xml.vim ]; then
   wget https://raw.github.com/sukima/xmledit/master/ftplugin/xml.vim -O ~/.vim/ftplugin/xml.vim
   ln -vs ~/.vim/ftplugin/xml.vim ~/.vim/ftplugin/html.vim
 fi
+
+if [ ! -f ~/.vim/plugin/fugitive.vim ]; then
+  wget https://raw.github.com/tpope/vim-fugitive/master/plugin/fugitive.vim -O ~/.vim/plugin/fugitive.vim
+fi
