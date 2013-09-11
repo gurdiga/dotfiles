@@ -67,3 +67,5 @@ nnoremap <silent> <Leader>, :CommandT<CR>
 
 " select the just-pasted text
 nnoremap gp `[v`]
+
+imap <c-l> <space>=><space>
