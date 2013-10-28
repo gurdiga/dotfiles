@@ -20,6 +20,7 @@ alias j='jobs -l'
 alias ff='google-chrome --user-data-dir=$HOME/.config/chrome.vlad & exit'
 alias l='ls -hlaF'
 function www() { python -m SimpleHTTPServer ${1:-8888}; }
+function jsonpp() { node -e "console.log(JSON.parse(require('fs').readFileSync('/dev/stdin').toString()));"; }
 
 # Breakout stuff
 alias refreshdb='bundle exec rake db:drop db:create db:migrate db:test:clone_structure'
