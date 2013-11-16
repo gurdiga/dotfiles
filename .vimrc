@@ -65,10 +65,5 @@ source ~/.vimrc_local
 
 let g:netrw_list_hide='.*\.swp$'
 
-let mapleader = ","
-nnoremap <silent> <Leader>, :CommandT<CR>
-
 " select the just-pasted text
 nnoremap gp `[v`]
-
-imap <c-l> <space>=><space>
