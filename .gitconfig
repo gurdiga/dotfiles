@@ -15,3 +15,5 @@
 	unstage = reset HEAD --
 [branch]
 	autosetuprebase = always
+[push]
+  default=current
