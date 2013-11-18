@@ -12,7 +12,7 @@ set history=1000
 set scrolloff=5
 
 set cursorline
-highlight CursorLine term=bold cterm=bold guifg=NONE guibg=#121212 gui=NONE ctermfg=NONE ctermbg=234
+highlight CursorLine term=bold cterm=bold guifg=NONE guibg=#121212 gui=NONE ctermfg=NONE ctermbg=235
 
 set noerrorbells
 "set visualbell
@@ -65,10 +65,5 @@ source ~/.vimrc_local
 
 let g:netrw_list_hide='.*\.swp$'
 
-let mapleader = ","
-nnoremap <silent> <Leader>, :CommandT<CR>
-
 " select the just-pasted text
 nnoremap gp `[v`]
-
-imap <c-l> <space>=><space>
