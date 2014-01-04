@@ -5,13 +5,17 @@ line_number=`expr "$file" : '.*:\([0-9]\+\)'`
 
 echo $file
 
-if [[ "$file" =~ :[0-9]+.*$ ]]; then
+if [[ "$file" =~ :[0-9]*.*$ ]]; then
   file=${file/$BASH_REMATCH/}
   line_number=$BASH_REMATCH
   line_number=${line_number/:/}
   line_number=${line_number/[^0-9]*/}
 
-	exec vim "$file" +$line_number
+  if [[ "$line_number" -ne "" ]]; then
+    line_number="+$line_number"
+  fi
+
+	exec vim "$file" $line_number
 else
 	exec vim "$*"
 fi
