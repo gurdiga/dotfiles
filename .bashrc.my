@@ -19,4 +19,4 @@ export RUBY_FREE_MIN=200000
 export PATH=/usr/local/bin:$PATH
 
 # node
-export PATH=./node_modules/.bin:$PATH
+export PATH=./node_modules/.bin:./bin:$PATH
