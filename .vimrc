@@ -59,4 +59,4 @@ let g:netrw_list_hide='.*\.swp$'
 
 "select the just-pasted text
 nnoremap gp `[v`]
-nnoremap =p :set paste!<CR> :set paste?<CR>
+nnoremap =p :set paste!<CR>:set paste?<CR>
