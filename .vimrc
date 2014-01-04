@@ -54,6 +54,8 @@ autocmd BufRead,BufNewFile nginx.* set filetype=nginx
 autocmd BufRead,BufNewFile */nginx.conf.d/*.conf set filetype=nginx
 autocmd BufRead,BufNewFile */bind/zones/*.db set tabstop=8
 autocmd BufRead,BufNewFile Capfile,Gemfile,*.ru,*.rb.* set filetype=ruby
+autocmd BufRead,BufNewFile *.json set filetype=javascript
+autocmd BufRead,BufNewFile * silent execute (getline(1) =~ '[^ ]\+/\(env \)\?node\>' ? "set filetype=javascript" : "")
 
 let g:netrw_list_hide='.*\.swp$'
 
