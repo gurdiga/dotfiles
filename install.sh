@@ -18,15 +18,10 @@ fgrep '.aliases' ~/.bashrc || \
 fgrep '.bashrc.my' ~/.bashrc || \
 	echo ". ~/.bashrc.my" >> ~/.bashrc
 
-if [ ! -d ~/.vim/ftplugin ]; then
-  mkdir -p ~/.vim/ftplugin
-fi
+mkdir -p ~/.vim/autoload ~/.vim/bundle
 
-if [ ! -f ~/.vim/ftplugin/xml.vim ]; then
-  wget https://raw.github.com/sukima/xmledit/master/ftplugin/xml.vim -O ~/.vim/ftplugin/xml.vim
-  ln -vs ~/.vim/ftplugin/xml.vim ~/.vim/ftplugin/html.vim
-fi
+wget https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim -O ~/.vim/autoload/pathogen.vim
 
-if [ ! -f ~/.vim/plugin/fugitive.vim ]; then
-  wget https://raw.github.com/tpope/vim-fugitive/master/plugin/fugitive.vim -O ~/.vim/plugin/fugitive.vim
-fi
+git clone https://github.com/Shutnik/jshint2.vim.git ~/.vim/bundle/jshint2.vim
+git clone https://github.com/tpope/vim-fugitive.git  ~/.vim/bundle/vim-fugitive
+git clone https://github.com/othree/xml.vim.git      ~/.vim/bundle/xml.vim

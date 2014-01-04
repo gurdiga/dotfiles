@@ -60,3 +60,10 @@ let g:netrw_list_hide='.*\.swp$'
 "select the just-pasted text
 nnoremap gp `[v`]
 nnoremap =p :set paste!<CR>:set paste?<CR>
+
+execute pathogen#infect()
+let jshint2_save = 1
+let jshint2_error = 0
+let jshint2_height = 2
+
+autocmd BufWritePost *.css silent !csslint %
