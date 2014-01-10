@@ -34,7 +34,8 @@ alias migrate='bundle exec rake db:migrate db:test:clone_structure && RAILS_ENV=
 alias profm90s='mplayer http://stream.profm.ro:8092/90s.mp3'
 alias profmclassic='mplayer http://stream.profm.ro:8082/clasic.mp3'
 
-alias cl='cd ~/src/bp/client'
+alias bp='cd ~/src/bp'
+alias cl='cd ~/src/bp/cl'
 alias cs='cd ~/src/bp/cs'
 alias us='cd ~/src/bp/us'
 alias ds='cd ~/src/bp/ds'
