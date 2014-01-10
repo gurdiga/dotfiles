@@ -64,7 +64,7 @@ nnoremap gp `[v`]
 nnoremap =p :set paste!<CR>:set paste?<CR>
 
 execute pathogen#infect()
-let jshint2_save = 1
+let jshint2_save = 0
 let jshint2_error = 0
 let jshint2_height = 2
 
