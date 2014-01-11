@@ -22,6 +22,14 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle
 
 wget https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim -O ~/.vim/autoload/pathogen.vim
 
-git clone https://github.com/Shutnik/jshint2.vim.git ~/.vim/bundle/jshint2.vim
-git clone https://github.com/tpope/vim-fugitive.git  ~/.vim/bundle/vim-fugitive
-git clone https://github.com/othree/xml.vim.git      ~/.vim/bundle/xml.vim
+repos="Shutnik/jshint2.vim tpope/vim-fugitive othree/xml.vim"
+
+for repo in $repos; do
+  dir=~/.vim/bundle/$(basename $repo)
+
+  if [ -d $dir ]; then
+    continue
+  fi
+
+  git clone https://github.com/$repo.git $dir
+done
