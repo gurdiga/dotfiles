@@ -39,3 +39,6 @@ alias cl='cd ~/src/bp/cl'
 alias cs='cd ~/src/bp/cs'
 alias us='cd ~/src/bp/us'
 alias ds='cd ~/src/bp/ds'
+
+alias g='grunt'
+alias xo='cd ~/src/xo'
