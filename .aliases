@@ -21,7 +21,7 @@ alias l='ls -hlaF'
 
 function www() { python -m SimpleHTTPServer ${1:-8888}; }
 function jsonpp() { node -e "console.log(JSON.parse(require('fs').readFileSync('/dev/stdin').toString()));"; }
-function q() { find ${2:-.} -name $1; }
+function q() { find "${2:-.}" -name $1; }
 
 # Breakout stuff
 alias refreshdb='bundle exec rake db:drop db:create db:migrate db:test:clone_structure'
