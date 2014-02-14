@@ -4,6 +4,8 @@
 
 echo -n -e "\033]0;`whoami`@`hostname -f`\007"
 
+set -b
+
 export HISTSIZE=10000
 export HISTCONTROL=ignoredups
 export LC_CTYPE=en_US.UTF-8
