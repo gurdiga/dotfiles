@@ -1,3 +1,4 @@
 # Write your default config options here!
 
 utf8=yes
+prefer-ipv4=yes
