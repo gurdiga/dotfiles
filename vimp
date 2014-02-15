@@ -17,5 +17,5 @@ if [[ "$file" =~ :[0-9]*.*$ ]]; then
 
 	exec vim "$file" $line_number
 else
-	exec vim "$*"
+	exec vim $*
 fi
