@@ -34,11 +34,11 @@ autocmd BufNewFile,BufRead *.html,*.php let b:unaryTagsStack="none"
 autocmd Filetype blog set textwidth=72 formatoptions=tanv
 autocmd Filetype gitcommit set textwidth=72
 
-highlight SpacesBeforeTab ctermbg=red guibg=lightgreen
-highlight TrailingWhitespace ctermbg=red guibg=lightgreen
-highlight TabsNotAtTheStartOfLine ctermbg=red guibg=lightgreen
+highlight SpacesBeforeTab             ctermbg=red guibg=lightgreen
+highlight TrailingWhitespace          ctermbg=red guibg=lightgreen
+highlight TabsNotAtTheStartOfLine     ctermbg=red guibg=lightgreen
 highlight SpacesForIndentingAfterTabs ctermbg=red guibg=lightgreen
-highlight OnlyWhitespace ctermbg=red guibg=lightgreen
+highlight OnlyWhitespace              ctermbg=red guibg=lightgreen
 
 "Show trailing whitepace and spaces before a tab:
 autocmd Syntax * syn match SpacesBeforeTab / \+\ze\t/
@@ -70,4 +70,18 @@ let jshint2_save = 0
 let jshint2_error = 0
 let jshint2_height = 2
 
-autocmd BufWritePost *.css silent !csslint %
+
+func! Eatchar(pat)
+  let c = nr2char(getchar(0))
+  return (c =~ a:pat) ? '' : c
+endfunc
+
+iabbrev colo console.log('');<ESC>F'i<C-R>=Eatchar('\s')<CR>
+
+iabbrev fn function() {<CR>}<ESC><UP>$F)i<C-R>=Eatchar('\s')<CR>
+iabbrev fnus (function() {}());<ESC>F}i<CR><CR><CR><UP><UP><TAB>'use strict';<CR><CR><C-R>=Eatchar('\s')<CR>
+
+iabbrev tede describe('', function() {});<ESC>F}i<CR><ESC>O<TAB><UP><ESC>2f'i<C-R>=Eatchar('\s')<CR>
+iabbrev teit it('', function() {});<ESC>F}i<CR><ESC>O<TAB><UP><ESC>2f'i<C-R>=Eatchar('\s')<CR>
+iabbrev tebe beforeEach(function() {});<ESC>F}i<CR><ESC>O<TAB><C-R>=Eatchar('\s')<CR>
+iabbrev teaf afterEach(function() {});<ESC>F}i<CR><ESC>O<TAB><C-R>=Eatchar('\s')<CR>
