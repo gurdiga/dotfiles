@@ -58,6 +58,7 @@ autocmd BufRead,BufNewFile */bind/zones/*.db set tabstop=8
 autocmd BufRead,BufNewFile Capfile,Gemfile,*.ru,*.rb.* set filetype=ruby
 autocmd BufRead,BufNewFile *.json set filetype=javascript
 autocmd BufRead,BufNewFile * silent execute (getline(1) =~ '[^ ]\+/\(env \)\?node\>' ? "set filetype=javascript" : "")
+autocmd BufRead,BufNewFile *.md setlocal textwidth=72
 
 let g:netrw_list_hide='.*\.swp$'
 
@@ -80,6 +81,7 @@ iabbrev colo console.log('');<ESC>F'i<C-R>=Eatchar('\s')<CR>
 
 iabbrev fn function() {<CR>}<ESC><UP>$F)i<C-R>=Eatchar('\s')<CR>
 iabbrev fnus (function() {}());<ESC>F}i<CR><CR><CR><UP><UP><TAB>'use strict';<CR><CR><C-R>=Eatchar('\s')<CR>
+iabbrev us; 'use strict';<C-R>=Eatchar('\s')<CR><CR>
 
 iabbrev tede describe('', function() {});<ESC>F}i<CR><ESC>O<TAB><UP><ESC>2f'i<C-R>=Eatchar('\s')<CR>
 iabbrev teit it('', function() {});<ESC>F}i<CR><ESC>O<TAB><UP><ESC>2f'i<C-R>=Eatchar('\s')<CR>
