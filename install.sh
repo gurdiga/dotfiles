@@ -20,7 +20,7 @@ fgrep '.bashrc.my' ~/.bashrc || \
 
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 
-wget https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim -O ~/.vim/autoload/pathogen.vim
+wget --no-check-certificate https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim -O ~/.vim/autoload/pathogen.vim
 
 repos="Shutnik/jshint2.vim tpope/vim-fugitive othree/xml.vim"
 
