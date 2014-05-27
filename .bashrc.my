@@ -21,6 +21,54 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export EDITOR=vim
 
+# per-directory Bash history
+function check_for_local_history {
+  local last_command=`history 1`
+  local last_command=${last_command:27} # this depends on HISTTIMEFORMAT
+
+  function main {
+    if changing_directory; then
+      if found_local_history_file; then
+        use_history_file $PWD/.bash_history
+      else
+        use_history_file ~/.bash_history
+      fi
+    fi
+  }
+
+  function changing_directory {
+    is_cd_nothing || is_cd_something || is_a_cd_alias
+  }
+
+  function is_cd_nothing {
+    [ ${#last_command} -eq 2 -a "${last_command:0:2}" = "cd" ]
+  }
+
+  function is_cd_something {
+    [ ${#last_command} -gt 2 -a "${last_command:0:3}" = "cd " ]
+  }
+
+  function is_a_cd_alias {
+    local cd_aliases=`alias | grep "='cd " | grep -P -o '[a-z]+(?==)'`
+    echo $cd_aliases | grep -q "\<$last_command\>"
+  }
+
+  function found_local_history_file {
+    [ -e .bash_history ]
+  }
+
+  function use_history_file {
+    history -w
+    history -c
+    export HISTFILE=$1
+    history -r
+  }
+
+  main
+}
+
+PROMPT_COMMAND="check_for_local_history"
+
 export RUBY_GC_MALLOC_LIMIT=90000000
 export RUBY_FREE_MIN=200000
 
