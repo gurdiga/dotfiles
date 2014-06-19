@@ -87,6 +87,9 @@ iabbrev teit it('', function() {});<ESC>F}i<CR><ESC>O<TAB><UP><ESC>2f'i<C-R>=Eat
 iabbrev tebe beforeEach(function() {});<ESC>F}i<CR><ESC>O<TAB><C-R>=Eatchar('\s')<CR>
 iabbrev teaf afterEach(function() {});<ESC>F}i<CR><ESC>O<TAB><C-R>=Eatchar('\s')<CR>
 
+iabbrev teder describe '' do end<ESC>F i<CR><ESC>O<TAB><UP><ESC>2f'i<C-R>=Eatchar('\s')<CR>
+iabbrev teitr it '' do end<ESC>F i<CR><ESC>O<TAB><UP><ESC>2f'i<C-R>=Eatchar('\s')<CR>
+iabbrev teber before do end<ESC>F i<CR><ESC>O<TAB><C-R>=Eatchar('\s')<CR>
 
 au BufWinLeave ?* mkview
 au BufWinEnter ?* silent loadview
