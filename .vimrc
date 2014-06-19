@@ -57,6 +57,7 @@ autocmd BufRead,BufNewFile Capfile,Gemfile,*.ru,*.rb.* set filetype=ruby
 autocmd BufRead,BufNewFile *.json set filetype=javascript
 autocmd BufRead,BufNewFile * silent execute (getline(1) =~ '[^ ]\+/\(env \)\?node\>' ? "set filetype=javascript" : "")
 autocmd BufRead,BufNewFile *.md setlocal textwidth=72
+autocmd BufRead,BufNewFile *.scss,*.sass set filetype=scss.css
 
 let g:netrw_list_hide='.*\.swp$'
 
