@@ -22,7 +22,7 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle
 
 wget --no-check-certificate https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim -O ~/.vim/autoload/pathogen.vim
 
-repos="Shutnik/jshint2.vim tpope/vim-fugitive othree/xml.vim"
+repos="Shutnik/jshint2.vim tpope/vim-fugitive othree/xml.vim JulesWang/css.vim cakebaker/scss-syntax.vim digitaltoad/vim-jade"
 
 for repo in $repos; do
   dir=~/.vim/bundle/$(basename $repo)
