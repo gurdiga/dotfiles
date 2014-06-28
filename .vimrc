@@ -29,8 +29,7 @@ autocmd BufNewFile,BufRead *.log set nonu
 "autocmd Filetype php,html,xml,xsl source ~/.vim/closetag.vim
 autocmd BufNewFile,BufRead *.html,*.php let b:unaryTagsStack="none"
 
-autocmd Filetype blog set textwidth=72 formatoptions=tanv
-autocmd Filetype gitcommit set textwidth=72
+autocmd Filetype gitcommit,blog set textwidth=72 formatoptions=tanv
 
 highlight SpacesBeforeTab             ctermbg=red guibg=lightgreen
 highlight TrailingWhitespace          ctermbg=red guibg=lightgreen
