@@ -13,7 +13,6 @@ alias glg='git log --graph --pretty=oneline --abbrev-commit'
 alias gl1='git log --abbrev-commit --format=oneline'
 alias push='git push'
 alias pull='git pull'
-alias f='grep -E --color=always -n -I -R --exclude-dir=log --exclude-dir=tmp --exclude-dir=.git --exclude-dir=.svn --exclude-dir=session --exclude-dir=node_modules --exclude=.viminfo'
 alias v='~/vimp'
 alias less='less -R'
 alias j='jobs -l'
@@ -23,6 +22,46 @@ alias l='ls -hlaF'
 function www() { python -m SimpleHTTPServer ${1:-8888}; }
 function jsonpp() { node -e "console.log(JSON.parse(require('fs').readFileSync('/dev/stdin').toString()));"; }
 function q() { find "${2:-.}" -name $1; }
+
+function f() {
+  if [ "$#" -eq 0 ]; then
+    echo 'Find what?'
+    return 0
+  fi
+
+  DOT_FILE=".grepignore"
+  MAX_LINE_LENGTH=350
+
+  IGNORE_DIRS=".git .svn node_modules"
+  IGNORE_FILES=".bash_history .viminfo"
+  EXCLUDE_DIR_CLAUSE=""
+  EXCLUDE_CLAUSE=""
+
+  if [ -f $DOT_FILE ]; then
+    IGNORE_DIRS+=" $(echo $(grep '/$' $DOT_FILE | sed 's|/$||'))"
+    IGNORE_FILES+=" $(echo $(grep -v '/$' $DOT_FILE))"
+  fi
+
+  for DIR in $IGNORE_DIRS; do
+    EXCLUDE_DIR_CLAUSE+=" --exclude-dir=$DIR"
+  done
+
+  for FILE in $IGNORE_FILES; do
+    EXCLUDE_CLAUSE+=" --exclude=$FILE"
+  done
+
+  grep \
+    --extended-regexp \
+    --color=always \
+    --line-number \
+    --binary-files=without-match \
+    --recursive \
+    $EXCLUDE_CLAUSE \
+    $EXCLUDE_DIR_CLAUSE "$@" \
+    | grep \
+    --invert-match \
+    --extended-regexp ".{$MAX_LINE_LENGTH,}"
+}
 
 # Breakout stuff
 alias refreshdb='bundle exec rake db:drop db:create && mysql < db/test_structure.sql && rake db:seed'
