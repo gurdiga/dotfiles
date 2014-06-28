@@ -1,3 +1,5 @@
 *.swp
 .bash_history
+.vimrc
+.grepignore
 Makefile
