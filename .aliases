@@ -75,11 +75,9 @@ alias migrate='bundle exec rake db:migrate && ( mysqldump breakout_development -
 alias profm90s='mplayer http://stream.profm.ro:8092/90s.mp3'
 alias profmclassic='mplayer http://stream.profm.ro:8082/clasic.mp3'
 
-alias bp='cd ~/src/bp'
 alias cl='cd ~/src/bp/cl'
 alias cs='cd ~/src/bp/cs'
 alias us='cd ~/src/bp/us'
 alias ds='cd ~/src/bp/ds'
 
 alias g='grunt'
-alias xo='cd ~/src/xo'
