@@ -49,8 +49,8 @@ function check_for_local_history {
   }
 
   function is_a_cd_alias {
-    local cd_aliases=`alias | grep "='cd " | grep -P -o '[a-z]+(?==)'`
-    echo $cd_aliases | grep -q "\<$last_command\>"
+    local cd_aliases=`alias | grep "='cd " | grep -E -o 'alias [a-z]+='`
+    echo $cd_aliases | grep -q "alias \<$last_command\>="
   }
 
   function found_local_history_file {
@@ -67,7 +67,9 @@ function check_for_local_history {
   main
 }
 
-PROMPT_COMMAND="check_for_local_history"
+if grep -v -q check_for_local_history <<<$PROMPT_COMMAND; then
+  PROMPT_COMMAND="${PROMPT_COMMAND} check_for_local_history"
+fi
 
 export RUBY_GC_MALLOC_LIMIT=90000000
 export RUBY_GC_HEAP_FREE_SLOTS=200000
