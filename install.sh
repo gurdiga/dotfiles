@@ -20,7 +20,10 @@ fgrep '.bashrc.my' ~/.bashrc || \
 
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 
-wget --no-check-certificate https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim -O ~/.vim/autoload/pathogen.vim
+curl --silent https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim -o ~/.vim/autoload/pathogen.vim
+curl --silent https://raw.github.com/tpope/vim-haml/master/ftplugin/sass.vim         -o ~/.vim/ftplugin/sass.vim
+curl --silent https://raw.github.com/tpope/vim-haml/master/indent/sass.vim           -o ~/.vim/indent/sass.vim --create-dirs
+curl --silent https://raw.github.com/tpope/vim-haml/master/syntax/sass.vim           -o ~/.vim/syntax/sass.vim
 
 repos="Shutnik/jshint2.vim tpope/vim-fugitive othree/xml.vim JulesWang/css.vim cakebaker/scss-syntax.vim digitaltoad/vim-jade"
 
