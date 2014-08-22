@@ -25,7 +25,16 @@ curl --silent https://raw.github.com/tpope/vim-haml/master/ftplugin/sass.vim    
 curl --silent https://raw.github.com/tpope/vim-haml/master/indent/sass.vim           -o ~/.vim/indent/sass.vim --create-dirs
 curl --silent https://raw.github.com/tpope/vim-haml/master/syntax/sass.vim           -o ~/.vim/syntax/sass.vim
 
-repos="Shutnik/jshint2.vim tpope/vim-fugitive othree/xml.vim JulesWang/css.vim cakebaker/scss-syntax.vim digitaltoad/vim-jade"
+repos="
+  JulesWang/css.vim
+  Shutnik/jshint2.vim
+  cakebaker/scss-syntax.vim
+  digitaltoad/vim-jade
+  michaeljsmith/vim-indent-object
+  othree/xml.vim
+  tpope/vim-fugitive
+  tpope/vim-surround
+"
 
 for repo in $repos; do
   dir=~/.vim/bundle/$(basename $repo)
