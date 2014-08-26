@@ -20,10 +20,10 @@ fgrep '.bashrc.my' ~/.bashrc || \
 
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 
-curl --silent https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim -o ~/.vim/autoload/pathogen.vim
-curl --silent https://raw.github.com/tpope/vim-haml/master/ftplugin/sass.vim         -o ~/.vim/ftplugin/sass.vim
-curl --silent https://raw.github.com/tpope/vim-haml/master/indent/sass.vim           -o ~/.vim/indent/sass.vim --create-dirs
-curl --silent https://raw.github.com/tpope/vim-haml/master/syntax/sass.vim           -o ~/.vim/syntax/sass.vim
+curl --silent https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim -o ~/.vim/autoload/pathogen.vim
+curl --silent https://raw.githubusercontent.com/tpope/vim-haml/master/ftplugin/sass.vim         -o ~/.vim/ftplugin/sass.vim
+curl --silent https://raw.githubusercontent.com/tpope/vim-haml/master/indent/sass.vim           -o ~/.vim/indent/sass.vim --create-dirs
+curl --silent https://raw.githubusercontent.com/tpope/vim-haml/master/syntax/sass.vim           -o ~/.vim/syntax/sass.vim --create-dirs
 
 repos="
   JulesWang/css.vim
