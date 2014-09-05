@@ -3,8 +3,6 @@
 file=$1
 line_number=`expr "$file" : '.*:\([0-9]\+\)'`
 
-echo $file
-
 if [[ "$file" =~ :[0-9]*.*$ ]]; then
   file=${file/$BASH_REMATCH/}
   line_number=$BASH_REMATCH
