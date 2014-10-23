@@ -29,8 +29,6 @@ autocmd BufNewFile,BufRead *.log set nonu
 "autocmd Filetype php,html,xml,xsl source ~/.vim/closetag.vim
 autocmd BufNewFile,BufRead *.html,*.php let b:unaryTagsStack="none"
 
-autocmd Filetype gitcommit,blog set textwidth=72 formatoptions=tanv
-
 highlight SpacesBeforeTab             ctermbg=red guibg=lightgreen
 highlight TrailingWhitespace          ctermbg=red guibg=lightgreen
 highlight TabsNotAtTheStartOfLine     ctermbg=red guibg=lightgreen
@@ -91,6 +89,4 @@ iabbrev teaf afterEach(function() {});<ESC>F}i<CR><ESC>O<TAB><C-R>=Eatchar('\s')
 iabbrev teder describe '' do end<ESC>F i<CR><ESC>O<TAB><UP><ESC>2f'i<C-R>=Eatchar('\s')<CR>
 iabbrev teitr it '' do end<ESC>F i<CR><ESC>O<TAB><UP><ESC>2f'i<C-R>=Eatchar('\s')<CR>
 iabbrev teber before do end<ESC>F i<CR><ESC>O<TAB><C-R>=Eatchar('\s')<CR>
-
-au BufWinLeave ?* mkview
-au BufWinEnter ?* silent loadview
+iabbrev vst var self = this;
