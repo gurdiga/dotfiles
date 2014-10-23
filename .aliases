@@ -17,7 +17,7 @@ alias v='~/vimp'
 alias less='less -R'
 alias j='jobs -l'
 alias ff='google-chrome --user-data-dir=$HOME/.config/chrome.vlad & exit'
-alias l='ls -hlaF'
+alias l='ls --full-time --time-style="+%Y-%m-%d %H:%M:%S" --group-directories-first -hlAF'
 
 function www() { python -m SimpleHTTPServer ${1:-8888}; }
 function jsonpp() { node -e "console.log(JSON.parse(require('fs').readFileSync('/dev/stdin').toString()));"; }
