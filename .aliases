@@ -23,7 +23,7 @@ alias encrypt='openssl enc -aes-256-cbc -e'
 alias decrypt='openssl aes-256-cbc -d'
 
 function www() { python -m SimpleHTTPServer ${1:-8888}; }
-function jsonpp() { node -e "console.log(JSON.parse(require('fs').readFileSync('/dev/stdin').toString()));"; }
+function jsonpp() { node -e "console.log(JSON.stringify(JSON.parse(require('fs').readFileSync('/dev/stdin').toString()), null, '  '));"; }
 function q() { find "${2:-.}" -name $1; }
 
 function f() {
