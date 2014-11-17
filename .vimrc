@@ -1,6 +1,8 @@
 syntax on
 filetype plugin on
 
+nnoremap Q :echo "The “Q” command is disabled because it’s annoying and useless"<CR>
+
 "enable per-directory .vimrc files
 set exrc
 
