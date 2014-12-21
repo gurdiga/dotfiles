@@ -77,19 +77,20 @@ func! Eatchar(pat)
   return (c =~ a:pat) ? '' : c
 endfunc
 
-iabbrev colo console.log('');<ESC>F'i<C-R>=Eatchar('\s')<CR>
+autocmd BufEnter *.js     iabbrev colo console.log('');<ESC>F'i<C-R>=Eatchar('\s')<CR>
+autocmd BufEnter *.coffee iabbrev colo console.log <ESC>a<C-R>=Eatchar('\s')<CR>
 
-iabbrev fn function() {<CR>}<ESC><UP>$F)i<C-R>=Eatchar('\s')<CR>
-iabbrev fnus (function() {}());<ESC>F}i<CR><CR><CR><UP><UP><TAB>'use strict';<CR><CR><C-R>=Eatchar('\s')<CR>
-iabbrev us; 'use strict';<C-R>=Eatchar('\s')<CR><CR>
+autocmd BufEnter *.js     iabbrev fn function() {<CR>}<ESC><UP>$F)i<C-R>=Eatchar('\s')<CR>
+autocmd BufEnter *.js     iabbrev fnus (function() {}());<ESC>F}i<CR><CR><CR><UP><UP><TAB>'use strict';<CR><CR><C-R>=Eatchar('\s')<CR>
+autocmd BufEnter *.js     iabbrev us; 'use strict';<C-R>=Eatchar('\s')<CR><CR>
+autocmd BufEnter *.js     iabbrev vst var context = this;
+autocmd BufEnter *.js     iabbrev me= module.exports =;<ESC>i
 
-iabbrev tede describe('', function() {});<ESC>F}i<CR><ESC>O<TAB><UP><ESC>2f'i<C-R>=Eatchar('\s')<CR>
-iabbrev teit it('', function() {});<ESC>F}i<CR><ESC>O<TAB><UP><ESC>2f'i<C-R>=Eatchar('\s')<CR>
-iabbrev tebe beforeEach(function() {});<ESC>F}i<CR><ESC>O<TAB><C-R>=Eatchar('\s')<CR>
-iabbrev teaf afterEach(function() {});<ESC>F}i<CR><ESC>O<TAB><C-R>=Eatchar('\s')<CR>
+autocmd BufEnter *.js     iabbrev tede describe('', function() {});<ESC>F}i<CR><ESC>O<TAB><UP><ESC>2f'i<C-R>=Eatchar('\s')<CR>
+autocmd BufEnter *.js     iabbrev teit it('', function() {});<ESC>F}i<CR><ESC>O<TAB><UP><ESC>2f'i<C-R>=Eatchar('\s')<CR>
+autocmd BufEnter *.js     iabbrev tebe beforeEach(function() {});<ESC>F}i<CR><ESC>O<TAB><C-R>=Eatchar('\s')<CR>
+autocmd BufEnter *.js     iabbrev teaf afterEach(function() {});<ESC>F}i<CR><ESC>O<TAB><C-R>=Eatchar('\s')<CR>
 
-iabbrev teder describe '' do end<ESC>F i<CR><ESC>O<TAB><UP><ESC>2f'i<C-R>=Eatchar('\s')<CR>
-iabbrev teitr it '' do end<ESC>F i<CR><ESC>O<TAB><UP><ESC>2f'i<C-R>=Eatchar('\s')<CR>
-iabbrev teber before do end<ESC>F i<CR><ESC>O<TAB><C-R>=Eatchar('\s')<CR>
-iabbrev vst var context = this;
-iabbrev me= module.exports =;<ESC>i
+autocmd BufEnter *.rb     iabbrev tede describe '' do end<ESC>F i<CR><ESC>O<TAB><UP><ESC>2f'i<C-R>=Eatchar('\s')<CR>
+autocmd BufEnter *.rb     iabbrev teit it '' do end<ESC>F i<CR><ESC>O<TAB><UP><ESC>2f'i<C-R>=Eatchar('\s')<CR>
+autocmd BufEnter *.rb     iabbrev tebe before do end<ESC>F i<CR><ESC>O<TAB><C-R>=Eatchar('\s')<CR>
