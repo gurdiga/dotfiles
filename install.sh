@@ -26,14 +26,12 @@ curl --silent https://raw.githubusercontent.com/tpope/vim-haml/master/indent/sas
 curl --silent https://raw.githubusercontent.com/tpope/vim-haml/master/syntax/sass.vim           -o ~/.vim/syntax/sass.vim --create-dirs
 
 repos="
-  JulesWang/css.vim
-  Shutnik/jshint2.vim
-  cakebaker/scss-syntax.vim
   digitaltoad/vim-jade
   michaeljsmith/vim-indent-object
   othree/xml.vim
   tpope/vim-fugitive
   tpope/vim-surround
+  tpope/vim-haml
 "
 
 for repo in $repos; do
