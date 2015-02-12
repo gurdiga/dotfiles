@@ -44,6 +44,8 @@ autocmd Syntax * syn match TrailingWhitespace /\s\+$/
 
 "Show tabs that are not at the start of a line:
 autocmd Syntax * syn match TabsNotAtTheStartOfLine /[^\t]\zs\t\+/
+" exclude Vim help files
+autocmd Syntax .txt syn match TabsNotAtTheStartOfLine /none/
 
 "Show spaces used for indenting (so you use only tabs for indenting).
 autocmd Syntax * syn match SpacesForIndentingAfterTabs /^\t*\zs \+/
