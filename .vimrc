@@ -2,7 +2,6 @@ syntax on
 filetype plugin on
 
 nnoremap Q :echo "The “Q” normal command is disabled because it’s annoying and useless"<CR>
-cnoremap a :echo "The “:a” command is disabled because it’s annoying and useless"<CR>
 
 "enable per-directory .vimrc files
 set exrc
