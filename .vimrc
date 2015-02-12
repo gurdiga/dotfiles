@@ -93,3 +93,5 @@ autocmd BufEnter *.js     iabbrev teaf afterEach(function() {});<ESC>F}i<CR><ESC
 autocmd BufEnter *.rb     iabbrev tede describe '' do end<ESC>F i<CR><ESC>O<TAB><UP><ESC>2f'i<C-R>=Eatchar('\s')<CR>
 autocmd BufEnter *.rb     iabbrev teit it '' do end<ESC>F i<CR><ESC>O<TAB><UP><ESC>2f'i<C-R>=Eatchar('\s')<CR>
 autocmd BufEnter *.rb     iabbrev tebe before do end<ESC>F i<CR><ESC>O<TAB><C-R>=Eatchar('\s')<CR>
+
+autocmd filetype crontab setlocal nobackup nowritebackup
