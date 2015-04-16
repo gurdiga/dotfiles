@@ -73,10 +73,10 @@ function f() {
 alias refreshdb='bundle exec rake db:drop db:create && mysql < db/test_structure.sql && rake db:seed'
 alias br='cd ~/src/breakout'
 alias br2='cd ~/src/breakout2'
-alias s='bundle exec rails server webrick -d'
+alias s='bundle exec rails server puma --binding=0.0.0.0 --daemon'
 alias c='bundle exec rails console'
-alias ss='test -f tmp/pids/server.pid && kill -INT `cat tmp/pids/server.pid` && rm -f log/*.log'
-alias migrate='bundle exec rake db:migrate && ( mysqldump breakout_development --no-data --routines; mysqldump breakout_development -c --extended-insert=FALSE schema_migrations; ) | mysql breakout_test'
+alias ss='test -f tmp/pids/server.pid && kill -INT `cat tmp/pids/server.pid` && rm -f log/{production,development,test}.log'
+alias migrate='bundle exec rake db:migrate && ( mysqldump breakout_development --routines; mysqldump breakout_development -c --extended-insert=FALSE schema_migrations; ) | mysql breakout_test'
 
 alias profm90s='mplayer http://stream.profm.ro:8092/90s.mp3'
 alias profmclassic='mplayer http://stream.profm.ro:8082/clasic.mp3'
