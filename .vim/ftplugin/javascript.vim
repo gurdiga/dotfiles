@@ -1,3 +1,5 @@
+set expandtab
+
 iabbrev rq require('');<ESC>F'i<C-R>=Eatchar('\s')<CR>
 iabbrev colo console.log('');<ESC>F'i<C-R>=Eatchar('\s')<CR>
 iabbrev fn function() {<CR>}<ESC><UP>$F)i<C-R>=Eatchar('\s')<CR>
