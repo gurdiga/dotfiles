@@ -10,7 +10,6 @@ set nomodeline
 set autoindent
 set shiftwidth=2
 set tabstop=2
-set expandtab
 set ruler
 set number
 set backspace=indent,eol,start
