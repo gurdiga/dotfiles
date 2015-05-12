@@ -1,1 +1,1 @@
-set expandtab
+set filetype=ansible

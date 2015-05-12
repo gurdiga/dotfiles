@@ -33,6 +33,7 @@ repos="
   tpope/vim-fugitive
   tpope/vim-surround
   tpope/vim-haml
+	chase/vim-ansible-yaml
 "
 
 for repo in $repos; do
