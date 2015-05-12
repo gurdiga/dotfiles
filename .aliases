@@ -1,3 +1,5 @@
+# vim: filetype=sh
+
 alias gs='git status'
 alias gsh='git show'
 alias gd='git diff'
@@ -57,7 +59,6 @@ function f() {
   done
 
   grep \
-    --extended-regexp \
     --color=always \
     --line-number \
     --binary-files=without-match \
