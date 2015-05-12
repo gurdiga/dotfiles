@@ -12,7 +12,7 @@ set -b
 # HISTFILE variable when the shell exits, rather than overwriting the file.
 shopt -s histappend
 
-export HISTSIZE=10000
+export HISTSIZE=100000
 export HISTCONTROL=ignoredups
 export HISTTIMEFORMAT='%Y-%m-%d %T '
 export MAILCHECK=
