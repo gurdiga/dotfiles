@@ -74,3 +74,5 @@ alias s='bundle exec rails server puma --binding=0.0.0.0 --daemon'
 alias c='bundle exec rails console'
 alias ss='test -f tmp/pids/server.pid && kill -INT `cat tmp/pids/server.pid` && rm -f log/*.log'
 alias migrate='bundle exec rake db:migrate && ( mysqldump breakout_development --routines; mysqldump breakout_development -c --extended-insert=FALSE schema_migrations; ) | mysql breakout_test'
+
+alias nocolor='sed -r "s:\x1B\[[0-9;]*[mK]::g"'
