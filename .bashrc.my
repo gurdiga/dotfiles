@@ -8,6 +8,9 @@ echo -n -e "\033]0;`whoami`@`hostname -f`\007"
 # rather than before printing the next primary prompt.
 set -b
 
+shopt -s globstar
+shopt -s extglob
+
 # If set, the history list is appended to the file named by the value of the
 # HISTFILE variable when the shell exits, rather than overwriting the file.
 shopt -s histappend
