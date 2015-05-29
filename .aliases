@@ -26,8 +26,8 @@ alias decrypt='openssl aes-256-cbc -d'
 alias ding='mplayer /System/Library/Sounds/Glass.aiff'
 alias node='env NODE_NO_READLINE=1 rlwrap node'
 alias rewifi='networksetup -setairportpower en0 off && networksetup -setairportpower en0 on && sleep 3 && networksetup -getairportnetwork en0'
+alias www="~/src/nginx-server/nginx-server.py"
 
-function www() { python -m SimpleHTTPServer ${1:-8888}; }
 function jsonpp() { node -e "console.log(JSON.stringify(JSON.parse(require('fs').readFileSync('/dev/stdin').toString()), null, '  '));"; }
 function q() { find "${2:-.}" -name $1; }
 
