@@ -20,11 +20,11 @@ for f in $DIR/.vim/ftplugin/*; do
   ln -s -v $f ~/.vim/ftplugin/
 done
 
-
 curl --silent https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim -o ~/.vim/autoload/pathogen.vim
 curl --silent https://raw.githubusercontent.com/tpope/vim-haml/master/ftplugin/sass.vim         -o ~/.vim/ftplugin/sass.vim
 curl --silent https://raw.githubusercontent.com/tpope/vim-haml/master/indent/sass.vim           -o ~/.vim/indent/sass.vim --create-dirs
 curl --silent https://raw.githubusercontent.com/tpope/vim-haml/master/syntax/sass.vim           -o ~/.vim/syntax/sass.vim --create-dirs
+curl --silent https://raw.githubusercontent.com/ngmy/vim-rubocop/master/plugin/rubocop.vim      -o ~/.vim/plugin/rubocop.vim --create-dirs
 
 repos="
   digitaltoad/vim-jade
