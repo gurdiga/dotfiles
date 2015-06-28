@@ -86,9 +86,11 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PATH=./node_modules/.bin:$PATH
 
 # nvm
-export PATH=~/.nvm:$PATH
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+if [ `which brew` ]; then
+	export PATH=~/.nvm:$PATH
+	export NVM_DIR=~/.nvm
+	source $(brew --prefix nvm)/nvm.sh
+fi
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
