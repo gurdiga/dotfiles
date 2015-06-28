@@ -9,10 +9,10 @@ if [ ! -f ~/.vimrc_local ]; then
 fi
 
 fgrep '.aliases' ~/.bashrc || \
-	echo ". ~/.aliases" >> ~/.bashrc
+	echo '. ~/.aliases' >> ~/.bashrc
 
 fgrep '.bashrc.my' ~/.bashrc || \
-	echo ". ~/.bashrc.my" >> ~/.bashrc
+	echo '. ~/.bashrc.my' >> ~/.bashrc
 
 mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/ftplugin
 
@@ -40,9 +40,7 @@ repos="
 for repo in $repos; do
   dir=~/.vim/bundle/$(basename $repo)
 
-  if [ -d $dir ]; then
-    continue
+  if [ ! -d $dir ]; then
+		git clone https://github.com/$repo.git $dir
   fi
-
-  git clone https://github.com/$repo.git $dir
 done

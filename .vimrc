@@ -17,7 +17,6 @@ set history=1000
 set scrolloff=2
 set noerrorbells
 set encoding=utf-8
-set hidden
 
 set cursorline
 highlight CursorLine term=bold cterm=bold guifg=NONE guibg=#121212 gui=NONE ctermfg=NONE ctermbg=236
@@ -72,3 +71,5 @@ func! Eatchar(pat)
   let c = nr2char(getchar(0))
   return (c =~ a:pat) ? '' : c
 endfunc
+
+source ~/.vim/colors/diff.vim

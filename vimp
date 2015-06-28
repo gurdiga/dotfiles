@@ -13,7 +13,7 @@ if [[ "$file" =~ :[0-9]*.*$ ]]; then
     line_number="+$line_number"
   fi
 
-	exec vim "$file" $line_number
+  exec vim "$file" $line_number
 else
-	exec vim "$@"
+  exec vim "$@"
 fi
