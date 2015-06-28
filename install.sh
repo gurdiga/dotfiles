@@ -20,6 +20,11 @@ for f in $DIR/.vim/ftplugin/*; do
   ln -s -v $f ~/.vim/ftplugin/
 done
 
+mkdir -p ~/.vim/colors
+for f in $DIR/.vim/colors/*; do
+	ln -s -v $f ~/.vim/colors/
+done
+
 curl --silent https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim -o ~/.vim/autoload/pathogen.vim
 curl --silent https://raw.githubusercontent.com/tpope/vim-haml/master/ftplugin/sass.vim         -o ~/.vim/ftplugin/sass.vim
 curl --silent https://raw.githubusercontent.com/tpope/vim-haml/master/indent/sass.vim           -o ~/.vim/indent/sass.vim --create-dirs
