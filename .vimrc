@@ -6,6 +6,10 @@ nnoremap Q :echo "The “Q” normal command is disabled because it’s annoying
 "enable per-directory .vimrc files
 set exrc
 
+set foldmethod=manual
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
+
 set nomodeline
 set autoindent
 set shiftwidth=2
