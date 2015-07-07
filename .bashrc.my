@@ -53,7 +53,7 @@ function check_for_local_history {
 
   function is_a_cd_alias {
     local cd_aliases=`alias | grep "='cd " | grep -E -o 'alias [a-z]+='`
-    echo $cd_aliases | grep -q "alias \<$last_command\>="
+    echo $cd_aliases | grep -F -q "alias $last_command="
   }
 
   function found_local_history_file {
