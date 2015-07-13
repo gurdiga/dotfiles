@@ -17,3 +17,5 @@
   autosetuprebase = always
 [push]
   default=current
+[pull]
+  rebase=true
