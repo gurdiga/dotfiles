@@ -7,8 +7,8 @@ nnoremap Q :echo "The “Q” normal command is disabled because it’s annoying
 set exrc
 
 set foldmethod=manual
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
+"autocmd BufWinLeave *.* mkview
+"autocmd BufWinEnter *.* silent loadview
 
 set nomodeline
 set autoindent
