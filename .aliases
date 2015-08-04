@@ -29,7 +29,15 @@ alias www="~/src/nginx-server/nginx-server.py"
 alias stripcolor='sed -r "s:\x1B\[[0-9;]*[mK]::g"'
 
 function jsonpp() { node -e "console.log(JSON.stringify(JSON.parse(require('fs').readFileSync('/dev/stdin').toString()), null, '  '));"; }
-function q() { find "${2:-.}" -name "$1"; }
+
+function q() {
+	wildcard="$1"
+	shift
+	dirs="$@"
+
+	find ${dirs:-.} -name $wildcard;
+}
+
 function aac2mp3() {
 	aac_file=$1
 	mp3_file=$(basename "$aac_file" .aac).mp3
