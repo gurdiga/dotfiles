@@ -4,3 +4,7 @@
 .vim
 .grepignore
 Makefile
+
+# Extole
+js/mock-data/
+vendor/select2.png
