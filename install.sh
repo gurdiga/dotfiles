@@ -36,6 +36,7 @@ repos="
   cakebaker/scss-syntax.vim
   chase/vim-ansible-yaml
   mxw/vim-jsx
+  mitsuhiko/vim-jinja
 "
 
 for repo in $repos; do
