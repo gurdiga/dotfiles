@@ -26,10 +26,6 @@ for f in $DIR/.vim/colors/*; do
 done
 
 curl --silent https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim -o ~/.vim/autoload/pathogen.vim
-curl --silent https://raw.githubusercontent.com/tpope/vim-haml/master/ftplugin/sass.vim         -o ~/.vim/ftplugin/sass.vim
-curl --silent https://raw.githubusercontent.com/tpope/vim-haml/master/indent/sass.vim           -o ~/.vim/indent/sass.vim --create-dirs
-curl --silent https://raw.githubusercontent.com/tpope/vim-haml/master/syntax/sass.vim           -o ~/.vim/syntax/sass.vim --create-dirs
-curl --silent https://raw.githubusercontent.com/ngmy/vim-rubocop/master/plugin/rubocop.vim      -o ~/.vim/plugin/rubocop.vim --create-dirs
 
 repos="
   digitaltoad/vim-jade
@@ -37,7 +33,7 @@ repos="
   othree/xml.vim
   tpope/vim-fugitive
   tpope/vim-surround
-  tpope/vim-haml
+  cakebaker/scss-syntax.vim
   chase/vim-ansible-yaml
   mxw/vim-jsx
 "
