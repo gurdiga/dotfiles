@@ -86,6 +86,18 @@ function f() {
     | cut -c -$MAX_LINE_LENGTH
 }
 
+function gif() {
+  if [ "$#" -eq 0 ]; then
+    echo 'Gif what?'
+    return 0
+  fi
+
+	input="$1"
+	filename="${input%.*}"
+
+	ffmpeg -i "$input" -pix_fmt rgb24 -r 10 -f gif - | gifsicle --loopcount=3 --optimize=3 --delay=5 > "$filename.gif"
+}
+
 # Breakout stuff
 alias refreshdb='bin/rake db:drop db:create && mysql < db/test_structure.sql && bin/rake db:seed'
 alias br='cd ~/src/breakout'
