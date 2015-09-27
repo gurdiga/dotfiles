@@ -6,7 +6,6 @@ iabbrev fn function() {<CR>}<ESC><UP>$F)i<C-R>=Eatchar('\s')<CR>
 iabbrev fnus (function() {}());<ESC>F}i<CR><CR><CR><UP><UP><TAB>'use strict';<CR><CR><C-R>=Eatchar('\s')<CR>
 iabbrev us; 'use strict';<C-R>=Eatchar('\s')<CR><CR>
 iabbrev me= module.exports =;<ESC>i
-iabbrev var var;<ESC>i
 iabbrev if if () {<CR>}<UP><ESC>f)i<C-R>=Eatchar('\s')<CR>
 iabbrev else else {<CR>}<UP><ESC>o<TAB><C-R>=Eatchar('\s')<CR>
 
