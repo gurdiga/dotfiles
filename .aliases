@@ -97,11 +97,3 @@ function gif() {
 
 	ffmpeg -i "$input" -pix_fmt rgb24 -r 10 -f gif - | gifsicle --loopcount=3 --optimize=3 --delay=5 > "$filename.gif"
 }
-
-# Breakout stuff
-alias refreshdb='bin/rake db:drop db:create && mysql < db/test_structure.sql && bin/rake db:seed'
-alias br='cd ~/src/breakout'
-alias s='bin/rails server --binding=0.0.0.0 --daemon'
-alias c='bin/rails console'
-alias ss='pkill --full "rails master"'
-alias migrate='bundle exec rake db:migrate && ( mysqldump breakout_development --no-data --routines; mysqldump breakout_development -c --extended-insert=FALSE schema_migrations; ) | mysql breakout_test'
