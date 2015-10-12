@@ -8,6 +8,6 @@ iabbrev us; 'use strict';<C-R>=Eatchar('\s')<CR><CR>
 iabbrev me= module.exports =;<ESC>i
 
 iabbrev tede describe('', function() {});<ESC>F}i<CR><ESC>O<TAB><UP><ESC>2f'i<C-R>=Eatchar('\s')<CR>
-iabbrev teit it('', function() {});<ESC>F}i<CR><ESC>O<TAB><UP><ESC>2f'i<C-R>=Eatchar('\s')<CR>
+iabbrev teit it('', function() {});<ESC>F}i<CR><ESC>O<TAB><UP><ESC>^2f'i<C-R>=Eatchar('\s')<CR>
 iabbrev tebe beforeEach(function() {});<ESC>F}i<CR><ESC>O<TAB><C-R>=Eatchar('\s')<CR>
 iabbrev teaf afterEach(function() {});<ESC>F}i<CR><ESC>O<TAB><C-R>=Eatchar('\s')<CR>
