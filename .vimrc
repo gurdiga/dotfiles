@@ -63,6 +63,10 @@ autocmd BufRead,BufNewFile *.env.* set filetype=sh
 autocmd BufRead,BufNewFile * silent execute (getline(1) =~ '[^ ]\+/\(env \)\?node\>' ? "set filetype=javascript" : "")
 autocmd BufRead,BufNewFile *.md setlocal textwidth=72
 
+" Underscore templates
+autocmd BufRead,BufNewFile *.html._ set filetype=html
+autocmd BufRead,BufNewFile *.html._ set syntax=underscore_template
+
 let g:netrw_list_hide='.*\.swp$'
 
 "select the just-pasted text

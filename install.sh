@@ -37,6 +37,7 @@ repos="
   chase/vim-ansible-yaml
   mxw/vim-jsx
   mitsuhiko/vim-jinja
+  aaronj1335/underscore-templates.vim
 "
 
 for repo in $repos; do
