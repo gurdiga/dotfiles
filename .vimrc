@@ -5,6 +5,7 @@ nnoremap Q :echo "The “Q” normal command is disabled because it’s annoying
 
 "enable per-directory .vimrc files
 set exrc
+set secure
 
 set foldmethod=manual
 "autocmd BufWinLeave *.* mkview
