@@ -38,6 +38,7 @@ repos="
   mxw/vim-jsx
   mitsuhiko/vim-jinja
   aaronj1335/underscore-templates.vim
+	tpope/vim-commentary
 "
 
 for repo in $repos; do
