@@ -1,4 +1,4 @@
-*.swp
+*.sw?
 .bash_history
 .vimrc
 .vim
