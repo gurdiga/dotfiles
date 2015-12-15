@@ -33,12 +33,9 @@ repos="
   othree/xml.vim
   tpope/vim-fugitive
   tpope/vim-surround
+	tpope/vim-commentary
   cakebaker/scss-syntax.vim
   chase/vim-ansible-yaml
-  mxw/vim-jsx
-  mitsuhiko/vim-jinja
-  aaronj1335/underscore-templates.vim
-	tpope/vim-commentary
 "
 
 for repo in $repos; do
