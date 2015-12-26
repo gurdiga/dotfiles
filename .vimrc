@@ -69,6 +69,7 @@ autocmd BufRead,BufNewFile *.html._ set filetype=html
 autocmd BufRead,BufNewFile *.html._ set syntax=underscore_template
 
 let g:netrw_list_hide='.*\.swp$'
+let g:netrw_banner=0
 
 "select the just-pasted text
 nnoremap gp `[v`]
