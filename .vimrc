@@ -82,3 +82,6 @@ func! Eatchar(pat)
 endfunc
 
 source ~/.vim/colors/diff.vim
+
+" let every line be considered a change in the undo history
+inoremap <CR> <C-G>u<CR>
