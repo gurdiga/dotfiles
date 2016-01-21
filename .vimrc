@@ -86,3 +86,5 @@ source ~/.vim/colors/diff.vim
 
 " let every line be considered a change in the undo history
 inoremap <CR> <C-G>u<CR>
+
+inoremap <C-Z> <ESC>:stop<CR>
