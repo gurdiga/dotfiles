@@ -1,6 +1,6 @@
 # vim: filetype=sh
 
-alias gs='git status'
+alias gs='git status --short --branch'
 alias gsh='git show'
 alias gd='git diff'
 alias gds='git diff --staged'
