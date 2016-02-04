@@ -32,7 +32,7 @@ alias www="~/src/nginx-server/nginx-server.py"
 alias stripcolor='sed -r "s:\x1B\[[0-9;]*[mK]::g"'
 alias striptags='sed "s/<[^>]*>//g"'
 
-function jsonpp() { node -e "console.log(JSON.stringify(JSON.parse(require('fs').readFileSync('/dev/stdin').toString()), null, '  '));"; }
+function jsonpp() { node -e "console.log(JSON.stringify(JSON.parse(require('fs').readFileSync('/dev/stdin').toString()), null, '	'));"; }
 
 function q() {
 	wildcard="$1"
@@ -52,47 +52,47 @@ function aac2mp3() {
 }
 
 function f() {
-  if [ "$#" -eq 0 ]; then
-    echo 'Find what?'
-    return 0
-  fi
+	if [ "$#" -eq 0 ]; then
+		echo 'Find what?'
+		return 0
+	fi
 
-  DOT_FILE=".grepignore"
-  MAX_LINE_LENGTH=300
+	DOT_FILE=".grepignore"
+	MAX_LINE_LENGTH=300
 
-  IGNORE_DIRS=".git .svn node_modules bower_components"
-  IGNORE_FILES=".bash_history .viminfo"
-  EXCLUDE_DIR_CLAUSE=""
-  EXCLUDE_CLAUSE=""
+	IGNORE_DIRS=".git .svn node_modules bower_components"
+	IGNORE_FILES=".bash_history .viminfo"
+	EXCLUDE_DIR_CLAUSE=""
+	EXCLUDE_CLAUSE=""
 
-  if [ -f $DOT_FILE ]; then
-    IGNORE_DIRS+=" $(echo $(grep '/$' $DOT_FILE | sed 's|/$||'))"
-    IGNORE_FILES+=" $(echo $(grep -v '/$' $DOT_FILE))"
-  fi
+	if [ -f $DOT_FILE ]; then
+		IGNORE_DIRS+=" $(echo $(grep '/$' $DOT_FILE | sed 's|/$||'))"
+		IGNORE_FILES+=" $(echo $(grep -v '/$' $DOT_FILE))"
+	fi
 
-  for DIR in $IGNORE_DIRS; do
-    EXCLUDE_DIR_CLAUSE+=" --exclude-dir=$DIR"
-  done
+	for DIR in $IGNORE_DIRS; do
+		EXCLUDE_DIR_CLAUSE+=" --exclude-dir=$DIR"
+	done
 
-  for FILE in $IGNORE_FILES; do
-    EXCLUDE_CLAUSE+=" --exclude=$FILE"
-  done
+	for FILE in $IGNORE_FILES; do
+		EXCLUDE_CLAUSE+=" --exclude=$FILE"
+	done
 
-  grep \
-    --color=always \
-    --line-number \
-    --binary-files=without-match \
-    --recursive \
-    $EXCLUDE_CLAUSE \
-    $EXCLUDE_DIR_CLAUSE "$@" \
-    | cut -c -$MAX_LINE_LENGTH
+	grep \
+		--color=always \
+		--line-number \
+		--binary-files=without-match \
+		--recursive \
+		$EXCLUDE_CLAUSE \
+		$EXCLUDE_DIR_CLAUSE "$@" \
+		| cut -c -$MAX_LINE_LENGTH
 }
 
 function gif() {
-  if [ "$#" -eq 0 ]; then
-    echo 'Gif what?'
-    return 0
-  fi
+	if [ "$#" -eq 0 ]; then
+		echo 'Gif what?'
+		return 0
+	fi
 
 	input="$1"
 	filename="${input%.*}"
