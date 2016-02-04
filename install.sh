@@ -28,7 +28,6 @@ done
 curl --silent https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim -o ~/.vim/autoload/pathogen.vim
 
 repos="
-  digitaltoad/vim-jade
   michaeljsmith/vim-indent-object
   othree/xml.vim
   tpope/vim-fugitive
@@ -36,6 +35,7 @@ repos="
 	tpope/vim-commentary
   cakebaker/scss-syntax.vim
   chase/vim-ansible-yaml
+	groenewege/vim-less
 "
 
 for repo in $repos; do
