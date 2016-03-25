@@ -39,7 +39,7 @@ function q() {
 	shift
 	dirs="$@"
 
-	find ${dirs:-.} -name $wildcard;
+	find ${dirs:-.} -name "$wildcard";
 }
 
 function aac2mp3() {
