@@ -4,6 +4,7 @@
 .vim
 .grepignore
 Makefile
+.tmp
 
 # Extole
 js/mock-data/
