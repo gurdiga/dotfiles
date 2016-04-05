@@ -11,6 +11,7 @@ iabbrev tede describe('', function() {});<ESC>F}i<CR><ESC>O<TAB><UP><ESC>2f'i<C-
 iabbrev teit it('', function() {});<ESC>F}i<CR><ESC>O<TAB><UP><ESC>^2f'i<C-R>=Eatchar('\s')<CR>
 iabbrev tebe beforeEach(function() {});<ESC>F}i<CR><ESC>O<TAB><C-R>=Eatchar('\s')<CR>
 iabbrev teaf afterEach(function() {});<ESC>F}i<CR><ESC>O<TAB><C-R>=Eatchar('\s')<CR>
+iabbrev tett t.test('', function(t) {});<ESC>F}i<CR><ESC>O<TAB>t.end();<UP><ESC>F'i<C-R>=Eatchar('\s')<CR>
 
 iabbrev iff if () {<CR>}<ESC><UP>f)i<C-R>=Eatchar('\s')<CR>
 iabbrev ife if () {<CR>} else {<CR>}<ESC><UP><UP>f)i<C-R>=Eatchar('\s')<CR>
