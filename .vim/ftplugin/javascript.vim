@@ -36,7 +36,7 @@ iabbrev teit <Esc>:normal a_fn<CR>
   \<Esc>A);
   \<Esc>F}i<CR>
   \<Esc>O<Tab><Up>
-  \<Esc>f'a
+  \<Esc>^f'a
   \<C-R>=Eatchar('\s')<CR>
 
 iabbrev tebe <Esc>:normal a_fn<CR>
