@@ -90,4 +90,8 @@ source ~/.vim/colors/diff.vim
 " let every line be considered a change in the undo history
 inoremap <CR> <C-G>u<CR>
 
+" let ^Z suspend vim even if in insert mode
 inoremap <C-Z> <ESC>:stop<CR>
+
+" let ^L clear also search highlighting
+map <silent> <C-l> :nohlsearch<CR>:redraw!<CR>
