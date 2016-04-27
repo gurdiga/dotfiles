@@ -5,6 +5,7 @@
 .grepignore
 Makefile
 .tmp
+*.timestamp
 
 # Extole
 js/mock-data/
