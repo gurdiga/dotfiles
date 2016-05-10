@@ -71,7 +71,11 @@ function check_for_local_history {
   main
 }
 
-if grep -v -q check_for_local_history <<<$PROMPT_COMMAND; then
+function already_set {
+	grep -q check_for_local_history <<<$PROMPT_COMMAND
+}
+
+if ! already_set; then
   PROMPT_COMMAND="${PROMPT_COMMAND}; check_for_local_history"
 fi
 
