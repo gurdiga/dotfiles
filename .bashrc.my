@@ -72,7 +72,7 @@ function check_for_local_history {
 }
 
 if grep -v -q check_for_local_history <<<$PROMPT_COMMAND; then
-  PROMPT_COMMAND="${PROMPT_COMMAND} check_for_local_history"
+  PROMPT_COMMAND="${PROMPT_COMMAND}; check_for_local_history"
 fi
 
 export RUBY_GC_MALLOC_LIMIT=90000000
