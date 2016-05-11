@@ -27,7 +27,7 @@ iabbrev tede <Esc>:normal a_fn<CR>
   \Idescribe('',<Space>
   \<Esc>A);
   \<Esc>F}i<CR>
-  \<Esc>O<Tab><Up>
+  \<Esc>O<Esc><Up>
   \<Esc>f'a
   \<C-R>=Eatchar('\s')<CR>
 
@@ -35,7 +35,7 @@ iabbrev teit <Esc>:normal a_fn<CR>
   \Iit('',<Space>
   \<Esc>A);
   \<Esc>F}i<CR>
-  \<Esc>O<Tab><Up>
+  \<Esc>O<Esc><Up>
   \<Esc>^f'a
   \<C-R>=Eatchar('\s')<CR>
 
@@ -59,6 +59,6 @@ iabbrev tett <Esc>:normal a_fn<CR>
   \<Esc>A);
   \<Esc>F}i<CR>
   \<Esc>O<Tab>t.end();
-  \<Esc>O<Space><Backspace><Up>
+  \<Esc>O<Up>
   \<Esc>f'a
   \<C-R>=Eatchar('\s')<CR>
