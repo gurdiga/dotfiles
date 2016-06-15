@@ -62,3 +62,6 @@ iabbrev tett <Esc>:normal a_fn<CR>
   \<Esc>O<Up>
   \<Esc>f'a
   \<C-R>=Eatchar('\s')<CR>
+
+iabbrev us 'use strict'
+  \<C-R>=Eatchar('\s')<CR>
