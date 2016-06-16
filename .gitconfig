@@ -19,3 +19,5 @@
   default=current
 [pull]
   rebase=true
+[diff]
+	compactionHeuristic=true
