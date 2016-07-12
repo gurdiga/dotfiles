@@ -32,6 +32,11 @@ alias www="~/src/nginx-server/nginx-server.py"
 alias stripcolor='sed -r "s:\x1B\[[0-9;]*[mK]::g"'
 alias striptags='sed "s/<[^>]*>//g"'
 
+function gio() {
+	local url="$1"
+	curl -i https://git.io -F "url=$url"
+}
+
 function jsonpp() { node -e "console.log(JSON.stringify(JSON.parse(require('fs').readFileSync('/dev/stdin').toString()), null, '	'));"; }
 
 function q() {
