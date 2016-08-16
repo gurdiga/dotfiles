@@ -38,6 +38,9 @@ repos="
 	cakebaker/scss-syntax.vim
 	chase/vim-ansible-yaml
 	groenewege/vim-less
+	leafgarland/typescript-vim
+	Quramy/tsuquyomi
+	Shougo/vimproc.vim
 "
 
 for repo in $repos; do
@@ -47,3 +50,6 @@ for repo in $repos; do
 		git clone https://github.com/$repo.git $dir
 	fi
 done
+
+# TypeScript support, as per https://github.com/Quramy/tsuquyomi#pathogen
+cd ~/.vim/bundle/vimproc.vim && make
