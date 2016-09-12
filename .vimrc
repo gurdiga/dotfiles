@@ -38,25 +38,23 @@ autocmd BufNewFile,BufRead *.log set nonu
 "autocmd Filetype php,html,xml,xsl source ~/.vim/closetag.vim
 autocmd BufNewFile,BufRead *.html,*.php let b:unaryTagsStack="none"
 
-highlight SpacesBeforeTab             ctermbg=red guibg=lightgreen
-highlight TrailingWhitespace          ctermbg=red guibg=lightgreen
-highlight TabsNotAtTheStartOfLine     ctermbg=red guibg=lightgreen
-highlight SpacesForIndentingAfterTabs ctermbg=red guibg=lightgreen
-highlight OnlyWhitespace              ctermbg=red guibg=lightgreen
+highlight mySpacesBeforeTab             ctermbg=red guibg=lightgreen
+highlight myTrailingWhitespace          ctermbg=red guibg=lightgreen
+highlight myTabsNotAtTheStartOfLine     ctermbg=red guibg=lightgreen
+highlight mySpacesForIndentingAfterTabs ctermbg=red guibg=lightgreen
+highlight myOnlyWhitespace              ctermbg=red guibg=lightgreen
 
 "Show trailing whitepace and spaces before a tab:
-autocmd Syntax * syn match SpacesBeforeTab / \+\ze\t/
-autocmd Syntax * syn match TrailingWhitespace /\s\+$/
+autocmd Syntax * syntax match mySpacesBeforeTab / \+\ze\t/
+autocmd Syntax * syntax match myTrailingWhitespace /\s\+$/
 
 "Show tabs that are not at the start of a line:
-autocmd Syntax * syn match TabsNotAtTheStartOfLine /[^\t]\zs\t\+/
-" exclude Vim help files
-autocmd Syntax .txt syn match TabsNotAtTheStartOfLine /none/
+autocmd Syntax * if &filetype != "help" | syntax match myTabsNotAtTheStartOfLine /[^\t]\zs\t\+/
 
 "Show spaces used for indenting (so you use only tabs for indenting).
-autocmd Syntax * syn match SpacesForIndentingAfterTabs /^\t*\zs \+/
-autocmd Syntax * syn match SpacesForIndenting /^ \+/
-autocmd Syntax * syn match OnlyWhitespace /^[ \t]\+$/
+autocmd Syntax * syntax match mySpacesForIndentingAfterTabs /^\t*\zs \+/
+autocmd Syntax * syntax match mySpacesForIndenting /^ \+/
+autocmd Syntax * syntax match myOnlyWhitespace /^[ \t]\+$/
 
 autocmd BufRead,BufNewFile nginx.* set filetype=nginx
 autocmd BufRead,BufNewFile */nginx.conf.d/*.conf set filetype=nginx
