@@ -1,0 +1,1 @@
+iabbrev var const
