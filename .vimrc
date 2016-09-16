@@ -23,6 +23,9 @@ set scrolloff=2
 set noerrorbells
 set encoding=utf-8
 
+" Highlighting matching angle brackets <>
+set matchpairs+=<:> 
+
 set cursorline
 highlight CursorLine term=bold cterm=bold guifg=NONE guibg=#121212 gui=NONE ctermfg=NONE ctermbg=236
 
