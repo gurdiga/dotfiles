@@ -20,6 +20,7 @@ set history=1000
 set scrolloff=2
 set noerrorbells
 set encoding=utf-8
+set tabstop=4
 
 " Highlighting matching angle brackets <>
 set matchpairs+=<:> 
