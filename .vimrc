@@ -13,8 +13,6 @@ set foldmethod=manual
 
 set nomodeline
 set autoindent
-set shiftwidth=2
-set tabstop=2
 set ruler
 set number
 set backspace=indent,eol,start
