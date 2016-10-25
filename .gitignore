@@ -7,7 +7,4 @@ Makefile
 .tmp
 *.timestamp
 
-# Extole
-js/mock-data/
-vendor/select2x2.png
-assets/extole-logo.png
+!.vim
