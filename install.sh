@@ -42,6 +42,7 @@ repos="
 	leafgarland/typescript-vim
 	Quramy/tsuquyomi
 	Shougo/vimproc.vim
+	ElmCast/elm-vim
 "
 
 for repo in $repos; do
