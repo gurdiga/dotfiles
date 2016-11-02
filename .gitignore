@@ -8,3 +8,5 @@ Makefile
 *.timestamp
 
 !.vim
+
+tags
