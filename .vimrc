@@ -32,7 +32,16 @@ set hlsearch
 highlight Search term=NONE cterm=NONE ctermfg=11 ctermbg=239 guifg=#ffff00 guibg=#808000 gui=NONE
 
 "restore cursor position
-autocmd BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+function RestoreCursorPosition()
+	if line("'\"") > 0
+		if line("'\"") <= line("$")
+			execute "norm '\""
+		else
+			execute "norm $"
+		endif
+	endif
+endfunction
+autocmd BufReadPost * call RestoreCursorPosition()
 
 "remove line numbers for log files
 autocmd BufNewFile,BufRead *.log set nonu
@@ -51,7 +60,8 @@ autocmd Syntax * syntax match mySpacesBeforeTab / \+\ze\t/
 autocmd Syntax * syntax match myTrailingWhitespace /\s\+$/
 
 "Show tabs that are not at the start of a line:
-autocmd Syntax * if &filetype != "help" | syntax match myTabsNotAtTheStartOfLine /[^\t]\zs\t\+/
+autocmd Syntax * if &filetype != "help"
+	\|syntax match myTabsNotAtTheStartOfLine /[^\t]\zs\t\+/
 
 "Show spaces used for indenting (so you use only tabs for indenting).
 autocmd Syntax * syntax match mySpacesForIndentingAfterTabs /^\t*\zs \+/
@@ -94,7 +104,7 @@ inoremap <CR> <C-G>u<CR>
 " let ^Z suspend vim even if in insert mode
 inoremap <C-Z> <ESC>:stop<CR>
 
-" let ^L clear also search highlighting
+" let ^L clear search highlighting
 map <silent> <C-l> :nohlsearch<CR>:redraw!<CR>
 
 " Capture inside slashes. Useful for paths and regular expressions.
