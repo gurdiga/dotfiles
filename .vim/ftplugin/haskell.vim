@@ -1,3 +1,6 @@
+set expandtab
+set shiftwidth=4
+
 " related to neovimhaskell/haskell-vim
 let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
 let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
