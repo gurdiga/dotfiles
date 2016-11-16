@@ -20,4 +20,4 @@
 [pull]
   rebase=true
 [diff]
-	compactionHeuristic=true
+  compactionHeuristic=true
