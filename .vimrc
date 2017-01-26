@@ -11,6 +11,13 @@ set foldmethod=manual
 "autocmd BufWinLeave *.* mkview
 "autocmd BufWinEnter *.* silent loadview
 
+" helpful for :find
+set path+=**
+set wildignore+=**/node_modules/**/*
+
+" display all matches on tab completion
+set wildmenu
+
 set nomodeline
 set autoindent
 set ruler
@@ -113,3 +120,5 @@ onoremap <silent> i/ :<C-U>normal! T/vt/<CR>
 
 " Capture inside double smart quotes.
 onoremap <silent> i” :<C-U>normal! T“vt”<CR>
+
+set showcmd
