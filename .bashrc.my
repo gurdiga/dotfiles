@@ -41,7 +41,7 @@ function check_for_local_history {
   }
 
   function changing_directory {
-    is_cd_nothing || is_cd_something || is_a_cd_alias || is_extole_cdc
+    is_cd_nothing || is_cd_something || is_a_cd_alias
   }
 
   function is_cd_nothing {
@@ -56,10 +56,6 @@ function check_for_local_history {
     local cd_aliases=`alias | grep "='cd " | grep -E -o 'alias [a-z]+='`
     echo $cd_aliases | grep -F -q "alias $last_command="
   }
-
-	function is_extole_cdc {
-    [ ${#last_command} -gt 2 -a "${last_command:0:4}" = "cdc " ]
-	}
 
   function found_local_history_file {
     [ -e .bash_history ]
