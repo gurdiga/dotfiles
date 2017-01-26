@@ -10,3 +10,5 @@ Makefile
 !.vim
 
 tags
+
+.mocha.opts
