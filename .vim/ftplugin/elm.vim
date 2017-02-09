@@ -1,6 +1,4 @@
-set expandtab
-set tabstop=4
-set shiftwidth=4
+setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 
 "autocmd! BufWritePost *.elm ElmMake
 
