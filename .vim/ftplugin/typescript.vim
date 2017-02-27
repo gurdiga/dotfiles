@@ -1,4 +1,3 @@
-iabbrev var const
 set shiftwidth=2 tabstop=2 expandtab
 
 iabbrev _fn () => {}
