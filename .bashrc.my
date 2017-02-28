@@ -83,6 +83,8 @@ if ! already_set; then
 	fi
 fi
 
+check_for_local_history
+
 export RUBY_GC_MALLOC_LIMIT=90000000
 export RUBY_GC_HEAP_FREE_SLOTS=200000
 
