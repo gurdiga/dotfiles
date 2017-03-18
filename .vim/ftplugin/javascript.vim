@@ -27,16 +27,14 @@ iabbrev <buffer> fnus <Esc>:normal a_fn<CR>
 iabbrev <buffer> tede <Esc>:normal a_fn<CR>
   \Idescribe('',<Space>
   \<Esc>A);
-  \<Esc>F}i<CR>
-  \<Esc>O<Esc><Up>
+  \<Esc>F}i<CR><Up>
   \<Esc>f'a
   \<C-R>=Eatchar('\s')<CR>
 
 iabbrev <buffer> teit <Esc>:normal a_fn<CR>
   \Iit('',<Space>
   \<Esc>A);
-  \<Esc>F}i<CR>
-  \<Esc>O<Esc><Up>
+  \<Esc>F}i<CR><Up>
   \<Esc>^f'a
   \<C-R>=Eatchar('\s')<CR>
 
@@ -54,15 +52,5 @@ iabbrev <buffer> teaf <Esc>:normal a_fn<CR>
   \<Esc>O<Tab>
   \<C-R>=Eatchar('\s')<CR>
 
-iabbrev <buffer> tett <Esc>:normal a_fn<CR>
-  \It.test('',<Space>
-  \<Esc>f)it
-  \<Esc>A);
-  \<Esc>F}i<CR>
-  \<Esc>O<Tab>t.end();
-  \<Esc>O<Up>
-  \<Esc>f'a
-  \<C-R>=Eatchar('\s')<CR>
-
-iabbrev <buffer> us 'use strict'
+iabbrev <buffer> us 'use strict';<CR>
   \<C-R>=Eatchar('\s')<CR>
