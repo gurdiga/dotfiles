@@ -1,1 +1,1 @@
-set filetype=ansible
+setlocal filetype=ansible

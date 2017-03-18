@@ -1,5 +1,4 @@
-set expandtab
-set shiftwidth=4
+setlocal expandtab shiftwidth=4
 
 " related to neovimhaskell/haskell-vim
 let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`

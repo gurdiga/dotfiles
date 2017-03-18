@@ -1,5 +1,5 @@
-set expandtab
-set tabstop=2 shiftwidth=2
+setlocal expandtab
+setlocal tabstop=2 shiftwidth=2
 
 iabbrev rq require('');
   \<Esc>F'i
