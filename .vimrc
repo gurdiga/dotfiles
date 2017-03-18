@@ -39,7 +39,7 @@ set hlsearch
 highlight Search term=NONE cterm=NONE ctermfg=11 ctermbg=239 guifg=#ffff00 guibg=#808000 gui=NONE
 
 "restore cursor position
-function RestoreCursorPosition()
+function! RestoreCursorPosition()
 	if line("'\"") > 0
 		if line("'\"") <= line("$")
 			execute "norm '\""
