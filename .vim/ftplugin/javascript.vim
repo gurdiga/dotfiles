@@ -1,22 +1,22 @@
 setlocal expandtab
 setlocal tabstop=2 shiftwidth=2
 
-iabbrev rq require('');
+iabbrev <buffer> rq require('');
   \<Esc>F'i
   \<C-R>=Eatchar('\s')<CR>
 
-iabbrev colo console.log('');
+iabbrev <buffer> colo console.log('');
   \<Esc>F'i
   \<C-R>=Eatchar('\s')<CR>
 
-iabbrev _fn function() {}
+iabbrev <buffer> _fn function() {}
 
-iabbrev fn <Esc>:normal a_fn<CR>
+iabbrev <buffer> fn <Esc>:normal a_fn<CR>
   \i<CR>
   \<Esc><Up>f)i
   \<C-R>=Eatchar('\s')<CR>
 
-iabbrev fnus <Esc>:normal a_fn<CR>
+iabbrev <buffer> fnus <Esc>:normal a_fn<CR>
   \I(
   \<Esc>A());
   \<Esc>F}i<CR>
@@ -24,7 +24,7 @@ iabbrev fnus <Esc>:normal a_fn<CR>
   \<Esc>O<Tab>
   \<C-R>=Eatchar('\s')<CR>
 
-iabbrev tede <Esc>:normal a_fn<CR>
+iabbrev <buffer> tede <Esc>:normal a_fn<CR>
   \Idescribe('',<Space>
   \<Esc>A);
   \<Esc>F}i<CR>
@@ -32,7 +32,7 @@ iabbrev tede <Esc>:normal a_fn<CR>
   \<Esc>f'a
   \<C-R>=Eatchar('\s')<CR>
 
-iabbrev teit <Esc>:normal a_fn<CR>
+iabbrev <buffer> teit <Esc>:normal a_fn<CR>
   \Iit('',<Space>
   \<Esc>A);
   \<Esc>F}i<CR>
@@ -40,21 +40,21 @@ iabbrev teit <Esc>:normal a_fn<CR>
   \<Esc>^f'a
   \<C-R>=Eatchar('\s')<CR>
 
-iabbrev tebe <Esc>:normal a_fn<CR>
+iabbrev <buffer> tebe <Esc>:normal a_fn<CR>
   \IbeforeEach(
   \<Esc>A);
   \<Esc>F}i<CR>
   \<Esc>O<Tab>
   \<C-R>=Eatchar('\s')<CR>
 
-iabbrev teaf <Esc>:normal a_fn<CR>
+iabbrev <buffer> teaf <Esc>:normal a_fn<CR>
   \IafterEach(
   \<Esc>A);
   \<Esc>F}i<CR>
   \<Esc>O<Tab>
   \<C-R>=Eatchar('\s')<CR>
 
-iabbrev tett <Esc>:normal a_fn<CR>
+iabbrev <buffer> tett <Esc>:normal a_fn<CR>
   \It.test('',<Space>
   \<Esc>f)it
   \<Esc>A);
@@ -64,5 +64,5 @@ iabbrev tett <Esc>:normal a_fn<CR>
   \<Esc>f'a
   \<C-R>=Eatchar('\s')<CR>
 
-iabbrev us 'use strict'
+iabbrev <buffer> us 'use strict'
   \<C-R>=Eatchar('\s')<CR>
