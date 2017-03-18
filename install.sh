@@ -41,7 +41,7 @@ repos="
 	Quramy/tsuquyomi
 	Shougo/vimproc.vim
 	ElmCast/elm-vim
-	Chiel92/vim-autoformat
+	alvan/vim-closetag
 "
 
 for repo in $repos; do
