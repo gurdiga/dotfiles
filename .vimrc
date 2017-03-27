@@ -122,3 +122,4 @@ onoremap <silent> i/ :<C-U>normal! T/vt/<CR>
 onoremap <silent> i” :<C-U>normal! T“vt”<CR>
 
 set showcmd
+command W write
