@@ -123,3 +123,6 @@ onoremap <silent> i” :<C-U>normal! T“vt”<CR>
 
 set showcmd
 command W write
+
+" alvan/vim-closetag
+let g:closetag_filenames = "*.xml,*.html,*.tsx"
