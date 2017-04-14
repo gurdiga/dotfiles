@@ -126,3 +126,5 @@ command W write
 
 " alvan/vim-closetag
 let g:closetag_filenames = "*.xml,*.html,*.tsx"
+
+let g:gitgutter_sign_column_always = 1
