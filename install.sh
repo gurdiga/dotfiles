@@ -42,6 +42,7 @@ repos="
 	Shougo/vimproc.vim
 	ElmCast/elm-vim
 	alvan/vim-closetag
+	airblade/vim-gitgutter
 "
 
 for repo in $repos; do
