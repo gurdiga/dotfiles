@@ -117,6 +117,8 @@ map <silent> <C-l> :nohlsearch<CR>:redraw!<CR>
 " Capture inside slashes. Useful for paths and regular expressions.
 " Thanks to Dhruva Sagar @ http://stackoverflow.com/a/23668360/227167
 onoremap <silent> i/ :<C-U>normal! T/vt/<CR>
+onoremap <silent> i* :<C-U>normal! T*vt*<CR>
+onoremap <silent> i+ :<C-U>normal! T+vt+<CR>
 
 " Capture inside double smart quotes.
 onoremap <silent> i” :<C-U>normal! T“vt”<CR>
