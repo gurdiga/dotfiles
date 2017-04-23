@@ -1,6 +1,4 @@
-set expandtab
-set tabstop=2
-set shiftwidth=2
+setlocal expandtab tabstop=2 shiftwidth=2
 
 iabbrev <buffer> tede describe '' do end<ESC>F i<CR><UP><ESC>2f'i<C-R>=Eatchar('\s')<CR>
 iabbrev <buffer> teco context '' do end<ESC>F i<CR><UP><ESC>2f'i<C-R>=Eatchar('\s')<CR>
