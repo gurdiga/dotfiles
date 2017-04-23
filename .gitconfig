@@ -21,3 +21,6 @@
   rebase=true
 [diff]
   compactionHeuristic=true
+[filter "json-beautifier"]
+  clean = json_pp
+  smudge = cat
