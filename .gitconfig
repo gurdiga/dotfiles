@@ -1,26 +1,26 @@
 [github]
-  user = gurdiga
-  token = 8e6491be25675756987603e28e8f886f
+	user = gurdiga
+	token = 8e6491be25675756987603e28e8f886f
 [user]
-  name = Vlad GURDIGA
-  email = gurdiga@gmail.com
+	name = Vlad GURDIGA
+	email = gurdiga@gmail.com
 [color]
-  ui = true
+	ui = true
 [core]
-  pager = less -XFRS -x2
-  editor = vim
-  excludesfile = ~/.gitignore
-  quotepath = false
+	pager = less -XFRS -x2
+	editor = vim
+	excludesfile = ~/.gitignore
+	quotepath = false
 [alias]
-  unstage = reset HEAD --
+	unstage = reset HEAD --
 [branch]
-  autosetuprebase = always
+	autosetuprebase = always
 [push]
-  default=current
+	default=current
 [pull]
-  rebase=true
+	rebase=true
 [diff]
-  compactionHeuristic=true
+	compactionHeuristic=true
 [filter "json-beautifier"]
-  clean = json_pp
-  smudge = cat
+	clean = json_pp
+	smudge = cat
