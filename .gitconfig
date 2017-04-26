@@ -22,5 +22,5 @@
 [diff]
 	compactionHeuristic=true
 [filter "json-beautifier"]
-	clean = json_pp
+	clean = jsonpp
 	smudge = cat
