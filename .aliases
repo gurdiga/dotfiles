@@ -15,7 +15,7 @@ alias glg='git log --graph --pretty=oneline --abbrev-commit'
 alias gl1='git log --abbrev-commit --format=oneline'
 alias grb='git rebase'
 alias push='git push'
-alias pull='git pull --ff-only'
+#alias pull='git pull --ff-only'
 alias gcp='git cherry-pick'
 alias grv='git remote --verbose'
 alias v='~/vimp'
@@ -33,6 +33,12 @@ alias www="~/src/nginx-server/nginx-server.py"
 alias stripcolor='sed -r "s:\x1B\[[0-9;]*[mK]::g"'
 alias striptags='sed "s/<[^>]*>//g"'
 alias rnd="tr -dc '(-~' < /dev/urandom | head -c${1:-37} | pbcopy"
+
+function pull() {
+	local remote_name=`git branch -vv | grep '^\*' | grep -oP '\[\K[^/]+'`
+	local branch_name=`git name-rev --name-only HEAD`
+	git pull $remote_name $branch_name
+}
 
 function gio() {
 	local url="$1"
