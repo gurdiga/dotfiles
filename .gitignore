@@ -12,3 +12,5 @@ Makefile
 tags
 
 .mocha.opts
+.env
+.env.sample
