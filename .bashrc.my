@@ -98,3 +98,12 @@ export PATH=./node_modules/.bin:$PATH
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+function get_make_completion_options {
+	if [ -e Makefile ]; then
+		make -pq |\
+		grep -oP '^[a-zA-Z0-9_-]+(?=:)'
+	fi
+}
+
+complete -W "`get_make_completion_options`" m
