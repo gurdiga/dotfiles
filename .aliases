@@ -15,7 +15,6 @@ alias glg='git log --graph --pretty=oneline --abbrev-commit'
 alias gl1='git log --abbrev-commit --format=oneline'
 alias grb='git rebase'
 alias push='git push'
-alias pull='git pull --ff-only'
 alias gcp='git cherry-pick'
 alias grv='git remote --verbose'
 alias v='~/vimp'
@@ -33,69 +32,3 @@ alias www="~/src/nginx-server/nginx-server.py"
 alias stripcolor='sed -r "s:\x1B\[[0-9;]*[mK]::g"'
 alias striptags='sed "s/<[^>]*>//g"'
 alias rnd="tr -dc '(-~' < /dev/urandom | head -c${1:-37} | pbcopy"
-
-function q() {
-	wildcard="$1"
-	shift
-	dirs="$@"
-
-	find ${dirs:-.} -name "$wildcard";
-}
-
-function aac2mp3() {
-	aac_file=$1
-	mp3_file=$(basename "$aac_file" .aac).mp3
-	wav_file=/tmp/aac2mp3.wav
-	ffmpeg -i "$aac_file" "$wav_file" && \
-	ffmpeg -i "$wav_file" -acodec libmp3lame "$mp3_file" && \
-	rm "$wav_file"
-}
-
-function f() {
-	if [ "$#" -eq 0 ]; then
-		echo 'Find what?'
-		return 0
-	fi
-
-	DOT_FILE=".grepignore"
-	MAX_LINE_LENGTH=300
-
-	IGNORE_DIRS=".git .svn node_modules bower_components"
-	IGNORE_FILES=".bash_history .viminfo"
-	EXCLUDE_DIR_CLAUSE=""
-	EXCLUDE_CLAUSE=""
-
-	if [ -f $DOT_FILE ]; then
-		IGNORE_DIRS+=" $(echo $(grep '/$' $DOT_FILE | sed 's|/$||'))"
-		IGNORE_FILES+=" $(echo $(grep -v '/$' $DOT_FILE))"
-	fi
-
-	for DIR in $IGNORE_DIRS; do
-		EXCLUDE_DIR_CLAUSE+=" --exclude-dir=$DIR"
-	done
-
-	for FILE in $IGNORE_FILES; do
-		EXCLUDE_CLAUSE+=" --exclude=$FILE"
-	done
-
-	grep \
-		--color=always \
-		--line-number \
-		--binary-files=without-match \
-		--recursive \
-		$EXCLUDE_CLAUSE \
-		$EXCLUDE_DIR_CLAUSE "$@" \
-		| cut -c -$MAX_LINE_LENGTH
-}
-
-function gif() {
-	if [ "$#" -eq 0 ]; then
-		echo 'Gif what?'
-		return 0
-	fi
-
-	input="$1"
-	filename="${input%.*}"
-
-	ffmpeg -i "$input" -pix_fmt rgb24 -r 10 -f gif - | gifsicle --loopcount=3 --optimize=3 --delay=5 > "$filename.gif"
-}
