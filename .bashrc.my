@@ -118,7 +118,7 @@ function pull() {
 		# If there is a tracked branch only pull that one
 		git status --short --branch |\
 		head -1 |\
-		grep -oP '\w+/\w+$' |\
+		grep -oP '\w+/\w+' |\
 		tr '/' ' ' |\
 		xargs git pull
 	else
