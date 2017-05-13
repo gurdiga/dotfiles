@@ -14,6 +14,9 @@ grep -F '.aliases' ~/.bashrc || \
 grep -F '.bashrc.my' ~/.bashrc || \
 	echo '. ~/.bashrc.my' >> ~/.bashrc
 
+grep -F '~/.bashrc' ~/.bash_profile || \
+	echo '. ~/.bashrc' >> ~/.bash_profile
+
 mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/ftplugin
 
 for f in "$DIR"/.vim/ftplugin/*; do
