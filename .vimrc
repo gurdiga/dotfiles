@@ -129,3 +129,7 @@ command W write
 let g:closetag_filenames = "*.xml,*.html,*.tsx"
 let g:gitgutter_sign_column_always = 1
 let g:tsuquyomi_use_vimproc = 1
+
+call plug#begin()
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+call plug#end()
