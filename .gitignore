@@ -1,6 +1,7 @@
 *.sw?
 .bash_history
 .vimrc
+.viminfo
 .vim
 .grepignore
 Makefile
