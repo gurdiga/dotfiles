@@ -191,3 +191,25 @@ function gif() {
 
 	ffmpeg -i "$input" -pix_fmt rgb24 -r 10 -f gif - | gifsicle --loopcount=3 --optimize=3 --delay=5 > "$filename.gif"
 }
+
+function inith() {
+	if [ ! -e .bash_history ]; then
+		touch .bash_history
+	else
+		echo ".bash_history already exists"
+	fi
+}
+
+function initv() {
+	local viminfo_config="set viminfo+=n.viminfo"
+	if [ ! -e .vimrc ]; then
+		echo "$viminfo_config" > .vimrc
+	else
+		if grep -F "set viminfo" .vimrc; then
+			echo ".viminfo already configured"
+		else
+			echo "$viminfo_config" >> .vimrc
+			echo ".viminfo configured"
+		fi
+	fi
+}
