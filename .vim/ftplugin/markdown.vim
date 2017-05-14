@@ -10,3 +10,15 @@ setlocal formatoptions+=tn1
 setlocal formatoptions-=ba 
 
 nnoremap <buffer> <C-F> vipgq
+
+"Alt-1
+nmap <buffer> ¡ ^i# <Esc>^
+
+"Alt-2
+nmap <buffer> ™ ^i## <Esc>^
+
+"Alt-3
+nmap <buffer> £ ^i### <Esc>^
+
+"Alt-4
+nmap <buffer> ¢ ^i#### <Esc>^
