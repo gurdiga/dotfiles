@@ -149,13 +149,13 @@ function f() {
 		return 0
 	fi
 
-	DOT_FILE=".grepignore"
-	MAX_LINE_LENGTH=300
+	local DOT_FILE=".grepignore"
+	local MAX_LINE_LENGTH=300
 
-	IGNORE_DIRS=".git .svn node_modules bower_components"
-	IGNORE_FILES=".bash_history .viminfo"
-	EXCLUDE_DIR_CLAUSE=""
-	EXCLUDE_CLAUSE=""
+	local IGNORE_DIRS=".git .svn node_modules bower_components"
+	local IGNORE_FILES=".bash_history .viminfo"
+	local EXCLUDE_DIR_CLAUSE=""
+	local EXCLUDE_CLAUSE=""
 
 	if [ -f $DOT_FILE ]; then
 		IGNORE_DIRS+=" $(echo $(grep '/$' $DOT_FILE | sed 's|/$||'))"
@@ -186,8 +186,8 @@ function gif() {
 		return 0
 	fi
 
-	input="$1"
-	filename="${input%.*}"
+	local input="$1"
+	local filename="${input%.*}"
 
 	ffmpeg -i "$input" -pix_fmt rgb24 -r 10 -f gif - | gifsicle --loopcount=3 --optimize=3 --delay=5 > "$filename.gif"
 }
