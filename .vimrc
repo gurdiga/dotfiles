@@ -11,10 +11,6 @@ set foldmethod=manual
 "autocmd BufWinLeave *.* mkview
 "autocmd BufWinEnter *.* silent loadview
 
-" helpful for :find
-set path+=**
-set wildignore+=**/node_modules/**/*
-
 " display all matches on tab completion
 set wildmenu
 
