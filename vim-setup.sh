@@ -65,3 +65,4 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 vim '+:PlugInstall|qa'
 # vim-plug END
+
