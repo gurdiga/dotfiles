@@ -59,5 +59,9 @@ done
 # TypeScript support, as per https://github.com/Quramy/tsuquyomi#pathogen
 cd ~/.vim/bundle/vimproc.vim && make
 
+# vim-plug BEGIN
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+vim '+:PlugInstall|qa'
+# vim-plug END
