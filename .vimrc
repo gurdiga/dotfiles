@@ -132,6 +132,7 @@ let g:tsuquyomi_use_vimproc = 1
 
 call plug#begin()
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug 'elmcast/elm-vim'
 call plug#end()
 
 map <C-P> :Files<CR>
