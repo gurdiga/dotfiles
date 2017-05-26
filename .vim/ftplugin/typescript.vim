@@ -1,5 +1,8 @@
 setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
+map <buffer> gr :TsuReferences<CR>
+map <buffer> grs :TsuRenameSymbol<CR>
+
 iabbrev <buffer> colo console.log("");
   \<Esc>F"i
   \<C-R>=Eatchar('\s')<CR>
