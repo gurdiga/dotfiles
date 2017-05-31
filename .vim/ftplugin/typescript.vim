@@ -2,6 +2,7 @@ setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
 map <buffer> gr :TsuReferences<CR>
 map <buffer> grs :TsuRenameSymbol<CR>
+map <buffer> gti :TsuImport<CR>
 
 iabbrev <buffer> colo console.log("");
   \<Esc>F"i
