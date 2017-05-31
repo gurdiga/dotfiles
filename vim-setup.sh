@@ -34,6 +34,7 @@ repos="
 	michaeljsmith/vim-indent-object
 	othree/xml.vim
 	tpope/vim-fugitive
+	tpope/vim-rhubarb
 	tpope/vim-surround
 	tpope/vim-commentary
 	tpope/vim-repeat
