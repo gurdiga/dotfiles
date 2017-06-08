@@ -9,6 +9,8 @@ iabbrev <buffer> if if () {}
   \<Esc>kf)i
   \<C-R>=Eatchar('\s')<CR>
 
+iabbrev <buffer> iff if
+
 iabbrev <buffer> colo console.log("");
   \<Esc>F"i
   \<C-R>=Eatchar('\s')<CR>
