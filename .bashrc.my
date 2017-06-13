@@ -110,7 +110,7 @@ complete -W "`get_make_completion_options`" m
 
 function pull() {
 	if [ ! -d .git ]; then
-		echo "Not a git repo."
+		echo "Not a Git repo."
 		return 1
 	fi
 
@@ -118,7 +118,7 @@ function pull() {
 		# If there is a tracked branch only pull that one
 		git status --short --branch |\
 		head -1 |\
-		grep -oP '\w+/\w+' |\
+		grep -oP '[\w-]+/[\w-]+' |\
 		tr '/' ' ' |\
 		xargs git pull
 	else
