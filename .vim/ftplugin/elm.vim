@@ -6,25 +6,15 @@ let g:elm_format_autosave = 1
 let g:elm_jump_to_error = 1
 let g:elm_make_show_warnings = 1
 
-imap <buffer> [ [  ]<Left><Left>
-imap <buffer> [] []
+map <C-]> gd
 
-imap <buffer> { {  }<Left><Left>
-imap <buffer> {} {}
-
-imap <buffer> ( (  )<Left><Left>
-imap <buffer> () ()
-
-inoremap <buffer> " ""<Left>
-inoremap <buffer> ' ''<Left>
-
-iabbrev if if then<CR><Backspace>else<CR>
+iabbrev <buffer> if if then<CR><Backspace>else<CR>
 	\<Esc><Up><Up>^ffa
 
-iabbrev case case of
+iabbrev <buffer> case case of
 	\<Esc>F i
 
-iabbrev let let<CR><Backspace>in
+iabbrev <buffer> let let<CR><Backspace>in
 	\<Esc><Up>A<CR>
 
 iabbrev <buffer> {-- {--<CR>--}
