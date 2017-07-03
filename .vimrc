@@ -131,6 +131,9 @@ let g:elm_format_autosave = 1
 call plug#begin()
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'elmcast/elm-vim'
+Plug 'mitermayer/vim-prettier', {
+	\ 'do': 'yarn install',
+	\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
 call plug#end()
 
 map <C-P> :Files<CR>
