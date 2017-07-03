@@ -22,3 +22,7 @@ nmap <buffer> £ ^i### <Esc>^
 
 "Alt-4
 nmap <buffer> ¢ ^i#### <Esc>^
+
+vmap <buffer> <C-K> S]%a()<Left>
+vmap <buffer> <C-I> S_e
+vmap <buffer> <C-B> S*vf*S*e
