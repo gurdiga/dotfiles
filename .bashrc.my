@@ -127,11 +127,11 @@ function pull() {
 }
 
 function q() {
-	wildcard="$1"
+	local wildcard="$1"
 	shift
-	dirs="$@"
+	local dirs="$@"
 
-	find ${dirs:-.} -name "$wildcard";
+	find ${dirs:-.} -name "$wildcard"
 }
 
 function aac2mp3() {
