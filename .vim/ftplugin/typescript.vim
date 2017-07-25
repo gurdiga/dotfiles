@@ -4,13 +4,6 @@ map <buffer> gr :TsuReferences<CR>
 map <buffer> grs :TsuRenameSymbol<CR>
 map <buffer> gti :TsuImport<CR>
 
-iabbrev <buffer> if if () {}
-  \<Esc>i<CR>
-  \<Esc>kf)i
-  \<C-R>=Eatchar('\s')<CR>
-
-iabbrev <buffer> iff if
-
 iabbrev <buffer> colo console.log("");
   \<Esc>F"i
   \<C-R>=Eatchar('\s')<CR>
