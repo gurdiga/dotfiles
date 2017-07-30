@@ -100,6 +100,7 @@ func! Eatchar(pat)
 endfunc
 
 source ~/.vim/colors/diff.vim
+source ~/.vim/colors/comments.vim
 source ~/.vim/ftplugin/common.vim
 
 " let every line be considered a change in the undo history
