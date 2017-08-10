@@ -126,7 +126,7 @@ command W write
 
 let g:closetag_filenames = "*.xml,*.html,*.tsx"
 let g:gitgutter_sign_column_always = 1
-let g:tsuquyomi_use_vimproc = 1
+"let g:tsuquyomi_use_vimproc = 1
 let g:elm_format_autosave = 1
 
 call plug#begin()

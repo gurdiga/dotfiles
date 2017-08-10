@@ -1,8 +1,9 @@
 #!/bin/bash
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# See https://sipb.mit.edu/doc/safe-shell/
+set -euf -o pipefail
 
-ln -v -s "$DIR"/{.gitconfig,.gitignore,.vimrc,.aliases,.bashrc.my,vimp,.mplayer,.screenrc,.irbrc} ~/
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 if [ ! -f ~/.vimrc_local ]; then
 	touch ~/.vimrc_local
