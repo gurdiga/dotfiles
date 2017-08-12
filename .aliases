@@ -34,3 +34,4 @@ alias striptags='sed "s/<[^>]*>//g"'
 alias rnd="tr -dc '(-~' < /dev/urandom | head -c${1:-37} | pbcopy"
 alias tree="tree -N"
 alias calc='bc <<<'
+alias hibp='curl --fail --silent https://haveibeenpwned.com/api/v2/pwnedpassword/`read -s -p "Password: " p && echo -n $p | openssl sha1`?originalPasswordIsAHash=false && echo YEP || echo NOPE'
