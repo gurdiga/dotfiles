@@ -138,3 +138,5 @@ Plug 'mitermayer/vim-prettier', {
 call plug#end()
 
 map <C-P> :Files<CR>
+
+set spellfile=$HOME/.vim/spell/en.utf-8.add

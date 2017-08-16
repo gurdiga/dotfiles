@@ -9,6 +9,7 @@ Makefile
 *.timestamp
 
 !.vim
+.vim/spell/*.add.spl
 
 tags
 

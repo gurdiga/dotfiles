@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # See https://sipb.mit.edu/doc/safe-shell/
 set -euf -o pipefail
@@ -7,6 +7,13 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 if [ ! -f ~/.vimrc_local ]; then
 	touch ~/.vimrc_local
+fi
+
+if [ ! -d ~/.vim/spell ]; then
+	ln -s -v "$DIR"/.vim/spell ~/.vim/
+
+	find ~/.vim/spell/ -name '*.add' | \
+		xargs -I{} vim +":mkspell! {}|q" -
 fi
 
 mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/ftplugin
