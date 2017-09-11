@@ -19,12 +19,12 @@ fi
 mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/ftplugin
 
 for f in "$DIR"/.vim/ftplugin/*; do
-	ln -s -v "$f" ~/.vim/ftplugin/
+	ln -s -v -f "$f" ~/.vim/ftplugin/
 done
 
 mkdir -p ~/.vim/colors
 for f in "$DIR"/.vim/colors/*; do
-	ln -s -v "$f" ~/.vim/colors/
+	ln -s -v -f "$f" ~/.vim/colors/
 done
 
 curl --silent https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim -o ~/.vim/autoload/pathogen.vim
