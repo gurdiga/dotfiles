@@ -130,7 +130,7 @@ let g:gitgutter_sign_column_always = 1
 let g:elm_format_autosave = 1
 
 call plug#begin()
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+"Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'elmcast/elm-vim'
 Plug 'mitermayer/vim-prettier', {
 	\ 'do': 'yarn install',
