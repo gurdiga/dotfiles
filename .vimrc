@@ -120,6 +120,9 @@ onoremap <silent> i+ :<C-U>normal! T+vt+<CR>
 
 " Capture inside double smart quotes.
 onoremap <silent> i” :<C-U>normal! T“vt”<CR>
+"
+" Capture Ruby lambda’s argument list
+onoremap <silent> i\| :<C-U>normal! T\|vt\|<CR>
 
 set showcmd
 command W write
