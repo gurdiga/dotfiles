@@ -110,7 +110,7 @@ inoremap <CR> <C-G>u<CR>
 inoremap <C-Z> <ESC>:stop<CR>
 
 " let ^L clear search highlighting
-map <silent> <C-l> :nohlsearch<CR>:redraw!<CR>
+map <silent> <C-l> :nohlsearch<CR>:redraw!<CR>:GitGutterAll<CR>
 
 " Capture inside slashes. Useful for paths and regular expressions.
 " Thanks to Dhruva Sagar @ http://stackoverflow.com/a/23668360/227167
