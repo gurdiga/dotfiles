@@ -96,6 +96,9 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 # node
 export PATH=./node_modules/.bin:$PATH
 
+# go
+export PATH=$PATH:~/go/bin
+
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
