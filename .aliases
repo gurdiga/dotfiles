@@ -28,7 +28,7 @@ alias files='cut -d: -f1 | uniq'
 alias encrypt='openssl enc -aes-256-cbc -e'
 alias decrypt='openssl aes-256-cbc -d'
 alias node='env NODE_NO_READLINE=1 rlwrap node'
-alias www="~/src/nginx-server/nginx-server.py"
+alias www="simplehttp2server"
 alias stripcolor='sed -r "s:\x1B\[[0-9;]*[mK]::g"'
 alias striptags='sed "s/<[^>]*>//g"'
 alias rnd="tr -dc '(-~' < /dev/urandom | head -c${1:-37} | pbcopy"

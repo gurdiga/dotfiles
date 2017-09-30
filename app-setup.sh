@@ -30,7 +30,9 @@ brew install bash
 sudo sh -c 'echo /usr/local/bin/bash >> /etc/shells'
 chsh -s /usr/local/bin/bash
 
-brew install nginx
-git clone git@github.com:suzanshakya/nginx-server.git ~/src/nginx-server
+# NOTE: replaced by github.com/GoogleChrome/simplehttp2server
+# brew install nginx
+# git clone git@github.com:suzanshakya/nginx-server.git ~/src/nginx-server
+go get github.com/GoogleChrome/simplehttp2server
 
 npm install -g elm-format
