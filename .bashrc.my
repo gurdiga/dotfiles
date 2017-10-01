@@ -216,30 +216,3 @@ function initv() {
 		fi
 	fi
 }
-
-function ts_check_unused_imports() {
-	local filepaths="$@"
-	local filter=""
-
-	for filepath in "$@"; do
-		if [ -z $filter ]; then
-			filter=$filepath
-		else
-			filter=$filter\|$filepath
-		fi
-	done
-
-	filter="^($filter)"
-
-	tsc \
-		--target es5 \
-		--jsx react \
-		--lib es6,dom \
-		--typeRoots ./node_modules/@types,./typings/globals,./typings/modules \
-		--noEmit \
-		--noUnusedLocals \
-		$filepaths | \
-		grep -P "$filter"
-}
-
-export -f ts_check_unused_imports
