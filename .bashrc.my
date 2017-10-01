@@ -183,6 +183,23 @@ function f() {
 		| cut -c -$MAX_LINE_LENGTH
 }
 
+function vq() {
+	if [ "$#" -eq 0 ]; then
+		echo 'Find what?'
+		return 1
+	fi
+
+	local filename="$1"
+	local filepath=`find . -name $filename`
+
+	if [ "$filepath" == "" ]; then
+		echo "Nothing found by name “ $filename ”."
+		return 2
+	fi
+
+	v $filepath
+}
+
 function gif() {
 	if [ "$#" -eq 0 ]; then
 		echo 'Gif what?'
