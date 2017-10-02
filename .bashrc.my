@@ -24,6 +24,7 @@ export LC_CTYPE=en_US.UTF-8
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export EDITOR=vim
+export MANWIDTH=80
 
 # per-directory Bash history
 function check_for_local_history {
