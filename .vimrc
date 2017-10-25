@@ -49,7 +49,6 @@ autocmd BufReadPost * call RestoreCursorPosition()
 "remove line numbers for log files
 autocmd BufNewFile,BufRead *.log set nonu
 
-"autocmd Filetype php,html,xml,xsl source ~/.vim/closetag.vim
 autocmd BufNewFile,BufRead *.html,*.php let b:unaryTagsStack="none"
 
 highlight mySpacesBeforeTab             ctermbg=red guibg=lightgreen
@@ -90,7 +89,6 @@ let g:netrw_banner=0
 
 "select the just-pasted text
 nnoremap gp `[v`]
-nnoremap =p :set paste!<CR>:set paste?<CR>
 
 execute pathogen#infect()
 
@@ -120,7 +118,7 @@ onoremap <silent> i+ :<C-U>normal! T+vt+<CR>
 
 " Capture inside double smart quotes.
 onoremap <silent> i” :<C-U>normal! T“vt”<CR>
-"
+
 " Capture Ruby lambda’s argument list
 onoremap <silent> i\| :<C-U>normal! T\|vt\|<CR>
 
