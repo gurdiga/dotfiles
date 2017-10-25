@@ -125,6 +125,8 @@ onoremap <silent> i\| :<C-U>normal! T\|vt\|<CR>
 
 set showcmd
 command W write
+command Wq wq
+command Q quit
 
 let g:closetag_filenames = "*.xml,*.html,*.tsx"
 let g:gitgutter_sign_column_always = 1
