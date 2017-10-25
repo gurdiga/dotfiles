@@ -44,12 +44,12 @@ iabbrev <buffer> tebe <Esc>:normal a_fn<CR>
   \IbeforeEach(
   \<Esc>A);
   \<Esc>F}i<CR>
-  \<Esc>O<Tab>
+  \<Esc>O
   \<C-R>=Eatchar('\s')<CR>
 
 iabbrev <buffer> teaf <Esc>:normal a_fn<CR>
   \IafterEach(
   \<Esc>A);
   \<Esc>F}i<CR>
-  \<Esc>O<Tab>
+  \<Esc>O
   \<C-R>=Eatchar('\s')<CR>
