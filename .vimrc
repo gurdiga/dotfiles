@@ -147,3 +147,4 @@ cnoremap <C-P> :GFiles<CR>
 cnoremap <C-R> :History:<CR>
 
 set spellfile=$HOME/.vim/spell/en.utf-8.add
+set dictionary+=/usr/share/dict/words
