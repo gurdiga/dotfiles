@@ -105,7 +105,8 @@ source ~/.vim/ftplugin/common.vim
 inoremap <CR> <C-G>u<CR>
 
 " let ^Z suspend vim even if in insert mode
-inoremap <C-Z> <ESC>:stop<CR>
+inoremap <silent> <C-Z> <ESC>:stop<CR>
+cnoremap <silent> <C-Z> <ESC>:stop<CR>
 
 " let ^L clear search highlighting
 map <silent> <C-l> :nohlsearch<CR>:redraw!<CR>:GitGutterAll<CR>
