@@ -46,6 +46,7 @@ repos="
 	ElmCast/elm-vim
 	alvan/vim-closetag
 	airblade/vim-gitgutter
+	vim-syntastic/syntastic
 "
 
 for repo in $repos; do
