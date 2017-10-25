@@ -53,7 +53,7 @@ for repo in $repos; do
 	dir=~/.vim/bundle/$(basename "$repo")
 
 	if [ ! -d "$dir" ]; then
-		git clone https://github.com/"$repo".git "$dir"
+		git clone --depth=1 https://github.com/"$repo".git "$dir"
 	fi
 done
 
