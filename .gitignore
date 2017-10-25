@@ -4,6 +4,7 @@
 .viminfo
 .vim
 .grepignore
+.qignore
 Makefile
 .tmp
 *.timestamp
