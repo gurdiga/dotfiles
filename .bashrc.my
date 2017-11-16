@@ -150,7 +150,7 @@ function q() {
 	done
 
 	find ${dirs:-.} $EXCLUDE_DIR_CLAUSE -name "$wildcard" \
-		| grep -v "^./($IGNORE_DIRS_RE)$"
+		| grep -Pv "^./($IGNORE_DIRS_RE)$"
 }
 
 function aac2mp3() {
