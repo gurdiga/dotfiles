@@ -47,6 +47,7 @@ repos="
 	alvan/vim-closetag
 	airblade/vim-gitgutter
 	vim-syntastic/syntastic
+	hail2u/vim-css3-syntax
 "
 
 for repo in $repos; do
