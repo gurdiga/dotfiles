@@ -144,8 +144,9 @@ Plug 'mitermayer/vim-prettier', {
 call plug#end()
 
 "fzf
-cnoremap <C-P> :GFiles<CR>
-cnoremap <C-R> :History:<CR>
+cmap <C-P> :GFiles<CR>
+cmap <C-R> :History:<CR>
+cmap <C-O> :Buffers<CR>
 
 set spellfile=$HOME/.vim/spell/en.utf-8.add
 set dictionary+=/usr/share/dict/words
