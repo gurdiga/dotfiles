@@ -256,9 +256,7 @@ function svgoo() {
 		return 1
 	fi
 
-	if which -s svgo; then
-		: # OK, just checking
-	else
+	if ! which -s svgo; then
 		echo 'I’m not seeing your svgo executable...🤔'
 		return 2
 	fi
