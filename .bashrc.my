@@ -249,3 +249,23 @@ function initv() {
 		fi
 	fi
 }
+
+function svgoo() {
+	if [ "$#" -eq 0 ]; then
+		echo 'Gimme an SVG file to optimize, please!'
+		return 1
+	fi
+
+	if which -s svgo; then
+		: # OK, just checking
+	else
+		echo 'I’m not seeing your svgo executable...🤔'
+		return 2
+	fi
+
+	local file="$1"
+	local temp="${file}-optimized"
+	svgo --input="$file" --output="$temp" && \
+		mv "$temp" "$file" && \
+		echo "Done."
+}
