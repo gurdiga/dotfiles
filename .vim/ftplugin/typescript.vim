@@ -6,6 +6,7 @@ nmap <buffer> <C-T><C-R> :TsuReferences<CR>
 nmap <buffer> <C-T><C-R><C-R> :TsuReload<CR>
 nmap <buffer> <C-T><C-M> :TsuRenameSymbol<CR>
 nmap <buffer> <C-T><C-D> :TsuSplitDefinition<CR>
+nmap <buffer> <C-T><C-E> :TsuGeterr<CR>
 
 iabbrev <buffer> colo console.log("");
   \<Esc>F"i
