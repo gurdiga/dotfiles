@@ -87,9 +87,6 @@ autocmd BufRead,BufNewFile *.html._ set syntax=underscore_template
 let g:netrw_list_hide='.*\.swp$'
 let g:netrw_banner=0
 
-"select the just-pasted text
-nnoremap gp `[v`]
-
 execute pathogen#infect()
 
 func! Eatchar(pat)
@@ -101,6 +98,9 @@ source ~/.vim/colors/diff.vim
 source ~/.vim/colors/comments.vim
 source ~/.vim/ftplugin/common.vim
 
+"select the just-pasted text
+nnoremap gp `[v`]
+
 " let every line be considered a change in the undo history
 inoremap <CR> <C-G>u<CR>
 
@@ -109,7 +109,7 @@ inoremap <silent> <C-Z> <ESC>:stop<CR>
 cnoremap <silent> <C-Z> <ESC>:stop<CR>
 
 " let ^L clear search highlighting
-map <silent> <C-l> :nohlsearch<CR>:redraw!<CR>:GitGutterAll<CR>
+noremap <silent> <C-l> :nohlsearch<CR>:redraw!<CR>:GitGutterAll<CR>
 
 " Capture inside slashes. Useful for paths and regular expressions.
 " Thanks to Dhruva Sagar @ http://stackoverflow.com/a/23668360/227167
@@ -129,8 +129,8 @@ command Wq wq
 command Wqa wqa
 command Q quit
 
+set signcolumn=yes
 let g:closetag_filenames = "*.xml,*.html"
-let g:gitgutter_sign_column_always = 1
 "let g:tsuquyomi_use_vimproc = 1
 let g:elm_format_autosave = 1
 
@@ -144,9 +144,10 @@ Plug 'mitermayer/vim-prettier', {
 call plug#end()
 
 "fzf
-cmap <C-P> :GFiles<CR>
-cmap <C-R> :History:<CR>
-cmap <C-O> :Buffers<CR>
+cnoremap <C-P> :GFiles<CR>
+cnoremap <C-R> :History:<CR>
+cnoremap <C-O> :Buffers<CR>
+cnoremap <C-F> Ag<Space>
 
 set spellfile=$HOME/.vim/spell/en.utf-8.add
 set dictionary+=/usr/share/dict/words
