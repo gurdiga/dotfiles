@@ -14,3 +14,18 @@
 --regex-actionscript=/^[ \t]*[(private| public|static) ( \t)]*var[ \t]+([A-Za-z0-9_]+)[ \t]*/\1/v,variable, variables/
 --regex-actionscript=/.*\.prototype \.([A-Za-z0-9 ]+)=([ \t]?)function( [ \t]?)*\(/\1/ f,function, functions/
 --regex-actionscript=/^[ \t]*class[ \t]+([A-Za-z0-9_]+)[ \t]*/\1/c,class, classes/
+
+
+--langdef=Elm
+--langmap=Elm:.elm
+--exclude=elm-stuff
+--exclude=dist
+--regex-Elm=/^ *([[:lower:]][[:alnum:]_]+)[[:blank:]]*:[^:].*->.*/\1/f,function,functions/
+--regex-Elm=/^ *([[:lower:]][[:alnum:]_]+)[[:blank:]]*:[^:][^-]+$/\1/c,constant,constants/
+--regex-Elm=/^port +([[:lower:]][[:alnum:]_]+)[[:blank:]]*:[^:]/\1/p,port,ports/
+--regex-Elm=/^port +module +(([[:upper:]][[:alnum:]]+)\.)*([[:upper:]][[:alnum:]]+)[[:blank:]]/\3/m,module,modules/
+--regex-Elm=/^module +(([[:upper:]][[:alnum:]]+)\.)*([[:upper:]][[:alnum:]]+)[[:blank:]]/\3/m,module,modules/
+--regex-Elm=/^type +([[:upper:]][[:alnum:]_]+)/\1/t,type,types/
+--regex-Elm=/^type[[:blank:]]+alias[[:blank:]]+([[:upper:]][[:alnum:]_]+)/\1/a,type-alias,type-aliases/
+--regex-Elm=/^[[:blank:]]*([[:lower:]][[:alnum:]_]+)([[:blank:]]([[:lower:]][[:alnum:]_]+))* =$/\1/f,function,functions/
+--regex-Elm=/^ +[,{] +([[:lower:]][[:alnum:]]+) : /\1/f,record-fields,record-fields/
