@@ -16,13 +16,12 @@ if [ ! -d ~/.vim/spell ]; then
 		xargs -I{} vim +":mkspell! {}|q" -
 fi
 
-mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/ftplugin
+mkdir -p ~/.vim/{autoload,bundle,ftplugin,colors}
 
 for f in "$DIR"/.vim/ftplugin/*; do
 	ln -s -v -f "$f" ~/.vim/ftplugin/
 done
 
-mkdir -p ~/.vim/colors
 for f in "$DIR"/.vim/colors/*; do
 	ln -s -v -f "$f" ~/.vim/colors/
 done
