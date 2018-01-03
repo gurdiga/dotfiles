@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # See https://sipb.mit.edu/doc/safe-shell/
-set -euf -o pipefail
+set -eu -o pipefail
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
