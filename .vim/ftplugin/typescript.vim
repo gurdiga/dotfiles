@@ -1,5 +1,7 @@
 setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
+set matchpairs+=<:>
+
 nmap <buffer> <C-T><C-T> :TsuquyomiGoBack<CR>
 nmap <buffer> <C-T><C-I> :TsuImport<CR>
 nmap <buffer> <C-T><C-R> :TsuReferences<CR>
