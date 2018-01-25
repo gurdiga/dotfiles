@@ -141,7 +141,7 @@ Plug 'mitermayer/vim-prettier', {
 call plug#end()
 
 "fzf
-cnoremap <C-P> :GFiles<CR>
+cnoremap <C-T> :GFiles<CR>
 cnoremap <C-R> :History:<CR>
 cnoremap <C-O> :Buffers<CR>
 cnoremap <C-F> Ag<Space>
