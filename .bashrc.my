@@ -267,3 +267,6 @@ function svgoo() {
 		mv "$temp" "$file" && \
 		echo "Done."
 }
+
+# yes
+source /usr/local/etc/bash_completion

@@ -26,7 +26,7 @@ brew install node rlwrap curl wget htop unrar watch vim imagemagick rsync gifsic
 brew install coreutils grep gnu-sed findutils --with-default-names
 brew install fzf && /usr/local/opt/fzf/install
 
-brew install bash
+brew install bash bash-completion
 sudo sh -c 'echo /usr/local/bin/bash >> /etc/shells'
 chsh -s /usr/local/bin/bash
 
