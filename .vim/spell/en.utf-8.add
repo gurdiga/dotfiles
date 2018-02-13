@@ -25,3 +25,5 @@ resize
 ve
 async
 UX
+STDERR
+STDOUT
