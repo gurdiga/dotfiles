@@ -225,7 +225,7 @@ function gif() {
 	local input="$1"
 	local filename="${input%.*}"
 
-	ffmpeg -i "$input" -pix_fmt rgb24 -r 10 -f gif - | gifsicle --loopcount=3 --optimize=3 --delay=5 > "$filename.gif"
+	ffmpeg -i "$input" -pix_fmt rgb24 -r 10 -f gif - | gifsicle --loopcount=forever --optimize=3 --delay=5 > "$filename.gif"
 }
 
 function inith() {
