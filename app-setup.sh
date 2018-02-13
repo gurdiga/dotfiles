@@ -30,9 +30,11 @@ brew install bash bash-completion
 sudo sh -c 'echo /usr/local/bin/bash >> /etc/shells'
 chsh -s /usr/local/bin/bash
 
-# NOTE: replaced by github.com/GoogleChrome/simplehttp2server
-# brew install nginx
-# git clone git@github.com:suzanshakya/nginx-server.git ~/src/nginx-server
+# for the `www` alias
+brew install nginx
+git clone git@github.com:suzanshakya/nginx-server.git ~/src/nginx-server
+
+# for the `wwws` alias
 go get github.com/GoogleChrome/simplehttp2server
 
 npm install -g elm-format
