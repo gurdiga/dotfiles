@@ -2,7 +2,6 @@ setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
 set matchpairs+=<:>
 
-nmap <buffer> <C-T><C-T> :TsuquyomiGoBack<CR>
 nmap <buffer> <C-T><C-I> :TsuImport<CR>
 nmap <buffer> <C-T><C-R> :TsuReferences<CR>
 nmap <buffer> <C-T><C-R><C-R> :TsuReload<CR>
@@ -11,6 +10,14 @@ nmap <buffer> <C-T><C-D> :TsuSplitDefinition<CR>
 nmap <buffer> <C-T><C-E> :TsuGeterr<CR>
 
 iabbrev <buffer> colo console.log("");
+  \<Esc>F"i
+  \<C-R>=Eatchar('\s')<CR>
+
+iabbrev <buffer> coti console.time("");
+  \<Esc>F"i
+  \<C-R>=Eatchar('\s')<CR>
+
+iabbrev <buffer> cogr console.group("");
   \<Esc>F"i
   \<C-R>=Eatchar('\s')<CR>
 
