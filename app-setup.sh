@@ -14,7 +14,7 @@ grep -F '~/.bashrc' ~/.bash_profile || \
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-ln -v -s "$DIR"/{.gitconfig,.gitignore,.vimrc,.aliases,.bashrc.my,vimp,.mplayer,.screenrc,.irbrc,.ctags} ~/
+ln -v -s "$DIR"/{.gitconfig,.gitignore,.vimrc,.aliases,.bashrc.my,vimp,.mplayer,.screenrc,.irbrc,.ctags,.my.cnf} ~/
 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -24,7 +24,7 @@ brew tap homebrew/dupes
 brew tap homebrew/versions
 brew install node rlwrap curl wget htop unrar watch vim imagemagick rsync gifsicle asciinema ffmpeg pgrep axel mtr app-engine-go-64 tmate tree jsonpp jq ctags Caskroom/cask/keycastr
 brew install coreutils grep gnu-sed findutils --with-default-names
-brew install fzf && /usr/local/opt/fzf/install
+brew install fd fzf && /usr/local/opt/fzf/install
 
 brew install bash bash-completion
 sudo sh -c 'echo /usr/local/bin/bash >> /etc/shells'
