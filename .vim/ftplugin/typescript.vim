@@ -8,6 +8,7 @@ nmap <buffer> <C-T><C-R><C-R> :TsuReload<CR>
 nmap <buffer> <C-T><C-M> :TsuRenameSymbol<CR>
 nmap <buffer> <C-T><C-D> :TsuSplitDefinition<CR>
 nmap <buffer> <C-T><C-E> :TsuGeterr<CR>
+nmap <buffer> <C-T><C-H> :echom tsuquyomi#hint()<CR>
 
 iabbrev <buffer> colo console.log("");
   \<Esc>F"i
