@@ -12,17 +12,23 @@ setlocal formatoptions-=ba
 nnoremap <buffer> <C-F> vipgq
 
 "Alt-1
-nmap <buffer> ¡ ^i# <Esc>^
+nnoremap <buffer> ¡ ^i# <Esc>^
 
 "Alt-2
-nmap <buffer> ™ ^i## <Esc>^
+nnoremap <buffer> ™ ^i## <Esc>^
 
 "Alt-3
-nmap <buffer> £ ^i### <Esc>^
+nnoremap <buffer> £ ^i### <Esc>^
 
 "Alt-4
-nmap <buffer> ¢ ^i#### <Esc>^
+nnoremap <buffer> ¢ ^i#### <Esc>^
 
-vmap <buffer> <C-K> S]%a()<Left>
-vmap <buffer> <C-I> S_e
-vmap <buffer> <C-B> S*vf*S*e
+" Alt-7 - make unordered list
+vnoremap <buffer> ¶ :<C-U>'<,'>s/^\s*/\0* /g\|:nohlsearch<CR>
+
+" Alt-8 - make ordered list
+vnoremap <buffer> • :<C-U>'<,'>s/^\s*/\00 /g\|:nohlsearch\|:normal gpo^g<CR>
+
+vnoremap <buffer> <C-K> S]%a()<Left>
+vnoremap <buffer> <C-I> S_e
+vnoremap <buffer> <C-B> S*vf*S*e
