@@ -36,6 +36,7 @@ repos="
 	tpope/vim-surround
 	tpope/vim-commentary
 	tpope/vim-repeat
+	tpope/vim-liquid
 	cakebaker/scss-syntax.vim
 	chase/vim-ansible-yaml
 	groenewege/vim-less
