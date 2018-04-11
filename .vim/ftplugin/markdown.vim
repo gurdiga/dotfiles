@@ -31,7 +31,7 @@ vnoremap <buffer> • :s/^\s*/\00 /g\|:nohlsearch\|:normal gpo^g<CR>
 
 vnoremap <buffer> <C-K> S]%a()<Left>
 vnoremap <buffer> <C-I> S_e
-vnoremap <buffer> <C-B> S*vf*S*e
+vmap <buffer> <C-B> S*vf*S*E
 
 " Alt-R
 vnoremap <buffer> ® <ESC>`<i<span lang="ru"><ESC>`>15<Right>a</span>
