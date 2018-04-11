@@ -301,16 +301,3 @@ complete -F _makefile_targets make
 complete -F _makefile_targets m
 
 # Autocompletion of Make targets END
-
-# Autocompletion of Git branches BEGIN
-
-_fzf_complete_git() {
-	local branches=$(git branch | cut -c 3-)
-	# Filter targets based on user input to the bash completion
-	curr_arg=${COMP_WORDS[COMP_CWORD]}
-	COMPREPLY=( $(compgen -W "${branches[@]}" -- $curr_arg ) );
-}
-
-complete -F _fzf_complete_git gch
-
-# Autocompletion of Git branches END
