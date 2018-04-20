@@ -24,13 +24,13 @@ nnoremap <buffer> £ ^i### <Esc>^
 nnoremap <buffer> ¢ ^i#### <Esc>^
 
 " Alt-7 - make unordered list
-vnoremap <buffer> ¶ :s/^\s*/\0* /g\|:nohlsearch<CR>
+vnoremap <buffer> ¶ :s/^\s*/\00. /g\|:nohlsearch\|:normal gpo^g<CR>
 
 " Alt-8 - make ordered list
-vnoremap <buffer> • :s/^\s*/\00 /g\|:nohlsearch\|:normal gpo^g<CR>
+vnoremap <buffer> • :s/^\s*/\0* /g\|:nohlsearch<CR>
 
-vnoremap <buffer> <C-K> S]%a()<Left>
-vnoremap <buffer> <C-I> S_e
+vnoremap <buffer> <C-K> <ESC>`<i[<ESC>`><Right>a]()<Left>
+vmap <buffer> <C-I> S_e
 vmap <buffer> <C-B> S*vf*S*E
 
 " Alt-R
