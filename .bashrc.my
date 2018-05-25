@@ -122,7 +122,7 @@ function pull() {
 		# If there is a tracked branch only pull that one
 		git status --short --branch |\
 		head -1 |\
-		grep -oP '\.{3}\K.+$' |\
+		grep -oP '\.{3}\K\S+ ' |\
 		sed 's|/| |' |\
 		xargs git pull
 	else
