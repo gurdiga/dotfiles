@@ -16,7 +16,7 @@ if [ ! -d ~/.vim/spell ]; then
 		xargs -I{} vim +":mkspell! {}|q" -
 fi
 
-mkdir -p ~/.vim/{autoload,bundle,ftplugin,colors}
+mkdir -p ~/.vim/{autoload,ftplugin,colors}
 
 for f in "$DIR"/.vim/ftplugin/*; do
 	ln -s -v -f "$f" ~/.vim/ftplugin/
@@ -27,39 +27,6 @@ for f in "$DIR"/.vim/colors/*; do
 done
 
 curl --silent https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim -o ~/.vim/autoload/pathogen.vim
-
-repos="
-	michaeljsmith/vim-indent-object
-	othree/xml.vim
-	tpope/vim-fugitive
-	tpope/vim-rhubarb
-	tpope/vim-surround
-	tpope/vim-commentary
-	tpope/vim-repeat
-	tpope/vim-liquid
-	cakebaker/scss-syntax.vim
-	chase/vim-ansible-yaml
-	groenewege/vim-less
-	leafgarland/typescript-vim
-	Quramy/tsuquyomi
-	Shougo/vimproc.vim
-	ElmCast/elm-vim
-	alvan/vim-closetag
-	airblade/vim-gitgutter
-	vim-syntastic/syntastic
-	hail2u/vim-css3-syntax
-"
-
-for repo in $repos; do
-	dir=~/.vim/bundle/$(basename "$repo")
-
-	if [ ! -d "$dir" ]; then
-		git clone --depth=1 https://github.com/"$repo".git "$dir"
-	fi
-done
-
-# TypeScript support, as per https://github.com/Quramy/tsuquyomi#pathogen
-cd ~/.vim/bundle/vimproc.vim && make
 
 # vim-plug BEGIN
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \

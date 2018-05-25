@@ -135,9 +135,32 @@ call plug#begin()
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'elmcast/elm-vim'
 Plug 'mitermayer/vim-prettier', {
-	\ 'tag' : '0.0.15',
-	\ 'do': 'yarn install',
-	\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
+	\ 'tag': '0.0.15',
+	\ 'do': 'brew install yarn && yarn install',
+	\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss']
+  \ }
+Plug 'metakirby5/codi.vim'
+Plug 'heavenshell/vim-tslint'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'othree/xml.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-liquid'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'chase/vim-ansible-yaml'
+Plug 'groenewege/vim-less'
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'ElmCast/elm-vim'
+Plug 'alvan/vim-closetag'
+Plug 'airblade/vim-gitgutter'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'w0rp/ale'
+Plug 'elzr/vim-json'
 call plug#end()
 
 "fzf
@@ -148,3 +171,22 @@ cnoremap <C-F> Ag<Space>
 
 set spellfile=$HOME/.vim/spell/en.utf-8.add
 set dictionary+=/usr/share/dict/words
+
+" ALE begin https://github.com/w0rp/ale
+let g:ale_fixers = {
+\   'css': ['stylelint', 'prettier'],
+\   'javascript': ['prettier'],
+\   'typescript': ['tslint', 'prettier'],
+\   'typescript.tsx': ['tslint', 'prettier'],
+\   'json': ['prettier'],
+\}
+
+let g:ale_fix_on_save = 1
+
+autocmd User ALEFixPost GitGutterAll
+nmap <C-A><C-F> :ALEFix<CR>
+nmap <C-A><C-L> :ALELint<CR>
+
+" ALE end
+
+let g:vim_json_syntax_conceal = 0
