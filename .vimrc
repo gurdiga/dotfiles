@@ -70,6 +70,7 @@ augroup my
   autocmd BufRead,BufNewFile * silent execute (getline(1) =~ '[^ ]\+/\(env \)\?node\>' ? "set filetype=javascript" : "")
   autocmd BufRead,BufNewFile *.md setlocal textwidth=72
   autocmd BufRead,BufNewFile *.as,*.js.esm set filetype=javascript
+  autocmd BufRead,BufNewFile ~/.aws/credentials set filetype=dosini
 
   " Underscore templates
   autocmd BufRead,BufNewFile *.html._ set filetype=html
