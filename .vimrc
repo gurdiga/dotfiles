@@ -161,6 +161,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'w0rp/ale'
 Plug 'elzr/vim-json'
+Plug 'digitaltoad/vim-pug'
 call plug#end()
 
 "fzf
