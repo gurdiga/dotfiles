@@ -308,3 +308,19 @@ complete -F _makefile_targets make
 complete -F _makefile_targets m
 
 # Autocompletion of Make targets END
+
+function hibp() {
+	local password_hash=`read -s -p "Password: " p && echo -n $p | openssl sha1`
+	local head=${password_hash:0:5}
+	local tail=${password_hash:5}
+
+	local tempfile=`mktemp`
+
+	if curl https://api.pwnedpasswords.com/range/$head --output $tempfile; then
+		if grep --ignore-case $tail $tempfile; then
+			echo YEP;
+		else
+			echo NOPE
+		fi
+	fi
+}
