@@ -22,7 +22,7 @@ brew install --with-pcre git;
 
 brew tap homebrew/dupes
 brew tap homebrew/versions
-brew install node rlwrap curl wget htop unrar watch vim imagemagick rsync gifsicle asciinema ffmpeg pgrep axel mtr app-engine-go-64 tmate tree jsonpp jq ctags Caskroom/cask/keycastr
+brew install node rlwrap curl wget htop unrar watch vim imagemagick rsync gifsicle asciinema ffmpeg pgrep axel mtr app-engine-go-64 tmate tree jsonpp jq ctags Caskroom/cask/keycastr moreutils
 brew install coreutils grep gnu-sed findutils --with-default-names
 brew install fd ag fzf && /usr/local/opt/fzf/install
 
