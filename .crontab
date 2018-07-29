@@ -1,0 +1,7 @@
+# I can’t get the Mac OS built-in email system to work, so I’m using msmtp instead.
+#"MAILTO="gurdiga@gmail.com"
+
+SHELL=/usr/local/bin/bash
+
+30 10 * * * /usr/sbin/ntpdate 0.europe.pool.ntp.org 2>&1 >/dev/null | mail -s 'ntpdate sync error?' gurdiga@gmail.com
+10 10 * * 0-4 man $(ls -1 /usr/bin | head -$((${RANDOM} \% `ls -1 /usr/bin | wc -l` + 1)) | tail -1) | col -b | mail -s 'Daily man page' gurdiga@gmail.com
