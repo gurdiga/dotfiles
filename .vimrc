@@ -24,7 +24,7 @@ set encoding=utf-8
 set tabstop=4
 
 set cursorline
-highlight CursorLine term=bold cterm=bold guifg=NONE guibg=#121212 gui=NONE ctermfg=NONE ctermbg=236
+highlight CursorLine term=NONE cterm=NONE guifg=NONE guibg=#121212 gui=NONE ctermfg=NONE ctermbg=236
 
 set hlsearch
 highlight Search term=NONE cterm=NONE ctermfg=11 ctermbg=239 guifg=#ffff00 guibg=#808000 gui=NONE
@@ -163,6 +163,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'w0rp/ale'
 Plug 'elzr/vim-json'
 Plug 'digitaltoad/vim-pug'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 "fzf
@@ -192,3 +193,23 @@ nmap <C-A><C-L> :ALELint<CR>
 " ALE end
 
 let g:vim_json_syntax_conceal = 0
+
+" auto-pairs
+let g:AutoPairs = {
+\  '`': '`',
+\  '"': '"',
+\  '{': '}',
+\  '''': '''',
+\  '(': ')',
+\  '[': ']',
+\  '<': '>',
+\}
+
+" Disabling this because it messes up my typing: I can’t type î any more.
+let g:AutoPairsShortcutJump=''
+
+" When the filetype is FILETYPE then make AutoPairs only match for parenthesis
+"autocmd Filetype FILETYPE let b:AutoPairs = {"(": ")"}
+
+
+" auto-pairs end
