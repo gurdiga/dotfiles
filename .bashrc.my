@@ -169,7 +169,7 @@ function f() {
 	fi
 
 	local DOT_FILE=".grepignore"
-	local MAX_LINE_LENGTH=300
+	local MAX_LINE_LENGTH=$(($COLUMNS * 3))
 
 	local IGNORE_DIRS=".git .svn node_modules bower_components"
 	local IGNORE_FILES=".bash_history .viminfo"
