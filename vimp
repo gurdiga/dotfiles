@@ -4,16 +4,16 @@ file=$1
 line_number=`expr "$file" : '.*:\([0-9]\+\)'`
 
 if [[ "$file" =~ :[0-9]*.*$ ]]; then
-  file=${file/$BASH_REMATCH/}
-  line_number=$BASH_REMATCH
-  line_number=${line_number/:/}
-  line_number=${line_number/[^0-9]*/}
+	file=${file/$BASH_REMATCH/}
+	line_number=$BASH_REMATCH
+	line_number=${line_number/:/}
+	line_number=${line_number/[^0-9]*/}
 
-  if [[ "$line_number" -ne "" ]]; then
-    line_number="+$line_number"
-  fi
+	if [[ "$line_number" -ne "" ]]; then
+		line_number="+$line_number"
+	fi
 
-  exec vim "$file" $line_number
+	exec vim "$file" $line_number
 else
-  exec vim "$@"
+	exec vim "$@"
 fi
