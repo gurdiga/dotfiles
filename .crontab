@@ -1,7 +1,8 @@
 MAILTO=gurdiga@gmail.com
 SHELL=/usr/local/bin/bash
+PATH=/bin:/usr/bin:/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin
 
-BIN_DIRS=/bin /usr/bin /usr/local/bin
+BIN_DIRS=/bin /usr/bin /usr/local/bin /usr/local/opt/coreutils/libexec/gnubin
 
 30 10 * * * sudo /usr/sbin/ntpdate 0.europe.pool.ntp.org 2>&1 >/dev/null | ifne mail -s 'ntpdate sync error?' gurdiga@gmail.com
 31 10 * * 0-4 man $(ls -1 $BIN_DIRS | head -$((${RANDOM} \% `ls -1 $BIN_DIRS | wc -l` + 1)) | tail -1) | col -b | mail -s 'Daily man page' gurdiga@gmail.com
