@@ -191,6 +191,8 @@ autocmd User ALEFixPost GitGutterAll
 nmap <C-A><C-F> :ALEFix<CR>
 nmap <C-A><C-L> :ALELint<CR>
 
+"TODO: disable when &diff == 1
+
 " ALE end
 
 let g:vim_json_syntax_conceal = 0
