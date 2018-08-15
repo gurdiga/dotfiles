@@ -208,6 +208,8 @@ let g:AutoPairs = {
 \  '<': '>',
 \}
 
+"TODO: have ft-specific pair-sets, e.g. <> is unwanted in most cases
+
 " Disabling this because it messes up my typing: I can’t type î any more.
 let g:AutoPairsShortcutJump=''
 
