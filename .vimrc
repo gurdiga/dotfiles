@@ -72,6 +72,7 @@ augroup my
   autocmd BufRead,BufNewFile *.as,*.js.esm set filetype=javascript
   autocmd BufRead,BufNewFile ~/.aws/credentials set filetype=dosini
   autocmd BufRead,BufNewFile .crontab set filetype=crontab
+  autocmd BufRead,BufNewFile .gitignore set filetype=config
 
   " Underscore templates
   autocmd BufRead,BufNewFile *.html._ set filetype=html
@@ -115,6 +116,9 @@ noremap <silent> <C-l> :nohlsearch<CR>:redraw!<CR>:GitGutterAll<CR>
 onoremap <silent> i/ :<C-U>normal! T/vt/<CR>
 onoremap <silent> i* :<C-U>normal! T*vt*<CR>
 onoremap <silent> i+ :<C-U>normal! T+vt+<CR>
+
+" IRB templates
+onoremap <silent> i% :<C-U>normal! T%vt%<CR>
 
 " Capture inside double smart quotes.
 onoremap <silent> i” :<C-U>normal! T“vt”<CR>
