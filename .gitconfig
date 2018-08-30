@@ -21,3 +21,5 @@
 	rebase=true
 [diff]
 	compactionHeuristic=true
+[commit]
+	gpgSign=true
