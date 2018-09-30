@@ -89,7 +89,7 @@ let g:netrw_banner=0
 
 execute pathogen#infect()
 
-func! Eatchar(pat)
+function! Eatchar(pat)
   let c = nr2char(getchar(0))
   return (c =~ a:pat) ? '' : c
 endfunc
