@@ -209,7 +209,6 @@ let g:AutoPairs = {
 \  '''': '''',
 \  '(': ')',
 \  '[': ']',
-\  '<': '>',
 \}
 
 "TODO: have ft-specific pair-sets, e.g. <> is unwanted in most cases
