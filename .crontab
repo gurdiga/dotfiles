@@ -3,8 +3,8 @@ SHELL=/usr/local/bin/bash
 PATH=/bin:/usr/bin:/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin
 
 BIN_DIRS=/bin /usr/bin /usr/local/bin /usr/local/opt/coreutils/libexec/gnubin
-HELP_DIR=~/help/
+HELP_DIR=/Users/vlad/help
 
-30 10 * * * sudo /usr/sbin/ntpdate 0.europe.pool.ntp.org 2>&1 >/dev/null | ifne mail -s 'ntpdate sync error?' gurdiga@gmail.com
+30 */3 * * * sudo /usr/sbin/ntpdate 0.europe.pool.ntp.org 2>&1 >/dev/null | ifne mail -s 'ntpdate sync error?' gurdiga@gmail.com
 31 10 * * 0-4 man $(ls -1 $BIN_DIRS | head -$((${RANDOM} \% `ls -1 $BIN_DIRS | wc -l` + 1)) | tail -1) | col -b | mail -s 'Daily man' gurdiga@gmail.com
 32 10 * * 0-4 cat $HELP_DIR/$(ls -1 $HELP_DIR | head -$((${RANDOM} \% `ls -1 $HELP_DIR | wc -l` + 1)) | tail -1) | mail -s 'Daily builtin' gurdiga@gmail.com
