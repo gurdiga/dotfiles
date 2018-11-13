@@ -169,6 +169,7 @@ Plug 'w0rp/ale'
 Plug 'elzr/vim-json'
 Plug 'digitaltoad/vim-pug'
 Plug 'jiangmiao/auto-pairs'
+Plug 'vim-ruby/vim-ruby'
 call plug#end()
 
 "fzf
