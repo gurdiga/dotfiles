@@ -71,6 +71,7 @@ augroup my
   autocmd BufRead,BufNewFile *.md setlocal textwidth=72
   autocmd BufRead,BufNewFile *.as,*.js.esm set filetype=javascript
   autocmd BufRead,BufNewFile ~/.aws/credentials set filetype=dosini
+  autocmd BufRead,BufNewFile *.my.cnf set filetype=dosini
   autocmd BufRead,BufNewFile .crontab set filetype=crontab
   autocmd BufRead,BufNewFile .gitignore set filetype=config
 
