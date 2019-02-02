@@ -262,10 +262,7 @@ function svgoo() {
 	fi
 
 	local file="$1"
-	local temp="${file}-optimized"
-	svgo --input="$file" --output="$temp" && \
-		mv "$temp" "$file" && \
-		echo "Done."
+	svgo --input="$file" --pretty
 }
 
 function is_interactive_shell() {
