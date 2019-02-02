@@ -13,6 +13,7 @@
 	excludesfile = ~/.gitignore
 	quotepath = false
 [alias]
+	is-clean = diff --exit-code --quiet
 [branch]
 	autosetuprebase = always
 [push]
