@@ -339,5 +339,5 @@ function log() {
 	local directory=~/Google\ Drive/log
 	local filename="`date +%F-%H-%M`.md"
 
-	code --new-window "$directory/$filename"
+	code --new-window "$directory/$filename" && exit
 }
