@@ -1,0 +1,4 @@
+AllCops:
+  Exclude:
+    - "custom_plan.rb" # Zeus config file
+
