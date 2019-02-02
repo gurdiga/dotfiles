@@ -321,3 +321,10 @@ function hibp() {
 		fi
 	fi
 }
+
+function log() {
+	local directory=~/Google\ Drive/log
+	local filename="`date +%F-%H-%M`.md"
+
+	code --new-window "$directory/$filename"
+}
