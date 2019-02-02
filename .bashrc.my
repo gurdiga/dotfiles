@@ -28,63 +28,93 @@ export MANWIDTH=80
 
 # per-directory Bash history
 function check_for_local_history {
-  local last_command=`history 1`
-  local last_command=${last_command:27} # this depends on HISTTIMEFORMAT
+	function main {
+		if found_local_history_file; then
+			use_history_file $PWD/.bash_history
+		else
+			use_history_file ~/.bash_history
+		fi
+	}
 
-  function main {
-    if changing_directory; then
-      if found_local_history_file; then
-        use_history_file $PWD/.bash_history
-      else
-        use_history_file ~/.bash_history
-      fi
-    fi
-  }
+	function found_local_history_file {
+		[ -e .bash_history ]
+  	}
 
-  function changing_directory {
-    is_cd_nothing || is_cd_something || is_a_cd_alias
-  }
+	function use_history_file {
+		history -w
+		history -c
+		export HISTFILE=$1
+		history -r
+	}
 
-  function is_cd_nothing {
-    [ ${#last_command} -eq 2 -a "${last_command:0:2}" = "cd" ]
-  }
-
-  function is_cd_something {
-    [ ${#last_command} -gt 2 -a "${last_command:0:3}" = "cd " ]
-  }
-
-  function is_a_cd_alias {
-    local cd_aliases=`alias | grep "='cd " | grep -E -o 'alias [a-z]+='`
-    echo $cd_aliases | grep -F -q "alias $last_command="
-  }
-
-  function found_local_history_file {
-    [ -e .bash_history ]
-  }
-
-  function use_history_file {
-    history -w
-    history -c
-    export HISTFILE=$1
-    history -r
-  }
-
-  main
+	main
 }
 
-function already_set {
-	grep -q check_for_local_history <<<$PROMPT_COMMAND
+function changing_directory {
+	function main {
+		local last_command=`history 1`
+		local last_command=${last_command:27} # this depends on HISTTIMEFORMAT
+
+		is_cd_nothing || is_cd_something || is_a_cd_alias
+	}
+
+	function is_cd_nothing {
+		[ ${#last_command} -eq 2 -a "${last_command:0:2}" = "cd" ]
+	}
+
+	function is_cd_something {
+		[ ${#last_command} -gt 2 -a "${last_command:0:3}" = "cd " ]
+	}
+
+	function is_a_cd_alias {
+		local cd_aliases=`alias | grep "='cd " | grep -E -o 'alias [a-z]+='`
+		echo $cd_aliases | grep -F -q "alias $last_command="
+	}
 }
 
-if ! already_set; then
-	if [ -z "$PROMPT_COMMAND" ]; then
-		PROMPT_COMMAND="check_for_local_history"
-	else
-		PROMPT_COMMAND="${PROMPT_COMMAND}; check_for_local_history"
+function check_for_nvmrc {
+	if [ -e .nvmrc ]; then
+		export NVM_DIR="$HOME/.nvm"
+		source "$NVM_DIR/nvm.sh"  # This loads nvm
+		nvm use
 	fi
-fi
+}
 
-check_for_local_history
+function check_for_ruby_version {
+	if [ -e .ruby-version ]; then
+		source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+	fi
+}
+
+function do_my_checks {
+	if ! changing_directory; then
+		return
+	fi
+
+	check_for_local_history
+	check_for_nvmrc
+	check_for_ruby_version
+}
+
+function add_prompt_command {
+	function main {
+		if ! already_set; then
+			if [ -z "$PROMPT_COMMAND" ]; then
+				PROMPT_COMMAND="do_my_checks"
+			else
+				PROMPT_COMMAND="${PROMPT_COMMAND}; do_my_checks"
+			fi
+		fi
+	}
+
+	function already_set {
+		grep -q check_for_local_history <<<$PROMPT_COMMAND
+	}
+
+	main
+}
+
+add_prompt_command
 
 export RUBY_GC_MALLOC_LIMIT=90000000
 export RUBY_GC_HEAP_FREE_SLOTS=200000
@@ -199,23 +229,6 @@ function f() {
 		| cut -c -$MAX_LINE_LENGTH
 }
 
-function vq() {
-	if [ "$#" -eq 0 ]; then
-		echo 'Find what?'
-		return 1
-	fi
-
-	local filename="$1"
-	local filepath=`find . -name $filename`
-
-	if [ "$filepath" == "" ]; then
-		echo "Nothing found by name “ $filename ”."
-		return 2
-	fi
-
-	v $filepath
-}
-
 function gif() {
 	if [ "$#" -eq 0 ]; then
 		echo 'Gif what?'
@@ -278,8 +291,8 @@ fi
 #fzf
 export FZF_CTRL_T_COMMAND="fd --type f"
 
-# yes
-source /usr/local/etc/bash_completion
+# yes, or maybe not?
+# source /usr/local/etc/bash_completion
 
 # Autocompletion of Make targets BEGIN
 
