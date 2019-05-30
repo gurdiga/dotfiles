@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "Setting up VIM..."
+
 # See https://sipb.mit.edu/doc/safe-shell/
 set -eu -o pipefail
 

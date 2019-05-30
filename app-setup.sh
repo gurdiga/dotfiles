@@ -1,7 +1,9 @@
 #!/bin/bash
 
+echo "Installing applications..."
+
 # See https://sipb.mit.edu/doc/safe-shell/
-set -euf -o pipefail
+#set -euf -o pipefail
 
 grep -F '.aliases' ~/.bashrc || \
 	echo '. ~/.aliases' >> ~/.bashrc
@@ -18,14 +20,15 @@ ln -v -s "$DIR"/{.gitconfig,.gitignore,.vimrc,.aliases,.bashrc.my,vimp,.mplayer,
 
 crontab < .crontab
 
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+if [ ! -f /usr/local/bin/brew ]; then
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
 
-brew install --with-pcre git;
-
+brew install git
 brew tap homebrew/dupes
 brew tap homebrew/versions
 brew install node rlwrap curl wget htop unrar watch vim imagemagick rsync gifsicle asciinema ffmpeg pgrep axel mtr app-engine-go-64 tmate tree jsonpp jq yq ctags Caskroom/cask/keycastr moreutils
-brew install coreutils grep gnu-sed findutils --with-default-names
+brew install coreutils grep gnu-sed findutils
 brew install fd ag fzf && /usr/local/opt/fzf/install
 
 brew install bash bash-completion

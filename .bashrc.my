@@ -125,6 +125,7 @@ export RUBY_GC_HEAP_FREE_SLOTS=200000
 # brew
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # node
