@@ -70,6 +70,8 @@ function changing_directory {
 		local cd_aliases=`alias | grep "='cd " | grep -E -o 'alias [a-z]+='`
 		echo $cd_aliases | grep -F -q "alias $last_command="
 	}
+
+	main
 }
 
 function check_for_nvmrc {
@@ -83,6 +85,7 @@ function check_for_nvmrc {
 function check_for_ruby_version {
 	if [ -e .ruby-version ]; then
 		source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+		rvm use
 	fi
 }
 
@@ -335,9 +338,15 @@ function hibp() {
 	fi
 }
 
-function log() {
+function log {
 	local directory=~/Google\ Drive/log
 	local filename="`date +%F-%H-%M`.md"
 
-	code --new-window "$directory/$filename" && exit
+	cp "$directory/template.md" "$directory/$filename"
+	cd "$directory"
+	code --new-window "$filename" && exit
+}
+
+function think {
+	code --new-window && exit
 }
