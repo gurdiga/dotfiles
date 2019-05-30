@@ -24,3 +24,5 @@
 	compactionHeuristic=true
 [commit]
 	gpgSign=true
+[checkout]
+	defaultRemote=origin
