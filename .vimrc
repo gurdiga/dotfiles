@@ -132,6 +132,7 @@ command W write
 command Wq wq
 command Wqa wqa
 command Q quit
+command Hexdump %!xxd
 
 set signcolumn=yes
 let g:closetag_filenames = "*.xml,*.html"
@@ -143,9 +144,10 @@ Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'elmcast/elm-vim'
 Plug 'mitermayer/vim-prettier', {
 	\ 'tag': '0.0.15',
-	\ 'do': 'brew install yarn && yarn install',
+	\ 'do': 'npm install',
 	\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss']
   \ }
+
 Plug 'metakirby5/codi.vim'
 Plug 'heavenshell/vim-tslint'
 Plug 'michaeljsmith/vim-indent-object'
