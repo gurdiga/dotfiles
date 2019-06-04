@@ -43,3 +43,5 @@ git clone git@github.com:suzanshakya/nginx-server.git ~/src/nginx-server
 go get github.com/GoogleChrome/simplehttp2server
 
 npm install -g elm-format
+
+pip3 install csvtomd
