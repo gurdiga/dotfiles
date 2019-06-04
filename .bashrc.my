@@ -349,5 +349,5 @@ function log {
 }
 
 function think {
-	code --new-window && exit
+	code --new-window note.md && exit
 }
