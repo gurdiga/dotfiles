@@ -39,3 +39,6 @@ alias ports="sudo lsof -PiTCP -sTCP:LISTEN"
 alias ip="ifconfig | grep -Po '(?<=inet )\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | grep -v '127.0.0.1'"
 alias pbwrap="pbpaste | fold -w 72 -s | pbcopy"
 alias rehash="hash -r"
+
+# account for typos
+alias cd-="cd -"
