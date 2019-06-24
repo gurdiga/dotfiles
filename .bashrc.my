@@ -164,6 +164,29 @@ function pull() {
 	fi
 }
 
+function q() {
+	local wildcard="$1"
+	shift
+	local dirs="$@"
+
+	local IGNORE_DIRS=".git"
+	local DOT_FILE=".qignore"
+	local EXCLUDE_DIR_CLAUSE=""
+
+	if [ -f $DOT_FILE ]; then
+		IGNORE_DIRS+=" "`cat "$DOT_FILE" | paste -sd " "`
+	fi
+
+	local IGNORE_DIRS_RE=${IGNORE_DIRS// /\|}
+
+	for DIR in $IGNORE_DIRS; do
+		EXCLUDE_DIR_CLAUSE+=" -path ./$DIR -prune -o"
+	done
+
+	find ${dirs:-.} $EXCLUDE_DIR_CLAUSE -name "$wildcard" \
+		| grep -Pv "^./($IGNORE_DIRS_RE)$"
+}
+
 function aac2mp3() {
 	aac_file=$1
 	mp3_file=$(basename "$aac_file" .aac).mp3
@@ -326,5 +349,5 @@ function log {
 }
 
 function think {
-	code --new-window think.md && exit
+	code --new-window note.md && exit
 }
