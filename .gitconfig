@@ -4,7 +4,6 @@
 [user]
 	name = Vlad GURDIGA
 	email = gurdiga@gmail.com
-	signingkey = 59DDC0669FB5CFC6
 [color]
 	ui = true
 [core]
@@ -22,7 +21,5 @@
 	rebase=true
 [diff]
 	compactionHeuristic=true
-[commit]
-	gpgSign=true
 [checkout]
 	defaultRemote=origin
