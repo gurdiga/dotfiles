@@ -341,13 +341,13 @@ function hibp() {
 
 function log {
 	local directory=~/Google\ Drive/log
-	local filename="`date +%F-%H-%M`.md"
+	local filename="`date +%F-%H-%M`.txt"
 
-	cp "$directory/template.md" "$directory/$filename"
+	cp "$directory/template.txt" "$directory/$filename"
 	cd "$directory"
 	code --new-window "$filename" && exit
 }
 
 function think {
-	code --new-window note.md && exit
+	code --new-window note.txt && exit
 }
