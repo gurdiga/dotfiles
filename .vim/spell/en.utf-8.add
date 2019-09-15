@@ -34,3 +34,5 @@ crontab
 namespace
 prebuild
 prebuilt
+CSV
+checkbox
