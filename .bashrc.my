@@ -351,3 +351,7 @@ function log {
 function think {
 	code --new-window note.txt && exit
 }
+
+function skip {
+	tail --lines +`expr $1 + 1`
+}
