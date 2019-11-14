@@ -1,0 +1,6 @@
+vlad		ALL = (ALL) NOPASSWD: /usr/bin/sntp
+vlad		ALL = (ALL) NOPASSWD: /usr/sbin/lsof
+vlad		ALL = (ALL) NOPASSWD: /usr/local/sbin/mtr
+vlad		ALL = (ALL) NOPASSWD: /sbin/ifconfig
+vlad		ALL = (ALL) NOPASSWD: /usr/local/bin/gdu
+
