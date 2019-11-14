@@ -41,6 +41,7 @@ alias pbwrap="pbpaste | fold -w 72 -s | pbcopy"
 alias rehash="hash -r"
 alias bytes="numfmt --to=iec-i --suffix=B --padding=7"
 alias k9="kill -9"
+alias yt="yarn test"
 
 # account for typos
 alias cd-="cd -"
