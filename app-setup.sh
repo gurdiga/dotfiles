@@ -46,3 +46,31 @@ go get github.com/GoogleChrome/simplehttp2server
 npm install -g elm-format
 
 pip3 install csvtomd
+
+function check_fzf_patch() {
+	source ~/.bashrc # load fzf that was installed above
+	local file=`source_location __fzf_history__ | awk '{print \$3}'`
+
+	if [ -z file ]; then
+		cat <<-EOF
+
+		__fzf_history__ function is not defined in the current shell; will not patch.
+
+		EOF
+	elif grep -F '# gurdiga@gmail.com: uniq history' $file; then
+		cat <<-EOF
+
+		fzf is already patched. It’s all good.
+
+		EOF
+	else
+		cat <<-EOF
+		++ Here is the file to patch: $file. Insert this line as appropriate:
+
+			awk -F '^ *[0-9]+  ' '!x[\$2]++' | # gurdiga@gmail.com: uniq history
+
+		EOF
+	fi
+}
+
+check_fzf_patch
