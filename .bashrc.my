@@ -126,6 +126,7 @@ export RUBY_GC_HEAP_FREE_SLOTS=200000
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # node
@@ -354,4 +355,30 @@ function think {
 
 function skip {
 	tail --lines +`expr $1 + 1`
+}
+
+function vimp {
+	file=$1
+	line_number=`expr "$file" : '.*:\([0-9]\+\)'`
+
+	if [[ "$file" =~ :[0-9]*.*$ ]]; then
+		file=${file/$BASH_REMATCH/}
+		line_number=$BASH_REMATCH
+		line_number=${line_number/:/}
+		line_number=${line_number/[^0-9]*/}
+
+		if [[ "$line_number" -ne "" ]]; then
+			line_number="+$line_number"
+		fi
+
+		vim "$file" $line_number
+	else
+		vim "$@"
+	fi
+}
+
+function source_location {
+	shopt -s extdebug
+	declare -F $1
+	shopt -u extdebug
 }
