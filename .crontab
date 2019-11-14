@@ -12,5 +12,5 @@ HELP_DIR=/Users/vlad/help
 # Weekly RVM update
 0 11 * * 5 ~/.rvm/bin/rvm get stable
 
-# Weekly check for outdated packages
-0 11 * * 5 cd ~/src/repetitor.tsx && npm outdated
+# Daily check for outdated packages
+0 9 * * * cd ~/src/repetitor.tsx && npm outdated | ifne mail -s 'repetitor.tsx: outdated NPM packages' gurdiga@gmail.com
