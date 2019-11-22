@@ -67,7 +67,7 @@ function check_fzf_patch() {
 		cat <<-EOF
 		++ Here is the file to patch: $file. Insert this line as appropriate:
 
-			awk -F '^ *[0-9]+  ' '!x[\$2]++' | # gurdiga@gmail.com: uniq history
+			tac | awk -F '^ *[0-9]+  ' '!x[\$2]++' | tac | # gurdiga@gmail.com: uniq history
 
 		EOF
 	fi
