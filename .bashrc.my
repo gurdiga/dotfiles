@@ -89,6 +89,13 @@ function check_for_ruby_version {
 	fi
 }
 
+function check_for_dot_env {
+	if [ -e .env ]; then
+		source .env
+		echo "Loaded environment variables from .env"
+	fi
+}
+
 function do_my_checks {
 	if ! changing_directory; then
 		return
@@ -97,6 +104,7 @@ function do_my_checks {
 	check_for_local_history
 	check_for_nvmrc
 	check_for_ruby_version
+	check_for_dot_env
 }
 
 function add_prompt_command {
