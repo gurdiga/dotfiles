@@ -390,3 +390,10 @@ function source_location {
 	declare -F $1
 	shopt -u extdebug
 }
+
+function gfc {
+	local origin_branch_name="$1"
+
+	git fetch origin $origin_branch_name
+	git checkout $origin_branch_name
+}
