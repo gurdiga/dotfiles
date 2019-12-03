@@ -77,6 +77,8 @@ augroup my
 
   " Underscore templates
   autocmd BufRead,BufNewFile *.html._ set filetype=html
+  " For files in /private/etc/sudoers.d/, e. g. vlad.sudoers
+  autocmd BufRead,BufNewFile *.sudoers set filetype=sudoers
   autocmd BufRead,BufNewFile *.html._ set syntax=underscore_template
 
   "remove line numbers for log files
