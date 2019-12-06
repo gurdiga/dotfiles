@@ -43,6 +43,8 @@ git clone git@github.com:suzanshakya/nginx-server.git ~/src/nginx-server
 # for the `wwws` alias
 go get github.com/GoogleChrome/simplehttp2server
 
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+
 npm install -g elm-format
 
 pip3 install csvtomd
