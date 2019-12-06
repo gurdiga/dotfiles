@@ -30,6 +30,10 @@ export MANWIDTH=80
 function check_for_local_history {
 	function main {
 		if found_local_history_file; then
+			if [ ! "$PWD" == "$HOME" ]; then
+				echo "Using local Bash history."
+			fi
+
 			use_history_file $PWD/.bash_history
 		else
 			use_history_file ~/.bash_history
