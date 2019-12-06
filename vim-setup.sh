@@ -2,6 +2,8 @@
 
 echo "Setting up VIM..."
 
+mkdir -p ~/.vim
+
 # See https://sipb.mit.edu/doc/safe-shell/
 set -eu -o pipefail
 
