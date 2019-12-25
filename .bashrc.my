@@ -31,7 +31,7 @@ function check_for_local_history {
 	function main {
 		if found_local_history_file; then
 			if [ ! "$PWD" == "$HOME" ]; then
-				echo "Using local Bash history."
+				echo "Using local Bash history"
 			fi
 
 			use_history_file $PWD/.bash_history
@@ -79,11 +79,44 @@ function changing_directory {
 }
 
 function check_for_nvmrc {
-	if [ -e .nvmrc ]; then
-		export NVM_DIR="$HOME/.nvm"
-		source "$NVM_DIR/nvm.sh"  # This loads nvm
-		nvm use
-	fi
+	local nvm_node_path="$HOME/.nvm/versions/node"
+
+	function main {
+		if [ -e .nvmrc ]; then
+			local expected_node_version=`get_version_from_nvmrc`
+			local expected_node_path="$nvm_node_path/$expected_node_version/bin"
+
+			if [ -d $expected_node_path ]; then
+				# Remove previous nvm_node_path from PATH if found
+				export PATH=$expected_node_path:`remove_path_item_matching $nvm_node_path`
+				echo "Changed Node version to $(node -v)"
+			else
+				export NVM_DIR="$HOME/.nvm"
+				source "$NVM_DIR/nvm.sh"  # This loads nvm
+				nvm use
+			fi
+		fi
+
+	}
+
+	function get_version_from_nvmrc {
+		local version=$(<.nvmrc)
+		version=${version/v/}
+		echo v$version
+	}
+
+	function remove_path_item_matching {
+		local path_item=$1
+
+		if grep -F "$path_item" <<<$PATH ; then
+			escaped_path_item=${path_item//\//\\/} # escape slashes for the awk regexp
+			awk -v RS=: -v ORS=: "/$escaped_path_item/ {next} {print}" <<<$PATH
+		else
+			echo $PATH
+		fi
+	}
+
+	main
 }
 
 function check_for_ruby_version {
