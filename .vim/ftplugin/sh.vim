@@ -1,4 +1,4 @@
-setlocal softtabstop=8 tabstop=8 shiftwidth=8
+setlocal softtabstop=8 tabstop=8 shiftwidth=4
 
 iabbrev <buffer> _fn function () {}
 
