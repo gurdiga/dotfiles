@@ -17,6 +17,7 @@ grep -F '~/.bashrc' ~/.bash_profile || \
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 ln -v -s "$DIR"/{.gitconfig,.gitignore,.vimrc,.aliases,.bashrc.my,vimp,.mplayer,.screenrc,.irbrc,.ctags,.my.cnf} ~/
+ln -f vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 
 crontab < .crontab
 

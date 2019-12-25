@@ -1,0 +1,67 @@
+{
+  "editor.formatOnSave": true,
+  "files.insertFinalNewline": true,
+  "prettier.disableLanguages": ["markdown"],
+  "prettier.trailingComma": "es5",
+  "prettier.printWidth": 120,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+  "workbench.activityBar.visible": true,
+  "git.confirmSync": false,
+  "emmet.excludeLanguages": ["markdown", "typescript", "jsx"],
+  "files.trimTrailingWhitespace": true,
+  "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+  "workbench.editor.enablePreview": false,
+  "files.associations": {
+    "*.js.esm": "javascript",
+    ".env": "shellscript",
+    ".env.template": "shellscript"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "search.exclude": {
+    ".bash_history": true,
+    ".viminfo": true
+  },
+  "editor.occurrencesHighlight": false,
+  "[yaml]": {
+    "editor.formatOnSave": false
+  },
+  "git.enableSmartCommit": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "extensions.ignoreRecommendations": true,
+  "editor.detectIndentation": false,
+  "prettier.singleQuote": false,
+  "zenMode.restore": true,
+  "[plaintext]": {
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 72,
+    "editor.quickSuggestions": false,
+    "editor.minimap.enabled": false
+  },
+  "stylelint.enable": false,
+  "files.exclude": {
+    "node_modules": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[ruby]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "ruby.useLanguageServer": true,
+  "ruby.lint": {
+    "rubocop": {
+      "useBundler": false // enable rubocop via bundler
+    }
+  },
+  "diffEditor.renderSideBySide": false,
+  "ruby.rubocop.executePath": "/Users/vlad/.rvm/gems/ruby-2.6.5/bin/",
+  "ruby.format": "rubocop",
+  "ruby.lintDebounceTime": 5000
+}
