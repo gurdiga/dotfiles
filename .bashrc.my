@@ -94,9 +94,12 @@ function check_for_ruby_version {
 }
 
 function check_for_dot_env {
-	if [ -e .env ]; then
-		# TODO: Maybe unload .env from $OLDPWD
+	# Unload prev .env if any
+	if [ ! -z $OLDPWD ] && [ -f $OLDPWD/.env ]; then
+		unset `grep -Po '^\w+' $OLDPWD/.env`
+	fi
 
+	if [ -e .env ]; then
 		source .env
 		echo "Loaded environment variables from .env"
 	fi
