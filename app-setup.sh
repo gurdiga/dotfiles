@@ -5,8 +5,8 @@ echo "Installing applications..."
 # See https://sipb.mit.edu/doc/safe-shell/
 #set -euf -o pipefail
 
-grep -F '.aliases' ~/.bashrc || \
-	echo '. ~/.aliases' >> ~/.bashrc
+grep -F '.bash_aliases' ~/.bashrc || \
+	echo '. ~/.bash_aliases' >> ~/.bashrc
 
 grep -F '.bashrc.my' ~/.bashrc || \
 	echo '. ~/.bashrc.my' >> ~/.bashrc
@@ -16,7 +16,7 @@ grep -F '~/.bashrc' ~/.bash_profile || \
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-ln -v -s "$DIR"/{.gitconfig,.gitignore,.vimrc,.aliases,.bashrc.my,vimp,.mplayer,.screenrc,.irbrc,.ctags,.my.cnf} ~/
+ln -v -s "$DIR"/{.gitconfig,.gitignore,.vimrc,.bash_aliases,.bashrc.my,vimp,.mplayer,.screenrc,.irbrc,.ctags,.my.cnf} ~/
 ln -f vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 
 crontab < .crontab
