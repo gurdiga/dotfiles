@@ -42,6 +42,7 @@ alias rehash="hash -r"
 alias bytes="numfmt --to=iec-i --suffix=B --padding=7"
 alias k9="kill -9"
 alias yt="yarn test"
+alias flushdns="sudo killall -HUP mDNSResponder"
 
 # account for typos
 alias cd-="cd -"
