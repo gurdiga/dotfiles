@@ -18,6 +18,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 ln -v -s "$DIR"/{.gitconfig,.gitignore,.vimrc,.bash_aliases,.bashrc.my,vimp,.mplayer,.screenrc,.irbrc,.ctags,.my.cnf} ~/
 ln -f vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+ln -f vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 
 crontab < .crontab
 

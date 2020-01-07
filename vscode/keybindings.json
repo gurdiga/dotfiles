@@ -1,0 +1,127 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+  {
+    "key": "shift+cmd+=",
+    "command": "-workbench.action.zoomIn"
+  },
+  {
+    "key": "shift+cmd+-",
+    "command": "-workbench.action.zoomOut"
+  },
+  {
+    "key": "cmd+-",
+    "command": "-workbench.action.zoomOut"
+  },
+  {
+    "key": "cmd+numpad_subtract",
+    "command": "-workbench.action.zoomOut"
+  },
+  {
+    "key": "cmd+=",
+    "command": "-workbench.action.zoomIn"
+  },
+  {
+    "key": "cmd+numpad_add",
+    "command": "-workbench.action.zoomIn"
+  },
+  {
+    "key": "cmd+numpad0",
+    "command": "-workbench.action.zoomReset"
+  },
+  {
+    "key": "ctrl+left",
+    "command": "workbench.action.navigateBack"
+  },
+  {
+    "key": "ctrl+-",
+    "command": "-workbench.action.navigateBack"
+  },
+  {
+    "key": "ctrl+right",
+    "command": "workbench.action.navigateForward"
+  },
+  {
+    "key": "ctrl+shift+-",
+    "command": "-workbench.action.navigateForward"
+  },
+  // {
+  // 	"key": "ctrl+`",
+  // 	"command": "workbench.action.terminal.toggleTerminal"
+  // },
+  // {
+  // 	"key": "ctrl+`",
+  // 	"command": "-workbench.action.terminal.toggleTerminal"
+  // },
+  {
+    "key": "ctrl+shift+down",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+down",
+    "command": "-editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+up",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+up",
+    "command": "-editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+cmd+[BracketRight]",
+    "command": "workbench.action.nextEditor"
+  },
+  {
+    "key": "ctrl+shift+alt+cmd+[BracketRight]",
+    "command": "-workbench.action.nextEditor"
+  },
+  {
+    "key": "shift+cmd+[BracketLeft]",
+    "command": "workbench.action.previousEditor"
+  },
+  {
+    "key": "ctrl+shift+alt+cmd+[BracketLeft]",
+    "command": "-workbench.action.previousEditor"
+  },
+  {
+    "key": "alt+cmd+z",
+    "command": "workbench.action.toggleZenMode"
+  },
+  {
+    "key": "cmd+k z",
+    "command": "-workbench.action.toggleZenMode"
+  },
+  {
+    "key": "shift+cmd+backspace",
+    "command": "editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+cmd+k",
+    "command": "-editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+z",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "-workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "shift+cmd+w",
+    "command": "workbench.action.closeWindow",
+    "when": "!editorIsOpen && !multipleEditorGroups"
+  },
+  {
+    "key": "cmd+w",
+    "command": "-workbench.action.closeWindow",
+    "when": "!editorIsOpen && !multipleEditorGroups"
+  }
+]
