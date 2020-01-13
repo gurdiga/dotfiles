@@ -44,7 +44,7 @@ alias k9="kill -9"
 alias yt="yarn test"
 alias flushdns="sudo killall -HUP mDNSResponder"
 alias timestamp='date "+%Y%m%d%H%M%S"'
-alias loadnvm='source $HOME/.nvm/nvm.sh'
+alias nvmload='source $HOME/.nvm/nvm.sh'
 
 # account for typos
 alias cd-="cd -"
