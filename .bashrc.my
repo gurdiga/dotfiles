@@ -204,6 +204,11 @@ function pull() {
 	fi
 
 	if [ $# -eq 0 ]; then
+		if [ "`git status --short --branch | head -1 | grep -o '(no branch)'`" = "(no branch)" ]; then
+			echo "Not on a branch."
+			return 1
+		fi
+
 		# If there is a tracked branch only pull that one
 		git status --short --branch |\
 		head -1 |\
