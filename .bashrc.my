@@ -149,6 +149,13 @@ function do_my_checks {
 	check_for_nvmrc
 	check_for_ruby_version
 	check_for_dot_env
+	set_macos_terminal_tab_title
+}
+
+function set_macos_terminal_tab_title {
+	local home_relative_path=$(realpath --relative-to="$HOME" $PWD)
+
+	echo -n -e "\033]0;~/${home_relative_path}\007"
 }
 
 function add_prompt_command {
