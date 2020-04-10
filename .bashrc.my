@@ -128,8 +128,8 @@ function check_for_ruby_version {
 
 function check_for_dot_env {
 	# Unload prev .env if any
-	if [ ! -z $OLDPWD ] && [ -f $OLDPWD/.env ]; then
-		unset `grep -Po '^(export )?\K\w+' $OLDPWD/.env`
+	if [ ! -z "$OLDPWD" ] && [ -f "$OLDPWD/.env" ]; then
+		unset `grep -Po '^(export )?\K\w+' "$OLDPWD/.env"`
 	fi
 
 	if [ -e .env ]; then
