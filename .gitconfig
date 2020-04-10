@@ -23,3 +23,5 @@
 	compactionHeuristic=true
 [checkout]
 	defaultRemote=origin
+[grep]
+	extendedRegexp = true
