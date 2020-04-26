@@ -34,7 +34,7 @@ function check_for_local_history {
 				echo "Using local Bash history"
 			fi
 
-			use_history_file $PWD/.bash_history
+			use_history_file "$PWD/.bash_history"
 		else
 			use_history_file ~/.bash_history
 		fi
@@ -47,7 +47,7 @@ function check_for_local_history {
 	function use_history_file {
 		history -w
 		history -c
-		export HISTFILE=$1
+		export HISTFILE="$1"
 		history -r
 	}
 
@@ -187,15 +187,6 @@ export PATH=$PATH:~/go/bin
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-
-function get_make_completion_options {
-	if [ -e Makefile ]; then
-		make -pq |\
-		grep -oP '^[a-zA-Z0-9_-]+(?=:)'
-	fi
-}
-
-complete -W "`get_make_completion_options`" m
 
 function pull() {
 	if [ ! -d .git ]; then
@@ -362,7 +353,7 @@ function _makefile_targets {
 
     # Find makefile targets available in the current directory
     targets=''
-    if [[ -e "$(pwd)/Makefile" ]]; then
+    if [[ -e "Makefile" ]]; then
         targets=$( \
             grep -oE '^[a-zA-Z0-9._-]+:' Makefile \
             | sed 's/://' \
