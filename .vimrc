@@ -61,6 +61,7 @@ augroup my
   autocmd Syntax * syntax match mySpacesForIndenting /^ \+/
   autocmd Syntax * syntax match myOnlyWhitespace /^[ \t]\+$/
 
+  autocmd BufRead,BufNewFile .bashrc.my setlocal filetype=bash
   autocmd BufRead,BufNewFile nginx.* set filetype=nginx
   autocmd BufRead,BufNewFile */nginx.conf.d/*.conf set filetype=nginx
   autocmd BufRead,BufNewFile */bind/zones/*.db set tabstop=8
