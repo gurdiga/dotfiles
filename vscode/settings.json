@@ -109,5 +109,8 @@
     "terminal.integrated.confirmOnExit": true,
     "terminal.integrated.env.osx": {
         "MAKELEVEL": "0"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
 }
