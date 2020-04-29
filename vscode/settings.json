@@ -19,6 +19,7 @@
     "workbench.editor.enablePreview": false,
     "files.associations": {
         "*.js.esm": "javascript",
+        ".bashrc.my": "shellscript",
         ".env": "shellscript",
         ".env.*": "shellscript",
         ".bashrc*": "shellscript"
