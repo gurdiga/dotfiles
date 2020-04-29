@@ -133,7 +133,9 @@ function check_for_dot_env {
 	fi
 
 	if [ -e .env ]; then
+		set -o allexport
 		source .env
+		set +o allexport
 		echo "Loaded environment variables from .env"
 	fi
 }
