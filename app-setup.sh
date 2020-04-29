@@ -17,7 +17,10 @@ grep -F '~/.bashrc' ~/.bash_profile || \
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 ln -v -s "$DIR"/{.gitconfig,.gitignore,.vimrc,.bash_aliases,.bashrc.my,vimp,.mplayer,.screenrc,.irbrc,.ctags,.my.cnf} ~/
+
+cp ~/Library/Application\ Support/Code/User/settings.json{,.bak}
 ln -f vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+cp ~/Library/Application\ Support/Code/User/keybindings.json{,.bak}
 ln -f vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 
 crontab < .crontab
@@ -29,9 +32,8 @@ fi
 brew install git
 brew tap homebrew/dupes
 brew tap homebrew/versions
-brew install make rlwrap curl wget htop unrar watch vim imagemagick rsync gifsicle asciinema ffmpeg pgrep axel mtr app-engine-go-64 tree jq yq ctags Caskroom/cask/keycastr moreutils httpie yq awscli
+brew install node rlwrap curl wget htop unrar watch vim imagemagick rsync gifsicle asciinema ffmpeg pgrep axel mtr go app-engine-go-64 tmate tree jsonpp jq python-yq ctags Caskroom/cask/keycastr moreutils httpie yq awscli
 brew install coreutils grep gnu-sed findutils
-brew install parallel && brew link --overwrite parallel
 brew install fd ag fzf && /usr/local/opt/fzf/install
 
 brew install bash bash-completion
@@ -46,8 +48,6 @@ git clone git@github.com:suzanshakya/nginx-server.git ~/src/nginx-server
 go get github.com/GoogleChrome/simplehttp2server
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
-
-npm install -g elm-format
 
 pip3 install csvtomd
 
