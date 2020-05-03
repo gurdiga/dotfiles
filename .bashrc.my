@@ -1,3 +1,5 @@
+#!/bin/bash
+
 [ "$OSTYPE" = "linux-gnueabi" ] && export PS1="    \[\033[0;33m\]\w\[\033[0;37m\] \[\033[0;32m\]ε\[\033[0;37m\]  "
 [ "$OSTYPE" = "linux-gnu" ] && export PS1="    \[\033[0;33m\]\w\[\033[0;37m\] \[\033[0;32m\]Ξ\[\033[0;37m\]  "
 [[ $OSTYPE =~ ^darwin ]] && export PS1="    \[\033[0;33m\]\w\[\033[0;37m\] \[\033[0;35m\]ɀ\[\033[0;37m\]  "
@@ -182,17 +184,18 @@ export RUBY_GC_MALLOC_LIMIT=90000000
 export RUBY_GC_HEAP_FREE_SLOTS=200000
 
 # brew
-export PATH=/usr/local/sbin:/usr/local/bin:$PATH
+export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # node
-export PATH=./node_modules/.bin:$PATH
+export PATH="./node_modules/.bin:$PATH"
 
 # go
-export PATH=$PATH:~/go/bin
+export PATH="$PATH:~/go/bin"
 
 # pip
 export PATH=$PATH:~/Library/Python/2.7/bin
