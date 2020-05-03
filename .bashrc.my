@@ -155,7 +155,7 @@ function do_my_checks {
 }
 
 function set_macos_terminal_tab_title {
-	local home_relative_path=$(realpath --relative-to="$HOME" $PWD)
+	local home_relative_path=$(realpath --relative-to="$HOME" "$PWD")
 
 	echo -n -e "\033]0;~/${home_relative_path}\007"
 }
