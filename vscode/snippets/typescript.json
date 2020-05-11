@@ -1,0 +1,95 @@
+{
+    "colo": {
+      "prefix": "colo",
+      "body": [
+        "console.log($1);"
+      ],
+      "description": ""
+    },
+    "coti": {
+      "prefix": "coti",
+      "body": [
+        "console.time($1);",
+        "console.timeEnd($1);"
+      ],
+      "description": ""
+    },
+    "tede": {
+      "prefix": "tede",
+      "body": [
+        "describe(\"$1\", () => {",
+        "  $2",
+        "});"
+      ],
+      "description": ""
+    },
+    "teco": {
+      "prefix": "teco",
+      "body": [
+        "context(\"$1\", () => {",
+        "  $2",
+        "});"
+      ],
+      "description": ""
+    },
+    "tebe": {
+      "prefix": "tebe",
+      "body": [
+        "beforeEach(() => {",
+        "  $1",
+        "});"
+      ],
+      "description": ""
+    },
+    "teaf": {
+      "prefix": "teaf",
+      "body": [
+        "afterEach(() => {",
+        "  $2",
+        "});"
+      ],
+      "description": ""
+    },
+    "teit": {
+      "prefix": "teit",
+      "body": [
+        "it(\"$1\", () => {",
+        "  $2",
+        "});"
+      ],
+      "description": ""
+    },
+    "fn": {
+      "prefix": "fn",
+      "body": [
+        "function $1($2): $3 {",
+        "  $4",
+        "}"
+      ],
+      "description": ""
+    },
+    "ecs": {
+      "prefix": "ecs",
+      "body": [
+        "export const $1 = style({",
+        "  $2",
+        "});"
+      ],
+      "description": "Export TypeStyle constant"
+    }
+    /*
+      // Place your snippets for TypeScript here. Each snippet is defined under a snippet name and has a prefix, body and
+      // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+      // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+      // same ids are connected.
+      // Example:
+      "Print to console": {
+          "prefix": "log",
+          "body": [
+              "console.log('$1');",
+              "$2"
+          ],
+          "description": "Log output to console"
+      }
+      */
+  }
