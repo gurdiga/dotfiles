@@ -18,11 +18,6 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 ln -v -s "$DIR"/{.gitconfig,.gitignore,.vimrc,.bash_aliases,.bashrc.my,vimp,.mplayer,.screenrc,.irbrc,.ctags,.my.cnf} ~/
 
-cp ~/Library/Application\ Support/Code/User/settings.json{,.bak}
-ln -f vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-cp ~/Library/Application\ Support/Code/User/keybindings.json{,.bak}
-ln -f vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
-
 crontab < .crontab
 
 if [ ! -f /usr/local/bin/brew ]; then

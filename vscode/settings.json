@@ -1,118 +1,116 @@
 {
-    "editor.formatOnSave": true,
-    "files.insertFinalNewline": true,
-    "prettier.disableLanguages": [
-        "markdown"
-    ],
-    "prettier.trailingComma": "es5",
-    "prettier.printWidth": 120,
-    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
-    "workbench.activityBar.visible": true,
-    "git.confirmSync": false,
-    "emmet.excludeLanguages": [
-        "markdown",
-        "typescript",
-        "jsx"
-    ],
-    "files.trimTrailingWhitespace": true,
-    "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
-    "workbench.editor.enablePreview": false,
-    "files.associations": {
-        "*.js.esm": "javascript",
-        ".bashrc.my": "shellscript",
-        ".env": "shellscript",
-        ".env.*": "shellscript",
-        ".bashrc*": "shellscript"
-    },
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "search.exclude": {
-        ".bash_history": true,
-        ".viminfo": true
-    },
-    "editor.occurrencesHighlight": false,
-    "[yaml]": {
-        "editor.formatOnSave": false
-    },
-    "git.enableSmartCommit": true,
-    "workbench.startupEditor": "newUntitledFile",
-    "extensions.ignoreRecommendations": true,
-    "editor.detectIndentation": false,
-    "prettier.singleQuote": false,
-    "zenMode.restore": true,
-    "[plaintext]": {
-        "editor.wordWrap": "on",
-        "editor.wordWrapColumn": 72,
-        "editor.quickSuggestions": false,
-        "editor.minimap.enabled": false
-    },
-    "stylelint.enable": false,
-    "files.exclude": {
-        "node_modules": true
-    },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[shellscript]": {
-        "editor.insertSpaces": false,
-    },
-    "[ruby]": {
-        "editor.insertSpaces": true,
-        "editor.tabSize": 2
-    },
-    "ruby.useLanguageServer": true,
-    "ruby.lint": {
-        "rubocop": {
-            "useBundler": false // enable rubocop via bundler
-        }
-    },
-    "diffEditor.renderSideBySide": false,
-    "ruby.rubocop.executePath": "/Users/vlad/.rvm/gems/ruby-2.6.5/bin/",
-    "ruby.format": "rubocop",
-    "ruby.lintDebounceTime": 5000,
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "cSpell.userWords": [
-        "BUILDKITE",
-        "Croppable",
-        "GURDIGA",
-        "Loggable",
-        "Mbml",
-        "Mixbook",
-        "Resizeable",
-        "Swipeable",
-        "Unmount",
-        "Vadim",
-        "Workarea",
-        "codefreeze",
-        "endregion",
-        "entrypoint",
-        "gmail",
-        "landshark",
-        "rasterization",
-        "repetitor",
-        "repos",
-        "synchronizable",
-        "unhover"
-    ],
-    "cSpell.enabledLanguageIds": [
-        "git-commit"
-    ],
-    "cSpell.language": "en,en-US",
-    "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "window.restoreFullscreen": true,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "terminal.integrated.confirmOnExit": true,
-    "terminal.integrated.env.osx": {
-        "MAKELEVEL": "0"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.formatOnSave": true,
+  "files.insertFinalNewline": true,
+  "prettier.disableLanguages": ["markdown"],
+  "prettier.trailingComma": "es5",
+  "prettier.printWidth": 120,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+  "workbench.activityBar.visible": true,
+  "git.confirmSync": false,
+  "emmet.excludeLanguages": ["markdown", "typescript", "jsx"],
+  "files.trimTrailingWhitespace": true,
+  "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+  "workbench.editor.enablePreview": false,
+  "files.associations": {
+    "*.js.esm": "javascript",
+    ".env": "shellscript",
+    ".env.*": "shellscript",
+    ".bashrc*": "shellscript"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "search.exclude": {
+    ".bash_history": true,
+    ".viminfo": true
+  },
+  "editor.occurrencesHighlight": false,
+  "[yaml]": {
+    "editor.formatOnSave": false
+  },
+  "git.enableSmartCommit": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "extensions.ignoreRecommendations": true,
+  "editor.detectIndentation": false,
+  "prettier.singleQuote": false,
+  "zenMode.restore": true,
+  "[plaintext]": {
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 72,
+    "editor.quickSuggestions": false,
+    "editor.minimap.enabled": false
+  },
+  "stylelint.enable": false,
+  "files.exclude": {
+    "node_modules": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[shellscript]": {
+    "editor.insertSpaces": false
+  },
+  "[ruby]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "ruby.useLanguageServer": true,
+  "ruby.lint": {
+    "rubocop": {
+      "useBundler": false // enable rubocop via bundler
     }
+  },
+  "diffEditor.renderSideBySide": false,
+  "ruby.rubocop.executePath": "/Users/vlad/.rvm/gems/ruby-2.6.5/bin/",
+  "ruby.format": "rubocop",
+  "ruby.lintDebounceTime": 5000,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "cSpell.userWords": [
+    "BUILDKITE",
+    "Croppable",
+    "GURDIGA",
+    "Loggable",
+    "Mbml",
+    "Mixbook",
+    "Resizeable",
+    "Swipeable",
+    "Unmount",
+    "Vadim",
+    "Workarea",
+    "codefreeze",
+    "endregion",
+    "entrypoint",
+    "gmail",
+    "landshark",
+    "rasterization",
+    "repetitor",
+    "repos",
+    "synchronizable",
+    "unhover"
+  ],
+  "cSpell.enabledLanguageIds": ["git-commit"],
+  "cSpell.language": "en,en-US",
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "window.restoreFullscreen": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "terminal.integrated.confirmOnExit": true,
+  "terminal.integrated.env.osx": {
+    "MAKELEVEL": "0"
+  },
+  "workbench.editorAssociations": [
+    {
+      "viewType": "default",
+      "filenamePattern": "*.txt"
+    }
+  ],
+  "rewrap.wrappingColumn": 72
 }
