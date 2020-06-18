@@ -6,8 +6,6 @@ BIN_DIRS=/bin /usr/bin /usr/local/bin /usr/local/opt/coreutils/libexec/gnubin
 HELP_DIR=/Users/vlad/help
 
 30 * * * * sudo /usr/bin/sntp -sS europe.pool.ntp.org 2>&1 >/dev/null | ifne mail -s 'NTP sync error?' gurdiga@gmail.com
-31 10 * * 0-4 find /usr/share/man /usr/local/share/man -printf '\%f\n' | sed -E 's/\.([0-9]\.?[a-z]*)$//' | shuf -n 1 | xargs man | col -b | mail -s 'Daily man page' gurdiga@gmail.com
-32 10 * * 0-4 cat $HELP_DIR/$(ls -1 $HELP_DIR | head -$((${RANDOM} \% `ls -1 $HELP_DIR | wc -l` + 1)) | tail -1) | mail -s 'Daily builtin' gurdiga@gmail.com
 
 # Weekly RVM update
 0 11 * * 5 ~/.rvm/bin/rvm get stable
