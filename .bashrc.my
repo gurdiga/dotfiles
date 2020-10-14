@@ -200,6 +200,9 @@ export PATH="$PATH:~/go/bin"
 # pip
 export PATH=$PATH:~/Library/Python/2.7/bin
 
+# Ruby gems
+export PATH=$PATH:~/.gem/ruby/2.6.0/bin
+
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
