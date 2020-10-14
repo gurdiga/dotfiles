@@ -406,7 +406,7 @@ function hibp() {
 
 function log {
 	local directory=~/Google\ Drive/log
-	local filename="`date +%F-%H-%M`.txt"
+	local filename="`LC_ALL=ro_RO.utf-8 date +%F-%H-%M-%a`.txt"
 
 	cp "$directory/template.txt" "$directory/$filename"
 	cd "$directory"
