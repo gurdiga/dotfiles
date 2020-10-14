@@ -49,3 +49,4 @@ alias flushdns="sudo killall -HUP mDNSResponder"
 alias timestamp='date "+%Y%m%d%H%M%S"'
 alias nvmload='source $HOME/.nvm/nvm.sh'
 alias rm="rm -v"
+alias d="docker"
