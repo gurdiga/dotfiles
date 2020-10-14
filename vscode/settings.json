@@ -1,5 +1,4 @@
 {
-  "editor.formatOnSave": true,
   "files.insertFinalNewline": true,
   "prettier.disableLanguages": ["markdown"],
   "prettier.trailingComma": "es5",
@@ -12,10 +11,14 @@
   "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
   "workbench.editor.enablePreview": false,
   "files.associations": {
+    "tsconfig.json": "jsonc",
     "*.js.esm": "javascript",
     ".env": "shellscript",
     ".env.*": "shellscript",
-    ".bashrc*": "shellscript"
+    ".bashrc*": "shellscript",
+    "*.conf": "lua",
+    "*.json": "json",
+    "*.xlf": "xml"
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
   "search.exclude": {
@@ -112,5 +115,31 @@
       "filenamePattern": "*.txt"
     }
   ],
-  "rewrap.wrappingColumn": 72
+  "rewrap.wrappingColumn": 72,
+  "editor.renameOnType": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.largeFileOptimizations": false,
+  "mssql.connections": [
+    {
+      "server": "localhost",
+      "database": "",
+      "authenticationType": "SqlLogin",
+      "user": "sa",
+      "password": "",
+      "emptyPasswordInput": false,
+      "savePassword": true
+    },
+    {
+      "connectionString": "Microsoft.SqlTools|itemtype:Profile|server:winerist-sql.database.windows.net|db:Winerist|user:winerist|isConnectionString:true",
+      "database": "Winerist",
+      "user": "winerist",
+      "server": "winerist-sql.database.windows.net",
+      "authenticationType": "SqlLogin",
+      "savePassword": true,
+      "password": ""
+    }
+  ],
+  "editor.codeLens": false
 }
