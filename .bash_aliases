@@ -14,6 +14,7 @@ alias gl='git log --abbrev-commit'
 alias gln='git log --abbrev-commit --stat'
 alias glg='git log --graph --decorate --source --all --oneline'
 alias gl1='git log --abbrev-commit --format=oneline'
+alias gl1m="gl1 master..."
 alias grb='git rebase'
 alias grs='git reset'
 alias gfo='git fetch origin'
