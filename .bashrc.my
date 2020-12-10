@@ -14,6 +14,10 @@ set -b
 shopt -s globstar
 shopt -s extglob
 
+# keeps newlines in multi-line commands
+shopt -s cmdhist
+shopt -s lithist
+
 # If set, the history list is appended to the file named by the value of the
 # HISTFILE variable when the shell exits, rather than overwriting the file.
 shopt -s histappend
