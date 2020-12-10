@@ -17,3 +17,11 @@ tags
 .mocha.opts
 .env
 .env.sample
+
+# Jekyll
+_site/
+.jekyll-cache/
+
+# Bundler per-directory setup
+.bundle
+vendor/
