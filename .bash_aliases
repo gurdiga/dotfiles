@@ -49,5 +49,5 @@ alias yt="yarn test"
 alias flushdns="sudo killall -HUP mDNSResponder"
 alias timestamp='date "+%Y%m%d%H%M%S"'
 alias nvmload='source $HOME/.nvm/nvm.sh'
-alias rm="rm --verbose"
-alias d="docker"
+alias rm="rm -v"
+alias e="code -n ."
