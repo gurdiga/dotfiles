@@ -271,9 +271,6 @@ function f() {
 		return 0
 	fi
 
-	local NEEDLE="$1"
-	local HAYSTACK=${2:-*}
-
 	local DOT_FILE=".grepignore"
 	local MAX_LINE_LENGTH=$(($COLUMNS * 3))
 
@@ -295,15 +292,14 @@ function f() {
 		EXCLUDE_CLAUSE+=" --exclude=$FILE"
 	done
 
-	ls -Rd $HAYSTACK \
-	| xargs grep \
-		--color=auto \
+	grep \
+		--color=always \
 		--line-number \
 		--binary-files=without-match \
 		--recursive \
 		$EXCLUDE_CLAUSE \
-		$EXCLUDE_DIR_CLAUSE \
-		$NEEDLE
+		$EXCLUDE_DIR_CLAUSE "$@" \
+		| cut -c -$MAX_LINE_LENGTH
 }
 
 function gif() {
