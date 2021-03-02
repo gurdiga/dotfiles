@@ -411,8 +411,14 @@ function hibp() {
 function log {
 	local directory=~/Google\ Drive/log
 	local filename="`LC_ALL=ro_RO.utf-8 date +%F-%H-%M-%a`.txt"
+	local variation="$1"
+	local template="template.txt"
 
-	cp "$directory/template.txt" "$directory/$filename"
+	if [ $variation ]; then
+	    template="template-$variation.txt"
+	fi
+
+	cp "$directory/$template" "$directory/$filename"
 	cd "$directory"
 	code --new-window "$filename" && exit
 }
