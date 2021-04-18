@@ -423,10 +423,6 @@ function log {
 	code --new-window "$filename" && exit
 }
 
-function think {
-	code --new-window note.txt && exit
-}
-
 function skip {
 	tail --lines +`expr $1 + 1`
 }
@@ -464,15 +460,12 @@ function gfc {
 	git checkout $origin_branch_name
 }
 
-function gsm {
-	local branch_name="$1"
-	local commit_message="$2"
-
-	git merge "$branch_name" --squash && git commit -m "$commit_message"
-}
-
 function s {
 	local files="$@"
 
 	stat -c "%s %n" $files | numfmt --to=iec-i --suffix=B --padding=7
+}
+
+function second {
+	awk '{ print $2; }'
 }
