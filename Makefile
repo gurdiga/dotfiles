@@ -16,3 +16,6 @@ kpax-gmail-smtp:
 	#
 	# [1]: https://myaccount.google.com/security
 	# [2]: https://www.linode.com/docs/email/postfix/postfix-smtp-debian7/#configuring-smtp-usernames-and-passwords
+
+sudoers:
+	sudo cp vlad.sudoers /etc/sudoers.d/vlad.sudoers
