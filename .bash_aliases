@@ -51,3 +51,4 @@ alias timestamp='date "+%Y%m%d%H%M%S"'
 alias nvmload='source $HOME/.nvm/nvm.sh'
 alias rm="rm -v"
 alias e="code -n ."
+alias trim="sed -E 's/(^\s+|\s+*)//g'"
