@@ -469,3 +469,12 @@ function s {
 function second {
 	awk '{ print $2; }'
 }
+
+# Given a list of files to STDIN, will filter out the ones that contain the grep needle.
+function does_not_contain {
+	local needle=$1
+
+	while read file; do
+		grep "$needle" "$file" > /dev/null || echo "$file"
+	done
+}
