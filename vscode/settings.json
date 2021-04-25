@@ -19,7 +19,7 @@
     "editor.minimap.enabled": false,
     "editor.quickSuggestions": false,
     "editor.wrappingStrategy": "advanced",
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "bounded"
   },
   "[ruby]": {
     "editor.insertSpaces": true,
