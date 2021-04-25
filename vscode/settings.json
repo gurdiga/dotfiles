@@ -18,7 +18,8 @@
     "editor.lineHeight": 25,
     "editor.minimap.enabled": false,
     "editor.quickSuggestions": false,
-    "editor.wordWrap": "on",
+    "editor.wrappingStrategy": "advanced",
+    "editor.wordWrap": "on"
   },
   "[ruby]": {
     "editor.insertSpaces": true,
@@ -62,7 +63,7 @@
     "repos",
     "synchronizable",
     "unhover"
-],
+  ],
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.renderSideBySide": false,
   "editor.codeLens": false,
@@ -152,22 +153,22 @@
   "shellcheck.enableQuickFix": true,
   "json.maxItemsComputed": 50000,
   "editor.fontSize": 14,
-"terminal.integrated.fontSize": 14,
-"grammarly.hideUnavailablePremiumAlerts": true,
-"grammarly.showUsernameInStatusBar": false,
-"editor.linkedEditing": true,
-"angular.enable-experimental-ivy-prompt": false,
-"[java]": {
+  "terminal.integrated.fontSize": 14,
+  "grammarly.hideUnavailablePremiumAlerts": true,
+  "grammarly.showUsernameInStatusBar": false,
+  "editor.linkedEditing": true,
+  "angular.enable-experimental-ivy-prompt": false,
+  "[java]": {
     "editor.defaultFormatter": "redhat.java"
-},
-"redhat.telemetry.enabled": true,
-"sonarlint.rules": {
-  "Web:BoldAndItalicTagsCheck": {
-    "level": "off"
   },
-  "typescript:S4043": {
-    "level": "off"
-  }
-},
-"workbench.editor.decorations.badges": false
+  "redhat.telemetry.enabled": true,
+  "sonarlint.rules": {
+    "Web:BoldAndItalicTagsCheck": {
+      "level": "off"
+    },
+    "typescript:S4043": {
+      "level": "off"
+    }
+  },
+  "workbench.editor.decorations.badges": false
 }
