@@ -1,80 +1,44 @@
 {
-  "files.insertFinalNewline": true,
-  "prettier.disableLanguages": ["markdown"],
-  "prettier.trailingComma": "es5",
-  "prettier.printWidth": 120,
-  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
-  "workbench.activityBar.visible": true,
-  "git.confirmSync": false,
-  "emmet.excludeLanguages": ["markdown", "typescript", "jsx"],
-  "files.trimTrailingWhitespace": true,
-  "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
-  "workbench.editor.enablePreview": false,
-  "files.associations": {
-    "tsconfig.json": "jsonc",
-    "*.js.esm": "javascript",
-    ".env": "shellscript",
-    ".env.*": "shellscript",
-    ".bashrc*": "shellscript",
-    "*.conf": "lua",
-    "*.json": "json",
-    "*.xlf": "xml"
-  },
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "search.exclude": {
-    ".bash_history": true,
-    ".viminfo": true
-  },
-  "editor.occurrencesHighlight": false,
-  "[yaml]": {
-    "editor.formatOnSave": false
-  },
-  "git.enableSmartCommit": true,
-  "workbench.startupEditor": "newUntitledFile",
-  "extensions.ignoreRecommendations": true,
-  "editor.detectIndentation": false,
-  "prettier.singleQuote": false,
-  "zenMode.restore": true,
-  "[plaintext]": {
-    "editor.wordWrap": "on",
-    "editor.wordWrapColumn": 72,
-    "editor.quickSuggestions": false,
-    "editor.minimap.enabled": false
-  },
-  "stylelint.enable": false,
-  "files.exclude": {
-    "node_modules": true
-  },
-  "[javascript]": {
+  "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[typescriptreact]": {
+  "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[html]": {
+  "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[shellscript]": {
-    "editor.insertSpaces": false
+  "[plaintext]": {
+    "editor.fontFamily": "Bookerly",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 14,
+    "editor.lineHeight": 25,
+    "editor.minimap.enabled": false,
+    "editor.quickSuggestions": false,
+    "editor.wordWrap": "on",
   },
   "[ruby]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2
   },
-  "ruby.useLanguageServer": true,
-  "ruby.lint": {
-    "rubocop": {
-      "useBundler": false // enable rubocop via bundler
-    }
+  "[shellscript]": {
+    "editor.insertSpaces": false
   },
-  "diffEditor.renderSideBySide": false,
-  "ruby.rubocop.executePath": "/Users/vlad/.rvm/gems/ruby-2.6.5/bin/",
-  "ruby.format": "rubocop",
-  "ruby.lintDebounceTime": 5000,
-  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.formatOnSave": false
+  },
+  "cSpell.enabledLanguageIds": ["git-commit", "markdown"],
+  "cSpell.language": "en,en-US",
   "cSpell.userWords": [
     "BUILDKITE",
     "Croppable",
@@ -84,6 +48,7 @@
     "Mixbook",
     "Resizeable",
     "Swipeable",
+    "TLDR",
     "Unmount",
     "Vadim",
     "Workarea",
@@ -97,49 +62,112 @@
     "repos",
     "synchronizable",
     "unhover"
-  ],
-  "cSpell.enabledLanguageIds": ["git-commit"],
-  "cSpell.language": "en,en-US",
-  "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "window.restoreFullscreen": true,
+],
   "diffEditor.ignoreTrimWhitespace": false,
-  "terminal.integrated.confirmOnExit": true,
+  "diffEditor.renderSideBySide": false,
+  "editor.codeLens": false,
+  "editor.detectIndentation": false,
+  "editor.fontFamily": "'Fantasque Sans Mono', 'Cuisine', 'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+  "editor.largeFileOptimizations": false,
+  "editor.occurrencesHighlight": false,
+  "editor.suggestSelection": "first",
+  "emmet.excludeLanguages": ["markdown", "typescript", "jsx"],
+  "extensions.ignoreRecommendations": true,
+  "files.associations": {
+    "*.conf": "lua",
+    "*.js.esm": "javascript",
+    "*.json": "json",
+    "*.xlf": "xml",
+    ".bashrc*": "shellscript",
+    ".env": "shellscript",
+    ".env.*": "shellscript",
+    "tsconfig.json": "jsonc"
+  },
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "node_modules": true
+  },
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "mssql.connections": [
+    {
+      "authenticationType": "SqlLogin",
+      "database": "",
+      "emptyPasswordInput": false,
+      "password": "",
+      "savePassword": true,
+      "server": "localhost",
+      "user": "sa"
+    },
+    {
+      "authenticationType": "SqlLogin",
+      "connectionString": "Microsoft.SqlTools|itemtype:Profile|server:winerist-sql.database.windows.net|db:Winerist|user:winerist|isConnectionString:true",
+      "database": "Winerist",
+      "password": "",
+      "savePassword": true,
+      "server": "winerist-sql.database.windows.net",
+      "user": "winerist"
+    }
+  ],
+  "prettier.printWidth": 120,
+  "prettier.singleQuote": false,
+  "prettier.trailingComma": "es5",
+  "rewrap.wrappingColumn": 72,
+  "ruby.format": "rubocop",
+  "ruby.lint": {
+    "rubocop": {
+      "useBundler": false
+    }
+  },
+  "ruby.lintDebounceTime": 5000,
+  "ruby.rubocop.executePath": "/Users/vlad/.rvm/gems/ruby-2.6.5/bin/",
+  "ruby.useLanguageServer": true,
+  "search.exclude": {
+    ".bash_history": true,
+    ".viminfo": true
+  },
   "terminal.integrated.env.osx": {
     "MAKELEVEL": "0"
   },
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "window.restoreFullscreen": true,
+  "workbench.activityBar.visible": true,
+  "workbench.colorTheme": "Visual Studio Dark",
+  "workbench.editor.enablePreview": false,
   "workbench.editorAssociations": [
     {
-      "viewType": "default",
-      "filenamePattern": "*.txt"
+      "filenamePattern": "*.txt",
+      "viewType": "default"
     }
   ],
-  "rewrap.wrappingColumn": 72,
-  "editor.renameOnType": true,
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "workbench.startupEditor": "newUntitledFile",
+  "zenMode.restore": true,
+  "shellcheck.enableQuickFix": true,
+  "json.maxItemsComputed": 50000,
+  "editor.fontSize": 14,
+"terminal.integrated.fontSize": 14,
+"grammarly.hideUnavailablePremiumAlerts": true,
+"grammarly.showUsernameInStatusBar": false,
+"editor.linkedEditing": true,
+"angular.enable-experimental-ivy-prompt": false,
+"[java]": {
+    "editor.defaultFormatter": "redhat.java"
+},
+"redhat.telemetry.enabled": true,
+"sonarlint.rules": {
+  "Web:BoldAndItalicTagsCheck": {
+    "level": "off"
   },
-  "editor.largeFileOptimizations": false,
-  "mssql.connections": [
-    {
-      "server": "localhost",
-      "database": "",
-      "authenticationType": "SqlLogin",
-      "user": "sa",
-      "password": "",
-      "emptyPasswordInput": false,
-      "savePassword": true
-    },
-    {
-      "connectionString": "Microsoft.SqlTools|itemtype:Profile|server:winerist-sql.database.windows.net|db:Winerist|user:winerist|isConnectionString:true",
-      "database": "Winerist",
-      "user": "winerist",
-      "server": "winerist-sql.database.windows.net",
-      "authenticationType": "SqlLogin",
-      "savePassword": true,
-      "password": ""
-    }
-  ],
-  "editor.codeLens": false
+  "typescript:S4043": {
+    "level": "off"
+  }
+},
+"workbench.editor.decorations.badges": false
 }
