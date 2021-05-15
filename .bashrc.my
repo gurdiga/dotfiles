@@ -420,7 +420,7 @@ function log {
 
 	cp "$directory/$template" "$directory/$filename"
 	cd "$directory"
-	code --new-window "$filename" && exit
+	code --new-window . "$filename" && exit
 }
 
 function skip {
