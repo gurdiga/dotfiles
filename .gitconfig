@@ -25,3 +25,5 @@
 	defaultRemote=origin
 [grep]
 	extendedRegexp = true
+[init]
+	defaultBranch = main
