@@ -13,6 +13,8 @@
 	quotepath = false
 [alias]
 	is-clean = diff --exit-code --quiet
+	undo = reset HEAD~1
+	prune = remote prune origin
 [branch]
 	autosetuprebase = always
 [push]
