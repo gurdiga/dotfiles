@@ -458,6 +458,7 @@ function gfc {
 
 	git fetch origin $origin_branch_name
 	git checkout $origin_branch_name
+	git reset --hard origin/$origin_branch_name
 }
 
 function s {
