@@ -52,3 +52,4 @@ alias nvmload='source $HOME/.nvm/nvm.sh'
 alias rm="rm -v"
 alias e="code -n ."
 alias trim="sed -E 's/(^\s+|\s+*)//g'"
+alias cql='sqlite-utils memory'
