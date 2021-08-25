@@ -29,30 +29,6 @@
         "command": "-workbench.action.zoomReset"
     },
     {
-        "key": "ctrl+left",
-        "command": "workbench.action.navigateBack"
-    },
-    {
-        "key": "ctrl+-",
-        "command": "-workbench.action.navigateBack"
-    },
-    {
-        "key": "ctrl+right",
-        "command": "workbench.action.navigateForward"
-    },
-    {
-        "key": "ctrl+shift+-",
-        "command": "-workbench.action.navigateForward"
-    },
-    // {
-    // 	"key": "ctrl+`",
-    // 	"command": "workbench.action.terminal.toggleTerminal"
-    // },
-    // {
-    // 	"key": "ctrl+`",
-    // 	"command": "-workbench.action.terminal.toggleTerminal"
-    // },
-    {
         "key": "ctrl+shift+down",
         "command": "editor.action.moveLinesDownAction",
         "when": "editorTextFocus && !editorReadonly"
@@ -115,5 +91,15 @@
         "key": "cmd+w",
         "command": "-workbench.action.closeWindow",
         "when": "!editorIsOpen && !multipleEditorGroups"
+    },
+    {
+      "key": "alt+[",
+      "command": "-editor.action.inlineSuggest.showPrevious",
+      "when": "!editorReadonly"
+    },
+    {
+      "key": "alt+]",
+      "command": "-editor.action.inlineSuggest.showNext",
+      "when": "!editorReadonly"
     }
 ]

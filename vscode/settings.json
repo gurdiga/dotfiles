@@ -1,4 +1,7 @@
 {
+  "[Makefile]": {
+    "editor.insertSpaces": false
+  },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -9,17 +12,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
+    "editor.tabSize": 2,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[plaintext]": {
-    "editor.fontFamily": "Bookerly",
-    "editor.fontLigatures": true,
-    "editor.fontSize": 14,
-    "editor.lineHeight": 25,
-    "editor.minimap.enabled": false,
-    "editor.quickSuggestions": false,
-    "editor.wrappingStrategy": "advanced",
-    "editor.wordWrap": "bounded"
   },
   "[ruby]": {
     "editor.insertSpaces": true,
@@ -29,8 +23,8 @@
     "editor.insertSpaces": false
   },
   "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -43,6 +37,7 @@
   "cSpell.userWords": [
     "BUILDKITE",
     "Croppable",
+    "Feedly",
     "GURDIGA",
     "Loggable",
     "Mbml",
@@ -57,13 +52,14 @@
     "endregion",
     "entrypoint",
     "gmail",
+    "journaling",
     "landshark",
     "rasterization",
     "repetitor",
     "repos",
     "synchronizable",
     "unhover"
-  ],
+],
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.renderSideBySide": false,
   "editor.codeLens": false,
@@ -80,8 +76,10 @@
     "*.json": "json",
     "*.xlf": "xml",
     ".bashrc*": "shellscript",
-    ".env": "shellscript",
-    ".env.*": "shellscript",
+    ".env": "dotenv",
+    ".env.*": "dotenv",
+    "*.env": "dotenv",
+    "*.env.sample": "dotenv",
     "tsconfig.json": "jsonc"
   },
   "files.exclude": {
@@ -139,15 +137,11 @@
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.restoreFullscreen": true,
-  "workbench.activityBar.visible": true,
-  "workbench.colorTheme": "Visual Studio Dark",
+"workbench.activityBar.visible": true,
   "workbench.editor.enablePreview": false,
-  "workbench.editorAssociations": [
-    {
-      "filenamePattern": "*.txt",
-      "viewType": "default"
-    }
-  ],
+  "workbench.editorAssociations": {
+    "*.txt": "default"
+},
   "workbench.startupEditor": "newUntitledFile",
   "zenMode.restore": true,
   "shellcheck.enableQuickFix": true,
@@ -158,9 +152,6 @@
   "grammarly.showUsernameInStatusBar": false,
   "editor.linkedEditing": true,
   "angular.enable-experimental-ivy-prompt": false,
-  "[java]": {
-    "editor.defaultFormatter": "redhat.java"
-  },
   "redhat.telemetry.enabled": true,
   "sonarlint.rules": {
     "Web:BoldAndItalicTagsCheck": {
@@ -168,7 +159,14 @@
     },
     "typescript:S4043": {
       "level": "off"
+    },
+    "javascript:S1854": {
+      "level": "off"
     }
   },
-  "workbench.editor.decorations.badges": false
+  "workbench.editor.decorations.badges": false,
+  "stylelint.configOverrides": {
+    "ignoreFiles": ["**/*.txt"]
+},
+"debug.javascript.autoAttachFilter": "disabled"
 }
