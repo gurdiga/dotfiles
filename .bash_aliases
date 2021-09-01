@@ -41,7 +41,7 @@ alias calc='bc <<<'
 alias be="bundle exec"
 alias ports="sudo lsof -PiTCP -sTCP:LISTEN"
 alias ip="ifconfig | grep -Po '(?<=inet )\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | grep -v '127.0.0.1'"
-alias pbwrap="pbpaste | fold -w 72 -s | pbcopy"
+alias pbwrap="pbpaste | prettier --stdin-filepath text.md --print-width 72 --prose-wrap always | pbcopy"
 alias rehash="hash -r"
 alias bytes="numfmt --to=iec-i --suffix=B --padding=7"
 alias k9="kill -9"
