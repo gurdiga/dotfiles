@@ -30,7 +30,6 @@ alias ll='ls --full-time --time-style="+%Y-%m-%d %H:%M:%S" --group-directories-f
 alias files='cut -d: -f1 | uniq | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"'
 alias encrypt='openssl enc -aes-256-cbc -e'
 alias decrypt='openssl aes-256-cbc -d'
-alias node='env NODE_NO_READLINE=1 rlwrap node'
 alias www="~/src/nginx-server/nginx-server.py"
 alias wwws="simplehttp2server"
 alias stripcolor='sed -r "s:\x1B\[[0-9;]*[mK]::g"'
@@ -54,3 +53,4 @@ alias e="code -n ."
 alias trim="sed -E 's/(^\s+|\s+*)//g'"
 alias cql='sqlite-utils memory'
 alias sshaddk='ssh-add -K ~/.ssh/id_rsa'
+alias nodenpmversion='curl -s https://nodejs.org/dist/index.json | jq -r ".[] | [.version, .npm] | @tsv"'
