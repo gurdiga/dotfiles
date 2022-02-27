@@ -3,7 +3,7 @@
 echo "Installing applications..."
 
 # See https://sipb.mit.edu/doc/safe-shell/
-#set -euf -o pipefail
+set -euf -o pipefail
 
 grep -F '.bash_aliases' ~/.bashrc || \
 	echo '. ~/.bash_aliases' >> ~/.bashrc
@@ -20,31 +20,24 @@ ln -v -s "$DIR"/{.gitconfig,.gitignore,.vimrc,.bash_aliases,.bashrc.my,vimp,.mpl
 
 crontab < .crontab
 
-if [ ! -f /usr/local/bin/brew ]; then
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
-
 brew install git
 brew tap homebrew/dupes
 brew tap homebrew/versions
-brew install node rlwrap curl wget htop unrar watch vim imagemagick rsync gifsicle asciinema mpv ffmpeg pgrep mtr go app-engine-go-64 tmate tree jsonpp jq python-yq ctags Caskroom/cask/keycastr moreutils httpie yq awscli@1 sqlite-utils
+brew install make curl wget htop unrar watch vim imagemagick rsync gifsicle asciinema mpv ffmpeg pgrep mtr tree jq ctags moreutils sqlite-utils
 brew install coreutils grep gnu-sed findutils
 brew install fd ag fzf && /usr/local/opt/fzf/install
 
 brew install bash bash-completion
-sudo sh -c 'echo /usr/local/bin/bash >> /etc/shells'
-chsh -s /usr/local/bin/bash
+
+BREW_BASH=$(brew --prefix)/bin/bash
+sudo sh -c "echo $BREW_BASH >> /etc/shells"
+chsh -s $BREW_BASH
 
 # for the `www` alias
 brew install nginx
 git clone git@github.com:suzanshakya/nginx-server.git ~/src/nginx-server
 
-# for the `wwws` alias
-go get github.com/GoogleChrome/simplehttp2server
-
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
-
-pip3 install csvtomd
 
 function check_fzf_patch() {
 	source ~/.bashrc # load fzf that was installed above
