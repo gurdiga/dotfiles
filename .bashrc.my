@@ -11,7 +11,7 @@ echo -n -e "\033]0;`whoami`@`hostname -f`\007"
 # rather than before printing the next primary prompt.
 set -b
 
-shopt -s globstar
+# shopt -s globstar
 shopt -s extglob
 
 # keeps newlines in multi-line commands
@@ -189,20 +189,15 @@ export RUBY_GC_HEAP_FREE_SLOTS=200000
 
 # brew
 export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+export MANPATH="/opt/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # node
 export PATH="./node_modules/.bin:$PATH"
-
-# go
-export PATH="$PATH:~/go/bin"
-
-# pip
-export PATH=$PATH:~/Library/Python/2.7/bin
 
 # Ruby gems
 export PATH=$PATH:~/.gem/ruby/2.6.0/bin
@@ -293,7 +288,7 @@ function f() {
 	done
 
 	grep \
-		--color=always \
+		--color=${GREP_COLOR:-always} \
 		--line-number \
 		--binary-files=without-match \
 		--recursive \
@@ -479,3 +474,6 @@ function does_not_contain {
 		grep "$needle" "$file" > /dev/null || echo "$file"
 	done
 }
+
+function seconds { date -u +%H:%M:%S -d @$1; }
+
