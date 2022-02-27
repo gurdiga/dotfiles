@@ -188,13 +188,13 @@ export RUBY_GC_MALLOC_LIMIT=90000000
 export RUBY_GC_HEAP_FREE_SLOTS=200000
 
 # brew
-export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
-export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-export PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
-export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
-export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
-export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
-export MANPATH="/opt/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
+BREW_PREFIX=$(brew --prefix)
+export PATH="$BREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="$BREW_PREFIX/opt/findutils/libexec/gnubin:$PATH"
+export PATH="$BREW_PREFIX/opt/grep/libexec/gnubin:$PATH"
+export PATH="$BREW_PREFIX/opt/grep/libexec/gnubin:$PATH"
+export PATH="$BREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH"
+export MANPATH="$BREW_PREFIX/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # node
 export PATH="./node_modules/.bin:$PATH"
