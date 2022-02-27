@@ -1,6 +1,5 @@
 install:
 	./app-setup.sh
-	./vim-setup.sh
 
 vscode-get:
 	@cp -v ~/Library/Application\ Support/Code/User/settings.json vscode/settings.json
