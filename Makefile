@@ -1,3 +1,6 @@
+.ONESHELL:
+SHELL = $(brew --prefix)/bin/bash
+
 install:
 	./app-setup.sh
 
