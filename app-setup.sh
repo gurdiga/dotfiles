@@ -21,8 +21,6 @@ ln -v -s "$DIR"/{.gitconfig,.gitignore,.vimrc,.bash_aliases,.bashrc.my,vimp,.mpl
 crontab < .crontab
 
 brew install git
-brew tap homebrew/dupes
-brew tap homebrew/versions
 brew install make curl wget htop unrar watch vim imagemagick rsync gifsicle asciinema mpv ffmpeg pgrep mtr tree jq ctags moreutils sqlite-utils
 brew install coreutils grep gnu-sed findutils
 brew install fd ag fzf && /usr/local/opt/fzf/install
