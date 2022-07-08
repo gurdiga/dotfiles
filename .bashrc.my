@@ -93,7 +93,7 @@ function check_for_nvmrc {
 			local expected_node_path="$nvm_node_path/$expected_node_version/bin"
 			local current_node_version=`get_current_node_version`
 
-			if [[ -n "$current_node_version" && "$current_node_version" =~ $expected_node_version ]]; then
+			if [[ -n $current_node_version && $current_node_version =~ $expected_node_version ]]; then
 				return
 			fi
 
