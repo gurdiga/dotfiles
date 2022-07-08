@@ -11,7 +11,7 @@ echo -n -e "\033]0;`whoami`@`hostname -f`\007"
 # rather than before printing the next primary prompt.
 set -b
 
-# shopt -s globstar
+shopt -s globstar
 shopt -s extglob
 
 # keeps newlines in multi-line commands
@@ -158,7 +158,7 @@ function check_for_dot_env {
 		set -o allexport
 		source .env
 		set +o allexport
-		echo "Loaded environment variables from .env"
+		echo "Loaded .env"
 	fi
 }
 
@@ -210,6 +210,7 @@ export PATH="$BREW_PREFIX/opt/findutils/libexec/gnubin:$PATH"
 export PATH="$BREW_PREFIX/opt/grep/libexec/gnubin:$PATH"
 export PATH="$BREW_PREFIX/opt/grep/libexec/gnubin:$PATH"
 export PATH="$BREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="$BREW_PREFIX/opt/python/libexec/bin:$PATH"
 export MANPATH="$BREW_PREFIX/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # node
@@ -490,6 +491,8 @@ function does_not_contain {
 		grep "$needle" "$file" > /dev/null || echo "$file"
 	done
 }
+
+export -f does_not_contain
 
 function seconds { date -u +%H:%M:%S -d @$1; }
 
