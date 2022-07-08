@@ -205,6 +205,12 @@ export RUBY_GC_HEAP_FREE_SLOTS=200000
 
 # brew
 BREW_PREFIX=$(/opt/homebrew/bin/brew --prefix)
+
+if [ `arch` = 'i386' ]; then
+	echo "Rosetta"
+	BREW_PREFIX=$(/usr/local/homebrew/bin/brew --prefix)
+fi
+
 export PATH="$BREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="$BREW_PREFIX/opt/findutils/libexec/gnubin:$PATH"
 export PATH="$BREW_PREFIX/opt/grep/libexec/gnubin:$PATH"
