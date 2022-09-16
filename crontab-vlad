@@ -5,7 +5,4 @@ PATH=/usr/local/bin:/bin:/usr/bin:/usr/local/opt/coreutils/libexec/gnubin
 # Commented out because needs sudoers setup.
 30 * * * * sudo /usr/bin/sntp -sS europe.pool.ntp.org 2>&1 >/dev/null
 
-# Weekly RVM update, not doing too much Ruby lately
-# 0 11 * * 5 ~/.rvm/bin/rvm get stable
-
-*/30 * * * * osascript -e 'display notification "Maybe take a break? 🤔" with title "Energy Watcher"'
+*/30 * * * * osascript -e 'display notification "Maybe take a break? 🤔" with title "Energy Monitor"'
