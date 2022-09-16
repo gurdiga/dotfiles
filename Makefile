@@ -21,3 +21,6 @@ kpax-gmail-smtp:
 
 sudoers:
 	sudo cp vlad-sudoers /private/etc/sudoers.d/
+
+crontab:
+	crontab < .crontab

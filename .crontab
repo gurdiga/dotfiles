@@ -1,12 +1,11 @@
 MAILTO=gurdiga@gmail.com
-SHELL=/usr/local/bin/bash
+SHELL=/opt/homebrew/bin/bash
 PATH=/usr/local/bin:/bin:/usr/bin:/usr/local/opt/coreutils/libexec/gnubin
 
-BIN_DIRS=/bin /usr/bin /usr/local/bin /usr/local/opt/coreutils/libexec/gnubin
-HELP_DIR=/Users/vlad/help
-
 # Commented out because needs sudoers setup.
-# 30 * * * * sudo /usr/bin/sntp -sS europe.pool.ntp.org 2>&1 >/dev/null | ifne mail -s 'NTP sync error?' gurdiga@gmail.com
+30 * * * * sudo /usr/bin/sntp -sS europe.pool.ntp.org 2>&1 >/dev/null
 
 # Weekly RVM update, not doing too much Ruby lately
 # 0 11 * * 5 ~/.rvm/bin/rvm get stable
+
+*/30 * * * * osascript -e 'display notification "Maybe take a break? 🤔" with title "Energy Watcher"'
