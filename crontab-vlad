@@ -1,8 +1,6 @@
-MAILTO=gurdiga@gmail.com
 SHELL=/opt/homebrew/bin/bash
 PATH=/usr/local/bin:/bin:/usr/bin:/usr/local/opt/coreutils/libexec/gnubin
 
-# Commented out because needs sudoers setup.
-30 * * * * sudo /usr/bin/sntp -sS europe.pool.ntp.org 2>&1 >/dev/null
+0 */6 * * * sudo /usr/bin/sntp -sS europe.pool.ntp.org 2>&1 >/dev/null
 
 */30 * * * * osascript -e 'display notification "Maybe take a break? 🤔" with title "Energy Monitor"'
