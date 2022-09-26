@@ -57,3 +57,4 @@ alias sshaddk='ssh-add -K ~/.ssh/id_rsa'
 alias nodenpmversion='curl -s https://nodejs.org/dist/index.json | jq -r ".[] | [.version, .npm] | @tsv"'
 alias webp='cwebp'
 alias inspect='identify'
+alias d="docker"
