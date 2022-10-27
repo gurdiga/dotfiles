@@ -310,7 +310,14 @@ function f() {
 		EXCLUDE_CLAUSE+=" --exclude=$FILE"
 	done
 
-	grep \
+	local GREP="grep"
+
+	if [ -v DEBUG ]; then
+		GREP="echo grep"
+		MAX_LINE_LENGTH=$(($COLUMNS * 30))
+	fi
+
+	$GREP \
 		--color=${GREP_COLOR:-always} \
 		--line-number \
 		--binary-files=without-match \
