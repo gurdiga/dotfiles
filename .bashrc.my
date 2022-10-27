@@ -292,7 +292,7 @@ function f() {
 	local DOT_FILE=".grepignore"
 	local MAX_LINE_LENGTH=$(($COLUMNS * 3))
 
-	local IGNORE_DIRS=".git .svn node_modules bower_components"
+	local IGNORE_DIRS=".git .svn node_modules bower_components" # GLOB patterns
 	local IGNORE_FILES=".bash_history .viminfo"
 	local EXCLUDE_DIR_CLAUSE=""
 	local EXCLUDE_CLAUSE=""
