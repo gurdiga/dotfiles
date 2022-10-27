@@ -3,4 +3,4 @@ PATH=/usr/local/bin:/bin:/usr/bin:/usr/local/opt/coreutils/libexec/gnubin
 
 0 */6 * * * sudo /usr/bin/sntp -sS europe.pool.ntp.org 2>&1 >/dev/null
 
-*/30 * * * * osascript -e 'display notification "Maybe take a break? 🤔" with title "Energy Monitor"'
+*/30 * * * * osascript -e 'display notification "What am I busy with?\\nMaybe take a break? 🤔" with title "Energy Monitor"'
