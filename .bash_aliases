@@ -38,7 +38,7 @@ alias stripcolor='sed -r "s:\x1B\[[0-9;]*[mK]::g"'
 alias striptags='sed "s/<[^>]*>//g"'
 alias rnd="tr -dc '(-~' < /dev/urandom | head -c${1:-37} | pbcopy"
 alias tree="tree -N"
-alias calc='bc <<<'
+alias calc='bc -l <<<'
 alias be="bundle exec"
 alias ports="sudo lsof -PiTCP -sTCP:LISTEN"
 alias ip="ifconfig | grep -Po '(?<=inet )\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | grep -v '127.0.0.1'"
