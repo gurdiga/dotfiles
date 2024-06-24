@@ -1,4 +1,19 @@
-#!/bin/bash
+# vim: set filetype=sh
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Homebrew
+BREW_PREFIX=$(/opt/homebrew/bin/brew --prefix)
+
+export PATH="$BREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="$BREW_PREFIX/opt/findutils/libexec/gnubin:$PATH"
+export PATH="$BREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="$BREW_PREFIX/opt/grep/libexec/gnubin:$PATH"
+export PATH="$BREW_PREFIX/opt/make/libexec/gnubin:$PATH"
+export PATH="$BREW_PREFIX/opt/python/libexec/bin:$PATH"
+export PATH="./node_modules/.bin:$PATH"
+
+export MANPATH="$BREW_PREFIX/opt/coreutils/libexec/gnuman:$MANPATH"
 
 [ "$OSTYPE" = "linux-gnueabi" ] && export PS1="    \[\033[0;33m\]\w\[\033[0;37m\] \[\033[0;32m\]ε\[\033[0;37m\]  "
 [ "$OSTYPE" = "linux-gnu" ] && export PS1="    \[\033[0;33m\]\w\[\033[0;37m\] \[\033[0;32m\]Ξ\[\033[0;37m\]  "
@@ -203,27 +218,11 @@ add_prompt_command
 export RUBY_GC_MALLOC_LIMIT=90000000
 export RUBY_GC_HEAP_FREE_SLOTS=200000
 
-# brew
-BREW_PREFIX=$(/opt/homebrew/bin/brew --prefix)
-
 if [ `arch` = 'i386' ]; then
 	echo "Rosetta"
 	BREW_PREFIX=$(/usr/local/homebrew/bin/brew --prefix)
 fi
 
-export PATH="$BREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
-export PATH="$BREW_PREFIX/opt/findutils/libexec/gnubin:$PATH"
-export PATH="$BREW_PREFIX/opt/grep/libexec/gnubin:$PATH"
-export PATH="$BREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH"
-export PATH="$BREW_PREFIX/opt/python/libexec/bin:$PATH"
-export PATH="$BREW_PREFIX/opt/make/libexec/gnubin:$PATH"
-export MANPATH="$BREW_PREFIX/opt/coreutils/libexec/gnuman:$MANPATH"
-
-# node
-export PATH="./node_modules/.bin:$PATH"
-
-# Ruby gems
-export PATH=$PATH:~/.gem/ruby/2.6.0/bin
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
