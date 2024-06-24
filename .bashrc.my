@@ -214,9 +214,9 @@ fi
 export PATH="$BREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="$BREW_PREFIX/opt/findutils/libexec/gnubin:$PATH"
 export PATH="$BREW_PREFIX/opt/grep/libexec/gnubin:$PATH"
-export PATH="$BREW_PREFIX/opt/grep/libexec/gnubin:$PATH"
 export PATH="$BREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="$BREW_PREFIX/opt/python/libexec/bin:$PATH"
+export PATH="$BREW_PREFIX/opt/make/libexec/gnubin:$PATH"
 export MANPATH="$BREW_PREFIX/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # node
