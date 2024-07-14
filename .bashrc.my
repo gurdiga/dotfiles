@@ -12,6 +12,7 @@ export PATH="$BREW_PREFIX/opt/grep/libexec/gnubin:$PATH"
 export PATH="$BREW_PREFIX/opt/make/libexec/gnubin:$PATH"
 export PATH="$BREW_PREFIX/opt/python/libexec/bin:$PATH"
 export PATH="./node_modules/.bin:$PATH"
+export PATH="$PATH:/Applications/Docker.app/Contents/Resources/cli-plugins"
 
 export MANPATH="$BREW_PREFIX/opt/coreutils/libexec/gnuman:$MANPATH"
 
