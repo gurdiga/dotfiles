@@ -510,3 +510,11 @@ export -f does_not_contain
 
 function seconds { date -u +%H:%M:%S -d @$1; }
 
+function wfx { # WorkFlowy export
+	pbpaste > ~/tmp/wfx.opml
+
+	cd ~/Desktop
+
+	local filename=`xq -r '.opml.body.outline["@text"] + ".opml"' ~/tmp/wfx.opml`
+	mv ~/tmp/wfx.opml "$filename"
+}
