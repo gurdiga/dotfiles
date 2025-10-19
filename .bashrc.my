@@ -27,6 +27,9 @@ echo -n -e "\033]0;`whoami`@`hostname -f`\007"
 # rather than before printing the next primary prompt.
 set -b
 
+# Make the pipeline fail when any of its commands fail
+set -o pipefail
+
 shopt -s globstar
 shopt -s extglob
 
