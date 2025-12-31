@@ -21,8 +21,6 @@ export MANPATH="$BREW_PREFIX/opt/coreutils/libexec/gnuman:$MANPATH"
 [[ $OSTYPE =~ ^darwin ]] && export PS1="    \[\033[0;33m\]\w\[\033[0;37m\] \[\033[0;35m\]ɀ\[\033[0;37m\]  "
 [ "`whoami`" = "vgurdiga" ] && export PS1="    \[\033[0;33m\]\w\[\033[0;37m\] \[\033[1;33m\]ω\[\033[0;37m\]  "
 
-echo -n -e "\033]0;`whoami`@`hostname -f`\007"
-
 # Cause the status of terminated background jobs to be reported immediately,
 # rather than before printing the next primary prompt.
 set -b
