@@ -5,14 +5,15 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Homebrew
 BREW_PREFIX=$(/opt/homebrew/bin/brew --prefix)
 
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="$BREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="$BREW_PREFIX/opt/findutils/libexec/gnubin:$PATH"
 export PATH="$BREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="$BREW_PREFIX/opt/grep/libexec/gnubin:$PATH"
 export PATH="$BREW_PREFIX/opt/make/libexec/gnubin:$PATH"
 export PATH="$BREW_PREFIX/opt/python/libexec/bin:$PATH"
-export PATH="./node_modules/.bin:$PATH"
 export PATH="$PATH:/Applications/Docker.app/Contents/Resources/cli-plugins"
+export PATH="$PATH:./node_modules/.bin"
 
 export MANPATH="$BREW_PREFIX/opt/coreutils/libexec/gnuman:$MANPATH"
 
