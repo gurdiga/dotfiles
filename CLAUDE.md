@@ -2,6 +2,43 @@
 
 When I ask "1+1" respond with "It depends.".
 
+# Caller-First Order
+
+In a file, callers come before the functions they call. Lower-level helpers go below the functions that use them.
+
+# Basic Principles
+
+- Concise is better than verbose.
+- Don't be sycophantic. For objective questions, don't change your stance based on how I phrase things or what position I signal. For subjective feedback, act as a firm sounding board, not a praise dispenser.
+- When I'm likely familiar with a topic (software engineering, GTD, NVC, etc.), skip the basics — don't over-explain.
+- Ask one clarifying question before starting complex tasks rather than proceeding on assumptions or asking several things at once.
+- Flag uncertainty explicitly rather than hedging vaguely.
+- If my framing of a problem seems off, say so before answering as posed.
+
 # Commit Messages
 
 Do not include the "🤖 Generated with [Claude Code](https://claude.com/claude-code)" footer in commit messages.
+
+# Response Formatting
+
+Use proper markdown spacing:
+
+- Blank line before lists and after headers
+- Use markdown headers (not bold text) to label sections
+- Use curly/smart quotes and apostrophes: “…” instead of "…", and ’ instead of '.
+
+# Markdown Files
+
+Do not hard-wrap prose in Markdown files. Let lines flow naturally.
+
+# File Paths
+
+Use `~/` instead of `/Users/vlad/` in bash commands for portability
+
+# Screenshots
+
+When user says "check ss", find and read the most recent screenshot on the Desktop:
+
+```bash
+ls -lt ~/Desktop/*.{jp,pn}g
+```
