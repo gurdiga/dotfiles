@@ -25,3 +25,5 @@ _site/
 # Bundler per-directory setup
 .bundle
 vendor/
+
+**/.claude/settings.local.json
