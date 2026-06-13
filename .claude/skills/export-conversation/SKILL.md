@@ -23,29 +23,15 @@ ${CLAUDE_SKILL_DIR}/scripts/find-session-jsonl.sh <project-path>
 
 Where `<project-path>` is the working directory (e.g. `/Users/vlad/src/my-project`). It prints the path to the newest `.jsonl` in the project's Claude storage directory — which is the current session.
 
-### 2. Parse and extract via agent
+### 2. Parse and extract
 
-Spawn a general-purpose agent to read and parse the JSONL. Each line is a JSON object. The agent should extract:
+Run the bundled script:
 
-- `timestamp` — ISO 8601 string from the top-level `timestamp` field
-- `role` — from `message.role` (`"user"` or `"assistant"`)
-- Text content — from `message.content`, which is either a string or an array of content blocks. Extract `type: "text"` blocks only. For `type: "tool_use"` blocks, emit a brief inline note like `[tool: ToolName]` rather than skipping silently. For `type: "tool_result"` blocks, skip entirely (they're noise).
-
-Instruct the agent to output messages in this format:
-
-```
-## [<timestamp>] <role>
-
-<text>
-
----
+```bash
+python3 ${CLAUDE_SKILL_DIR}/scripts/parse-session-jsonl.py <session.jsonl> <output.md> [--from HH:MM:SS] [--until HH:MM:SS]
 ```
 
-Skip turns that contain only tool use with no text (common for intermediate assistant steps). Preserve interrupted user turns (marked `[Request interrupted by user]`) — they're useful context.
-
-### 3. Write the output
-
-Write the extracted conversation to the file the user specified (default: `./conversation.md`). Add a `# Conversation` heading at the top.
+The script writes `# Conversation` followed by one section per turn. Each section header shows the role and a human-friendly local time as a subdued subtitle (`## user <sub>2:17 pm</sub>`). Tool calls are inlined as brief notes — Bash includes the command, Read/Write/Edit include the file path. Assistant turns that are only tool calls with no prose are omitted.
 
 ## Notes
 
