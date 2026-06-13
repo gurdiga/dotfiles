@@ -62,3 +62,5 @@ alias inspect='identify'
 alias d="docker"
 alias c="code"
 alias hbytes="awk '{print $1}' | numfmt --to=iec-i --suffix=B"
+
+alias res='ssh feedsubscription.com docker exec'
