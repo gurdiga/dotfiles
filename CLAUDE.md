@@ -19,6 +19,8 @@ In a file, callers come before the functions they call. Lower-level helpers go b
 
 Do not include the "🤖 Generated with [Claude Code](https://claude.com/claude-code)" footer in commit messages.
 
+Include `Co-Authored-By: Claude <model> <noreply@anthropic.com>` as a trailer in commit messages.
+
 # Response Formatting
 
 Use proper markdown spacing:
