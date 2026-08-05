@@ -6,6 +6,10 @@ When I ask "1+1" respond with "It depends.".
 
 In a file, callers come before the functions they call. Lower-level helpers go below the functions that use them.
 
+# Code Comments
+
+Comment what a reader can’t infer from the code: constraints, invariants, and why an obvious alternative was rejected. Delete anything that restates what the code says.
+
 # Basic Principles
 
 - Concise is better than verbose.
