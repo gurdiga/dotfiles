@@ -69,19 +69,14 @@ By default both user and Claude can invoke a skill. Two fields restrict this:
 
 ## Dynamic context injection
 
-Use `` !`command` `` to run a shell command before the skill loads — the output replaces the placeholder, so Claude sees live data rather than the command itself:
+A SKILL.md can run shell commands at load time and substitute their output, so Claude sees live data rather than the command itself. Two forms:
 
-```markdown
-## Current diff
-!`git diff HEAD`
-```
+- **Inline** — a bang followed by the command in single backticks, dropped into a line of prose or under a heading.
+- **Block** — a fence opened with three backticks immediately followed by `!` (no language tag). Every line inside runs as one shell script, and the combined output replaces the block.
 
-For multi-line commands, use a fenced block opened with ` ```! `:
+This section describes both forms in prose rather than showing them, on purpose. The loader scans for those literal sequences **anywhere** in the file — inside fenced code blocks and inside double-backtick escapes alike — so any example of the syntax executes as if it were real. An earlier version of this file documented the block form by example and aborted its own load; the inline example silently ran `git diff HEAD` on every load and pasted the result here.
 
-    ```!
-    node --version
-    git status --short
-    ```
+A command that exits nonzero aborts the entire skill load, so guard anything that can fail — `cmd 2>/dev/null || echo "fallback"`.
 
 ## String substitutions
 
