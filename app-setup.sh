@@ -17,7 +17,10 @@ grep -F '~/.bashrc' ~/.bash_profile || \
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 ln -v -s "$DIR"/{.gitconfig,.gitignore,.vimrc,.bash_aliases,.bashrc.my,vimp,.mplayer,.screenrc,.irbrc,.ctags,.my.cnf} ~/
-ln -v -s "$DIR"/.claude/skills ~/.claude/skills
+# -f -n so re-running is idempotent: without -n, ln follows the existing
+# symlink and creates skills/skills inside the repo itself.
+mkdir -p ~/.claude
+ln -v -sfn "$DIR"/.claude/skills ~/.claude/skills
 
 crontab < .crontab
 
