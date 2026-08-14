@@ -38,8 +38,11 @@ curl -s https://cache.ruby-lang.org/pub/ruby/X.Y/ | grep -oE 'ruby-X\.Y\.[0-9]+\
 
 #### Install via RVM (macOS requires explicit OpenSSL path)
 
+Derive the prefix rather than hardcoding it — it differs between Apple Silicon
+(`/opt/homebrew`) and Intel (`/usr/local`):
+
 ```bash
-rvm install X.Y.Z --with-openssl-dir=/opt/homebrew/opt/openssl@3
+rvm install X.Y.Z --with-openssl-dir="$(brew --prefix openssl@3)"
 ```
 
 #### Update `.ruby-version`
@@ -96,7 +99,8 @@ git push
 
 ## Notes
 
+- This workflow assumes RVM and Homebrew. On a machine using rbenv/chruby, or Linux without Homebrew, the version-manager and OpenSSL steps need translating — the rest of the workflow still holds.
 - RVM on macOS often can't find binary rubies for the latest macOS releases and compiles from source — this is normal and takes a few minutes.
-- The `openssl@1.1` Homebrew formula was removed; always use `--with-openssl-dir=/opt/homebrew/opt/openssl@3`.
+- The `openssl@1.1` Homebrew formula was removed; always point `--with-openssl-dir` at `openssl@3`.
 - Dependabot alerts auto-dismiss once GitHub rescans after the push (usually within minutes).
 - If multiple repos need the same fix, check each one's `.ruby-version` and `Gemfile.lock` — they may be on different Ruby versions.
