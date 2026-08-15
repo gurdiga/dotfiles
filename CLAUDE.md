@@ -26,6 +26,22 @@ Do not include the "🤖 Generated with [Claude Code](https://claude.com/claude-
 
 Include `Co-Authored-By: Claude <model> <noreply@anthropic.com>` as a trailer in commit messages.
 
+# Pull Request Descriptions
+
+A PR body is a different register from a commit message: the commit is a note to my future self with the diff attached, the PR is a letter to someone who hasn’t looked yet. Longer and more explanatory than a commit — but that’s a default, not licence to pad.
+
+- **Always write a body**, even if it is one line.
+- **Aim short — a paragraph or two.** A couple of hundred characters of prose is typical for me; four thousand is not thorough, it’s unreadable.
+- **Follow the repo’s PR template if it has one, and add nothing beyond it.** Where there is none, don’t invent a reusable one — no standing `## Summary` / `## Test plan` scaffolding. If a header earns its place, make it specific to that PR and use it only there.
+- **Lead with rationale in prose**: why this, what breaks otherwise, which obvious alternative was rejected and why. Never enumerate the files changed — the diff does that.
+- **Prose over bullets** in the explanatory part. Bullets are for genuinely parallel items, not for chopping an argument into fragments.
+- **Paste evidence verbatim** — terminal output, error text, logs — after a lead-in line ending in a colon, in a fenced block, unreformatted.
+- **Don’t open with `Because …`** — that construction belongs in commit bodies.
+- **Backticks around identifiers are welcome here**, unlike in commit subjects.
+- **Go light on decoration**: curly quotes as everywhere else; em dashes about one PR in ten, not one per paragraph; bold and tables roughly one PR in twenty.
+- **`we` is fine here**, where commits use `I`.
+- **Titles**: capitalized, around 40 characters, no terminal period. Follow the repo’s prefix convention; where there is none, brackets are status labels (`[WIP]`, `[POC]`), not area tags.
+
 # Response Formatting
 
 Use proper markdown spacing:
