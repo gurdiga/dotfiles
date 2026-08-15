@@ -22,9 +22,54 @@ Comment what a reader can’t infer from the code: constraints, invariants, and 
 
 # Commit Messages
 
+Where a repo has its own convention — a repo-local CLAUDE.md, or a house style plainly visible in `git log` — that wins. What follows is my default, measured over my own projects; don't impose it on a team repo.
+
 Do not include the "🤖 Generated with [Claude Code](https://claude.com/claude-code)" footer in commit messages.
 
-Include `Co-Authored-By: Claude <model> <noreply@anthropic.com>` as a trailer in commit messages.
+Include `Co-Authored-By: Claude <model> <noreply@anthropic.com>` as a trailer, naming the model that actually wrote the commit. GitHub squash merges silently drop these, so a trailerless commit on a default branch is not proof of unassisted authorship.
+
+## Shape
+
+- **Usually the subject line and nothing else.** Fewer than one commit in ten of mine has a body. Add one only when there is a *why* the diff cannot show. The trailer is not body prose.
+- **Keep the subject near 30 characters.** Fifty is a ceiling nobody approaches, not a target.
+- **Prefix with a scope and a colon** about half the time. The scope names whatever changed: a directory (`web-ui/shared:`), a container (`smtp-in:`), a function (`makeRssItem:`), a filename (`docker-compose.yml:`), a Make target (`make backup:`), or a feature by its display name. Nesting is fine: `delmon: heartbeat: add lineCountDiff`.
+- **Lowercase after the scope.** `web-ui: no demoAccountNote`, not `web-ui: No demoAccountNote`.
+- **Never end the subject with a period.**
+- **Write a fragment, not a sentence.** Telegraphic noun phrases (`app: no NPM_VERSION`) and the literal command that was run (`npm i cheerio@latest`, `mv {parse,make}Date`) are as common as verb-initial subjects.
+
+## Bodies, when there is one
+
+- **Blank line after the subject, then a subordinate clause finishing the subject as one sentence.** `Because …` is the usual opener; `Otherwise …` gives the same construction from the failure side.
+- **Rationale, never enumeration.** The subject says what changed; the body says why, or what breaks otherwise, or which obvious alternative was rejected. Don't list the files touched.
+- **Prose, not bullets.** Wrap at 72. Pasted evidence — terminal output, error text — is exempt: introduce it with a line ending in a colon and paste it verbatim, unreflowed.
+- **First person is normal.** This is a personal log, not a changelog entry.
+
+## Vocabulary
+
+- **Curly apostrophes; no em dashes.**
+- **My idioms**: `intro X` for a new function or module (never "introduce"), `mv A B` for a rename, `no X` for a removal, `sketch` for exploratory work, `tweak` for a small adjustment, a `(2)`/`(3)` suffix for a fix that needed retrying.
+- **No Conventional Commits, no `[bracket]` prefixes, no changelog verbs** (`refactor`, `chore`, `feat`, `implement`, `enhance`, `ensure`) — in my own projects; team repos may require exactly these.
+- **Don't reach for `Housekeeping`.** A dead habit of mine that still litters my older history.
+
+## Examples
+
+The modal commit — a scoped, lowercase subject and nothing else:
+
+```
+logrotate: dateext
+
+Co-Authored-By: Claude <model> <noreply@anthropic.com>
+```
+
+The rare body, in full:
+
+```
+make certbot-report update
+
+Because logs are now rotated monthly.
+
+Co-Authored-By: Claude <model> <noreply@anthropic.com>
+```
 
 # Pull Request Descriptions
 
