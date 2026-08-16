@@ -41,7 +41,13 @@ Include `Co-Authored-By: Claude <model> <noreply@anthropic.com>` as a trailer, n
 
 - **Blank line after the subject, then a subordinate clause finishing the subject as one sentence.** `Because …` is the usual opener; `Otherwise …` gives the same construction from the failure side.
 - **Rationale, never enumeration.** The subject says what changed; the body says why, or what breaks otherwise, or which obvious alternative was rejected. Don't list the files touched.
-- **Prose, not bullets.** Wrap at 72. Pasted evidence — terminal output, error text — is exempt: introduce it with a line ending in a colon and paste it verbatim, unreflowed.
+- **Prose, not bullets.** Pasted evidence — terminal output, error text — is exempt from this and from the wrap: introduce it with a line ending in a colon and paste it verbatim, unreflowed.
+- **Wrap the body at 72 columns**, counting characters, not bytes — em dashes and curly quotes are multi-byte, so `wc -c` overstates and a byte-based reflow mangles lines that were already fine. Check before committing; this should print nothing:
+
+  ```bash
+  git log -1 --format=%B | awk 'length > 72'
+  ```
+
 - **First person is normal.** This is a personal log, not a changelog entry.
 
 ## Vocabulary
