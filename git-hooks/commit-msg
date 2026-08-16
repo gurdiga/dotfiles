@@ -1,0 +1,91 @@
+#!/usr/bin/perl
+
+# Enforces the 72-column body wrap from the Commit Messages section of
+# ~/CLAUDE.md. CLAUDE.md is context an agent may or may not act on; this
+# runs on every commit regardless.
+
+use strict;
+use warnings;
+
+my $LIMIT = 72;
+
+# The encoding layer is explicit because length() must count characters:
+# curly quotes and em dashes are multi-byte, and git gives the hook no
+# guarantee about the ambient locale.
+open(my $fh, '<:encoding(UTF-8)', $ARGV[0]) or exit 0;
+my @lines = <$fh>;
+close $fh;
+chomp @lines;
+
+@lines = strip_scissors(@lines);
+
+my @offenders = ();
+my $in_evidence = 0;
+my $prev = '';
+
+# Line 0 is the subject, which has its own (unenforced) length rule.
+for my $i (1 .. $#lines) {
+  my $line = $lines[$i];
+
+  if ($line =~ /^\s*$/) {
+
+    # A lead-in ending in a colon marks the next block as pasted evidence,
+    # which ~/CLAUDE.md exempts from the wrap. The exemption lasts one
+    # block: a body that pastes output and then resumes prose gets checked
+    # again after the blank line that closes the block.
+    $in_evidence = $in_evidence ? 0 : ($prev =~ /:$/ ? 1 : 0);
+    $prev = $line;
+    next;
+  }
+
+  $prev = $line;
+
+  next if $in_evidence;
+  next if $line =~ /^#/;
+  next if $line =~ /^\s/;
+  next if length($line) <= $LIMIT;
+  next if longest_token($line) > $LIMIT;
+
+  push @offenders, [$i + 1, $line];
+}
+
+exit 0 unless @offenders;
+
+print STDERR "commit-msg: body lines over $LIMIT columns (see ~/CLAUDE.md, Commit Messages):\n\n";
+printf STDERR "  line %d (%d): %s\n", $_->[0], length($_->[1]), $_->[1] for @offenders;
+print STDERR <<'HINT';
+
+Rewrap and retry. The message is kept in .git/COMMIT_EDITMSG:
+
+  git commit -e -F .git/COMMIT_EDITMSG
+
+Pasted evidence is exempt: introduce it with a line ending in a colon,
+then a blank line. Bypass this check with --no-verify.
+HINT
+
+exit 1;
+
+# Everything below the scissors is the diff git appends under
+# commit.verbose, never part of the message.
+sub strip_scissors {
+  my @in = @_;
+
+  for my $i (0 .. $#in) {
+    return @in[0 .. $i - 1] if $in[$i] =~ /^#\s*-+\s*>8\s*-+/;
+  }
+
+  return @in;
+}
+
+# A line no rewrap can shorten — a bare URL, a long path — is not a wrap
+# violation, so it is left alone rather than reported as unfixable.
+sub longest_token {
+  my ($line) = @_;
+  my $max = 0;
+
+  for my $token (split ' ', $line) {
+    $max = length($token) if length($token) > $max;
+  }
+
+  return $max;
+}
