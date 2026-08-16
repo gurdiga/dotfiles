@@ -19,8 +19,9 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ln -v -s "$DIR"/{.gitconfig,.gitignore,.vimrc,.bash_aliases,.bashrc.my,vimp,.mplayer,.screenrc,.irbrc,.ctags,.my.cnf} ~/
 # -f -n so re-running is idempotent: without -n, ln follows the existing
 # symlink and creates skills/skills inside the repo itself.
-mkdir -p ~/.claude
+mkdir -p ~/.claude ~/.agents
 ln -v -sfn "$DIR"/.claude/skills ~/.claude/skills
+ln -v -sfn "$DIR"/.agents/skills ~/.agents/skills
 
 crontab < .crontab
 

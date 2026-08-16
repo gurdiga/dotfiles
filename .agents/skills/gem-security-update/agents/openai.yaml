@@ -1,0 +1,6 @@
+interface:
+  display_name: "Gem Security Update"
+  short_description: "Fix Ruby gem security alerts safely"
+  default_prompt: "Use $gem-security-update to fix the open Dependabot alerts for Ruby gems in this repository."
+policy:
+  allow_implicit_invocation: false
