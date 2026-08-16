@@ -31,7 +31,7 @@ Run the bundled script:
 python3 ${CLAUDE_SKILL_DIR}/scripts/parse-session-jsonl.py <session.jsonl> <output.md> [--from HH:MM:SS] [--until HH:MM:SS]
 ```
 
-The script writes `# Conversation` followed by one section per turn. Each section header shows the role and a human-friendly local time as a subdued subtitle (`## user <sub>2:17 pm</sub>`). Tool calls are inlined as brief notes — Bash includes the command, Read/Write/Edit include the file path. Assistant turns that are only tool calls with no prose are omitted.
+The script writes `# Conversation` followed by one section per turn. Each section header shows the role and a human-friendly local time as a subdued subtitle (`## user <sub>2:17 pm</sub>`). Tool calls that share a record with assistant prose are inlined as brief notes — Bash includes the command, Read/Write/Edit include the file path. Assistant records containing only tool calls are omitted.
 
 ## Notes
 

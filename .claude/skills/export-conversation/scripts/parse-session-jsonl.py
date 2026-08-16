@@ -28,7 +28,11 @@ def tool_note(block):
     return f"{name}"
 
 
-STRIP_TAGS = re.compile(r"<(ide_opened_file|ide_selection|command-message|command-name|system-reminder)[^>]*>.*?</\1>", re.DOTALL)
+STRIP_TAGS = re.compile(
+    r"<(ide_opened_file|ide_selection|command-message|command-name|system-reminder|"
+    r"task-notification|local-command-(?:caveat|stdout|stderr))[^>]*>.*?</\1>",
+    re.DOTALL,
+)
 
 
 def clean(text):
@@ -38,7 +42,8 @@ def clean(text):
 def extract_turn(message):
     content = message.get("content", "")
     if isinstance(content, str):
-        return clean(content), False
+        text = clean(content)
+        return text, bool(text)
 
     parts = []
     has_text = False
@@ -89,6 +94,8 @@ def main():
             if not line:
                 continue
             data = json.loads(line)
+            if data.get("isMeta"):
+                continue
             message = data.get("message", {})
             role = message.get("role")
             if role not in ("user", "assistant"):
@@ -96,6 +103,8 @@ def main():
             timestamp = data.get("timestamp", "")
             text, has_text = extract_turn(message)
             if not text:
+                continue
+            if role == "assistant" and not has_text:
                 continue
             if text.startswith("Base directory for this skill:"):
                 continue
