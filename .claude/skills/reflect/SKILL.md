@@ -8,12 +8,12 @@ disable-model-invocation: true
 
 # Reflect on Recent Sessions
 
-Review the past week's session transcripts for the current project and surface anything worth adding to CLAUDE.md.
+Review recent session transcripts for the current project (30 days by default) and surface anything worth adding to CLAUDE.md.
 
 ## Transcript
 
 ```!
-${CLAUDE_SKILL_DIR}/scripts/extract-transcripts.sh $ARGUMENTS
+"${CLAUDE_SKILL_DIR}/scripts/extract-transcripts.sh" "$ARGUMENTS"
 ```
 
 ## Steps

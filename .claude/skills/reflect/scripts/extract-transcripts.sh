@@ -5,6 +5,13 @@
 set -euo pipefail
 
 days="${1:-30}"
+case "$days" in
+  ''|*[!0-9]*|0)
+    echo "Days must be a positive integer." >&2
+    exit 2
+    ;;
+esac
+
 project_path=$(pwd)
 encoded=${project_path//\//-}
 transcript_dir="$HOME/.claude/projects/$encoded"
@@ -17,7 +24,7 @@ while IFS= read -r file; do
 done < <(find "$transcript_dir" -name "*.jsonl" -mtime "-$days" -type f 2>/dev/null)
 
 if [[ ${#files[@]} -eq 0 ]]; then
-  echo "No transcripts found from the past 7 days." >&2
+  echo "No transcripts found from the past $days days." >&2
   exit 0
 fi
 
