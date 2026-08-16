@@ -22,13 +22,33 @@ if [[ ${#files[@]} -eq 0 ]]; then
 fi
 
 jq -rn '
+  def strip_tag($tag):
+    gsub("<" + $tag + "[^>]*>[\\s\\S]*?</" + $tag + ">"; "");
+  def clean:
+    reduce [
+      "ide_opened_file",
+      "ide_selection",
+      "command-message",
+      "command-name",
+      "system-reminder",
+      "task-notification",
+      "local-command-caveat",
+      "local-command-stdout",
+      "local-command-stderr"
+    ][] as $tag (. ; strip_tag($tag))
+    | gsub("^\\s+|\\s+$"; "");
+
   [ inputs |
-    select(.role == "user" or .role == "assistant") |
-    "\(.role | ascii_upcase): \(
-      if (.content | type) == "string" then .content
-      elif (.content | type) == "array" then
-        [.content[] | select(.type == "text") | .text] | join(" ")
+    select((.isMeta // false) | not) |
+    .message? as $message |
+    select($message.role == "user" or $message.role == "assistant") |
+    (if ($message.content | type) == "string" then $message.content
+      elif ($message.content | type) == "array" then
+        [$message.content[] | select(.type == "text") | (.text // "")] | join(" ")
       else "" end
-    )"
+    ) as $raw_text |
+    ($raw_text | clean) as $text |
+    select($text | length > 0) |
+    "\($message.role | ascii_upcase): \($text)"
   ] | join("\n")
 ' "${files[@]}" | head -c 40000
