@@ -8,7 +8,7 @@ import argparse
 import json
 import re
 import sys
-from datetime import datetime, time
+from datetime import datetime
 
 
 def tool_note(block):
@@ -61,16 +61,29 @@ def parse_time(s):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Export Claude session JSONL to markdown.")
+    parser = argparse.ArgumentParser(
+        description="Export Claude session JSONL to markdown."
+    )
     parser.add_argument("jsonl", help="Path to session .jsonl file")
     parser.add_argument("output", help="Path to output .md file")
-    parser.add_argument("--from", dest="from_time", metavar="HH:MM:SS", type=parse_time, help="Include messages at or after this local time")
-    parser.add_argument("--until", metavar="HH:MM:SS", type=parse_time, help="Include messages at or before this local time")
+    parser.add_argument(
+        "--from",
+        dest="from_time",
+        metavar="HH:MM:SS",
+        type=parse_time,
+        help="Include messages at or after this local time",
+    )
+    parser.add_argument(
+        "--until",
+        metavar="HH:MM:SS",
+        type=parse_time,
+        help="Include messages at or before this local time",
+    )
     args = parser.parse_args()
 
     turns = []
 
-    with open(args.jsonl) as f:
+    with open(args.jsonl, encoding="utf-8") as f:
         for line in f:
             line = line.strip()
             if not line:
@@ -100,7 +113,7 @@ def main():
 
             turns.append((friendly, role, text))
 
-    with open(args.output, "w") as f:
+    with open(args.output, "w", encoding="utf-8") as f:
         f.write("# Conversation\n")
         for friendly, role, text in turns:
             f.write(f"\n## {role}\n\n*{friendly}*\n\n{text}\n\n---\n")
