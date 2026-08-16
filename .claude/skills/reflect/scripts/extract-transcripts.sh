@@ -21,6 +21,25 @@ if [[ ${#files[@]} -eq 0 ]]; then
   exit 0
 fi
 
+# Put the newest sessions first so the output cap preserves the most relevant
+# work rather than whichever directory entries find happens to return first.
+for ((i = 0; i < ${#files[@]}; i++)); do
+  newest=$i
+  for ((j = i + 1; j < ${#files[@]}; j++)); do
+    if [[ "${files[$j]}" -nt "${files[$newest]}" ]]; then
+      newest=$j
+    fi
+  done
+  if ((newest != i)); then
+    tmp=${files[$i]}
+    files[i]=${files[newest]}
+    files[newest]=$tmp
+  fi
+done
+
+output_file=$(mktemp "${TMPDIR:-/tmp}/claude-reflect.XXXXXX")
+trap 'rm -f "$output_file"' EXIT
+
 jq -rn '
   def strip_tag($tag):
     gsub("<" + $tag + "[^>]*>[\\s\\S]*?</" + $tag + ">"; "");
@@ -51,4 +70,6 @@ jq -rn '
     select($text | length > 0) |
     "\($message.role | ascii_upcase): \($text)"
   ] | join("\n")
-' "${files[@]}" | head -c 40000
+' "${files[@]}" > "$output_file"
+
+head -c 40000 "$output_file"
