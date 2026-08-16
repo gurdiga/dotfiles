@@ -124,7 +124,7 @@ def main():
                 continue
             if args.until and local_time > args.until:
                 continue
-            friendly = dt.strftime("%H:%M:%S")
+            friendly = dt.strftime("%I:%M %p").lstrip("0").lower()
         except Exception:
             friendly = timestamp
 
@@ -133,7 +133,7 @@ def main():
     with open(args.output, "w", encoding="utf-8") as f:
         f.write("# Conversation\n")
         for friendly, role, text in turns:
-            f.write(f"\n## {role}\n\n*{friendly}*\n\n{text}\n\n---\n")
+            f.write(f"\n## {role} <sub>{friendly}</sub>\n\n{text}\n\n---\n")
 
     print(f"Wrote {len(turns)} turns to {args.output}")
 
