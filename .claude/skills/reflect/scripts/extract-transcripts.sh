@@ -5,7 +5,8 @@
 set -euo pipefail
 
 days="${1:-30}"
-encoded=$(pwd | sed 's|^/||; s|/|-|g')
+project_path=$(pwd)
+encoded=${project_path//\//-}
 transcript_dir="$HOME/.claude/projects/$encoded"
 
 [[ -d "$transcript_dir" ]] || { echo "No transcript directory found for this project." >&2; exit 1; }
