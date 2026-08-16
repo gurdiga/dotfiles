@@ -89,38 +89,46 @@ def main():
     turns = []
 
     with open(args.jsonl, encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
-            if not line:
-                continue
+        lines = [line.strip() for line in f if line.strip()]
+
+    for index, line in enumerate(lines):
+        try:
             data = json.loads(line)
-            if data.get("isMeta"):
+        except json.JSONDecodeError:
+            if index == len(lines) - 1:
+                print(
+                    "Warning: ignored an incomplete final JSONL record.",
+                    file=sys.stderr,
+                )
                 continue
-            message = data.get("message", {})
-            role = message.get("role")
-            if role not in ("user", "assistant"):
-                continue
-            timestamp = data.get("timestamp", "")
-            text, has_text = extract_turn(message)
-            if not text:
-                continue
-            if role == "assistant" and not has_text:
-                continue
-            if text.startswith("Base directory for this skill:"):
-                continue
+            raise
+        if data.get("isMeta"):
+            continue
+        message = data.get("message", {})
+        role = message.get("role")
+        if role not in ("user", "assistant"):
+            continue
+        timestamp = data.get("timestamp", "")
+        text, has_text = extract_turn(message)
+        if not text:
+            continue
+        if role == "assistant" and not has_text:
+            continue
+        if text.startswith("Base directory for this skill:"):
+            continue
 
-            try:
-                dt = datetime.fromisoformat(timestamp.replace("Z", "+00:00")).astimezone()
-                local_time = dt.time().replace(tzinfo=None)
-                if args.from_time and local_time < args.from_time:
-                    continue
-                if args.until and local_time > args.until:
-                    continue
-                friendly = dt.strftime("%H:%M:%S")
-            except Exception:
-                friendly = timestamp
+        try:
+            dt = datetime.fromisoformat(timestamp.replace("Z", "+00:00")).astimezone()
+            local_time = dt.time().replace(tzinfo=None)
+            if args.from_time and local_time < args.from_time:
+                continue
+            if args.until and local_time > args.until:
+                continue
+            friendly = dt.strftime("%H:%M:%S")
+        except Exception:
+            friendly = timestamp
 
-            turns.append((friendly, role, text))
+        turns.append((friendly, role, text))
 
     with open(args.output, "w", encoding="utf-8") as f:
         f.write("# Conversation\n")
